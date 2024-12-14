@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            width: 400px;
+
+        }
+        .setArt{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <input id="input" type="text" value="">
+    <button id="btn" type="submit">submit</button>
+    <div id="demo"></div>
+
+    <script>
+        let input = document.getElementById("input")
+        let btn = document.getElementById("btn")
+        let demo = document.getElementById("demo")
+        let editFlag = false;
+        let editElement;
+
+
+        btn.addEventListener("click", ()=>{
+            let value = input.value;
+
+
+            if (!editFlag) {
+                
+                let element = document.createElement("article")
+                element.classList.add("setArt")
+            element.innerHTML = `<p class="dot"> ${value} </p>
+            <div class="btn-container">
+                <button class="delete">
+                    X
+                    </button>
+                    <button class="edit">
+                        E
+                        </button>    
+                        </div>
+                        `;
+                        
+                        demo.appendChild(element);
+                        
+                        let edit = document.querySelector(".edit")
+                        edit.addEventListener("click", editElem)
+                    }else{
+                        editElement.textContent  = input.value;
+                        editFlag = false;
+                    }
+                input.value = ""
+        })
+        function editElem(e) {
+            let element = e.currentTarget.parentElement.parentElement;
+            editElement = element.querySelector(".dot")
+            input.value = editElement.textContent;
+            editFlag = true;
+        }
+        
+         
+    </script>
+</body>
+</html>

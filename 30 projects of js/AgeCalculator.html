@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgb(199, 129, 129),  #E0D8F2);
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .calculator{
+            width: 100%;
+            max-width: 700px;
+            margin-left: 10%;
+            margin-top: 10%;
+        }
+        .calculator h1{
+            font-size: 60px;
+        }
+        .calculator h1 span{
+            color:  #b83232;
+        }
+        .input-box{
+            margin: 40px 0;
+            padding: 35px;
+            border-radius: 20px;
+            background-color: rgba(173, 24, 24, 0);
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+        .input-box input{
+            flex: 1;
+            margin-right: 20px;
+            padding: 14px 20px;
+            border: 0;
+            outline: 0;font-size: 18px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .input-box button{
+            background: #cf1c1f;
+            outline: none;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            color: #f0e9e9;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .input-box input::-webkit-calendar-picker-indicator{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            cursor: pointer;
+            position: absolute;
+            background-size: 30px;
+            background-position: calc(100% - 10px);
+        }
+        #result{
+            color: white;
+            font-size: 18px;
+        }
+        #result span{
+            color: #cf1c1f;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1>Javascrpt Age <span>Calculator</span></h1>
+            <div class="input-box">
+                <input type="date" name="" id="date">
+                <button onclick="calculateAge()">Calculate</button>
+            </div>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        let userInput  = document.getElementById("date");
+        userInput.max = new Date().toISOString().split("T")[0];
+        let result = document.getElementById("result");
+
+        function calculateAge() {
+            let birthdate = new Date(userInput.value);
+            
+            let d1 = birthdate.getDay();
+            let m1 = birthdate.getMonth() + 1;
+            let y1 = birthdate.getFullYear();
+            
+            
+            let today = new Date();
+            
+            let d2 = today.getDay();
+            let m2 = today.getMonth() + 1;
+            let y2 = today.getFullYear();
+            
+            let d3,m3,y3;
+            console.log(y2);
+            
+            y3 = y2 - y1;
+
+            if (m2 >= m1) {
+                m3 = m2 - m1;
+            }else{
+                y3--;
+                m3 =12 + m2 -m1;
+            }
+            // console.log(`birthDateeee = ${ y3 }`);
+
+            if (d2 >= d1) {
+                d3 = d2 - d1;
+            }else{
+                m3--;
+                d3 = daysInMonth(y1,m1) + d2 -d1;
+
+            }
+            if (m3 < 0) {
+                m3 = 11;
+                y3--;
+            }
+            // console.log(d2);
+            
+            result.innerHTML = `You are <span> ${y3} </span> years <span> ${m3} </span> months and <span> ${d3} </span> days.`;
+        }
+        function daysInMonth(year, month) {
+            return new Date(year, month, 0).getDate();
+        }
+        console.log(daysInMonth(2004,2));
+        
+        
+    </script>
+</body>
+</html>

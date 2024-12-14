@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploding Fireworks</title>
+    <link rel="stylesheet" href="fireworks.css">
+    <style>
+        body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.fireworks-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.firework {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: explode 2s infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2) translateY(-200px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1) translateY(-400px);
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="fireworks-container">
+        <img   style="background-color: red;"  class="firework" alt="Firework">
+    </div>
+</body>
+</html>

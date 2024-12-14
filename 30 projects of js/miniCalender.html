@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Calender</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        /* box-sizing: border-box; */
+      }
+      .hero {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #660606, #20205b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .calender {
+        width: 400px;
+        height: 250px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        position: relative;
+      }
+      .left,
+      .right {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 24px;
+      }
+      .right {
+        width: 42%;
+        background: #f4351e;
+        color: #fff;
+        border-top-right-radius: 10px;
+        position: absolute;
+        right: 0;
+        padding: 0 8px;
+      }
+      .left {
+        width: 50%;
+        padding: 0 8px;
+      }
+      #date{
+        font-size: 100px;
+        line-height: 99px;
+      }
+      .bot{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #00002e;
+        width: 402px;
+        height: 50px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        color: #fff;
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="calender">
+        <div class="left">
+          <p id="date">01</p>
+          <p id="day">Sunday</p>
+        </div>
+        <div class="right">
+          <p id="month">January</p>
+          <p id="year">2020</p>
+        </div>
+      </div>
+      <div class="bot">
+        <h3 id="time"></h3>
+      </div>
+    </div>
+    <script>
+      let date = document.getElementById("date");
+      let day = document.getElementById("day");
+      let month = document.getElementById("month");
+      let year = document.getElementById("year");
+      let time = document.getElementById("time")
+
+
+
+      function showTime() {
+    const timeElement = document.getElementById("time");
+    const now = new Date();
+    
+    // Get hours, minutes, and seconds
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    // Add leading zero to minutes and seconds if they are less than 10
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    // Display the time in the element
+    timeElement.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+}
+
+// Call the function to update the time every second
+setInterval(showTime, 1000);
+
+// Call the function initially to show the time immediately
+showTime();
+
+
+
+      const today = new Date();
+
+
+      let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+      let monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+      date.innerHTML = (today.getDate()<10?"0":"") + today.getDate();
+      day.innerHTML =  weekDays[today.getDay()]
+      month.innerHTML =  monthsName[today.getMonth()];
+      year.innerHTML = today.getFullYear();
+      time.innerHTML = today.setHours(15,35,1);
+    </script>
+  </body>
+</html>

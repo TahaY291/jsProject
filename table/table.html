@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text " id="table">
+<button onclick="createTable()">Submit</button>
+
+    <p id="demo" ></p>
+    <script>
+        function createTable() {
+            let number = document.getElementById('table').value;
+            for (let i = 1; i <= 10; i++) {
+                const result = number * i;
+                document.getElementById('demo').innerHTML +=  `${number} X ${i} = ${result} <br>`;
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+</html>

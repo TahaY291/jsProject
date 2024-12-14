@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #center{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+</head>
+<body>
+    <div id="center"></div>
+    <script>
+        let center = document.getElementById('center');
+        center.addEventListener('mousemove', (e)=>{
+            let rect = center.getBoundingClientRect();
+            let insiderectVal = e.clientX - rect.left;
+            // console.log(insiderectVal);
+            
+            if (insiderectVal < rect.width/2) {
+                let redcolor = gsap.utils.mapRange(0, rect.width/2, 255, 150, e.offsetX);
+                gsap.to(center, {
+                backgroundColor: `rgba(${redcolor}, 0,0)`,
+                ease:Power4,
+                duration: 2,
+            })  
+            }else{
+                let bluecolor = gsap.utils.mapRange(rect.width/2, rect.width, 150, 255, e.offsetX);
+                gsap.to(center, {
+                backgroundColor: `rgba( 0,0,${bluecolor})`,
+                ease:Power4,  
+                duration: 2, 
+            })
+        }
+        center.addEventListener('mouseleave',(event)=>{
+            gsap.to(center,{
+                backgroundColor: "white",
+                ease: Power4,
+                duration: 2, 
+            })
+        })
+
+            
+            
+            
+            // let posx = e.offsetX;
+            // console.log(posx);
+            
+            // if (posx <= 150) {
+            //     center.style.backgroundColor  = `rgba(${posx + 100},0 ,0 )`
+            // }else if(posx >= 150 ){
+            //     center.style.backgroundColor = 'rgba(255,145 , 145)'
+            // }
+            
+            
+        })
+        console.log(gsap.utils.mapRange(0, 255, 255, 0,255));
+        
+        
+
+    </script>
+</body>
+</html>

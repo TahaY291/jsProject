@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+    // function check(str1, str2) {
+    //     if (str2.length > str1.length) return false;
+    //     for (let i = 0; i < str1.length; i++) {
+
+    //     }
+
+    // }
+    // console.log(    check("leet","code"));
+    
+    var kidsWithCandies = function(candies, extraCandies) {
+    let totalCandies = candies.map((candy)=>{
+        return candy + extraCandies;
+    }) 
+    console.log(totalCandies);
+    
+    let max = 0;
+    let arr = []
+    for(let i = 0; i < totalCandies.length; i++){
+        if(totalCandies[i] > max){
+            max = totalCandies[i] 
+        }
+    }
+    arr = totalCandies.map((x)=> x === max)
+    return arr;
+};
+console.log(kidsWithCandies([2,3,5,1,3],3));
+
+
+    
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text on Image</title>
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            /* transform: translate(-50%, -50%); */
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            font-size: larger;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1440 width400px " alt="Your Image">
+        <div class="text-overlay"> <a href="https://www.youtube.com/watch?v=bdCvhxN6KiA"> Youtube</a> </div>
+    </div>
+</body>
+</html>

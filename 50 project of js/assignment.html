@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e8f0;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .welcome {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .welcome h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .form-sec {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-sec h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .form-sec label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-sec input[type="text"],
+        .form-sec input[type="email"],
+        .form-sec input[type="tel"],
+        .form-sec select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+        }
+
+        .form-sec .gender-group,
+        .form-sec .interest-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .form-sec input[type="radio"],
+        .form-sec input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .form-sec input[type="submit"] {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #2d3748;
+            color: #ffffff;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-sec input[type="submit"]:hover {
+            background-color: #4a5568;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome">
+        <h2>Welcome to the Youth Empowerment Conference</h2>
+        <p>
+            Join us for an inspiring event aimed at empowering the youth of our
+            community. This conference will provide a unique platform for young
+            individuals to learn and grow. <br /><br />
+            <strong>Date:</strong> October 14, 2024<br />
+            <strong>Time:</strong> 10:00 AM - 4:00 PM<br />
+            <strong>Location:</strong> Community Center Hall
+        </p>
+    </div>
+    <div class="form-sec">
+        <h3>Register Now</h3>
+        <form>
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Full Name" required />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Email" required />
+            <label for="contact-number">Contact Number</label>
+            <input type="tel" id="contact-number" name="contact-number" placeholder="Phone No" required />
+            <label>Gender</label>
+            <div>
+                <label for="male">
+                    <input type="radio" value="male" name="gender" id="gender" />
+                    Male</label>
+                <label for="female">
+                    <input type="radio" value="female" name="gender" id="gender" />
+                    Female</label>
+                <label for="other">
+                    <input type="radio" value="other" name="gender" id="gender" />
+                    Other</label>
+            </div>
+            <label>Area of Interest</label>
+            <div class="interset">
+                <label>
+                    <input type="checkbox" value="leadership" name="interest" id="gender" />
+                    Leadership</label>
+                <label>
+                    <input type="checkbox" value="technology" name="interest" id="gender" />
+                    Technology</label>
+                <label>
+                    <input type="checkbox" value="community-service" name="interest" id="gender" />
+                    Community Service</label>
+            </div>
+            <label for="age-range">Age Range</label>
+            <select id="age-range" name="age-range" required>
+                <option value="" disabled selected>Select your age range</option>
+                <option value="under-18">Under 18</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35+">35+</option>
+            </select>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+
+</html>

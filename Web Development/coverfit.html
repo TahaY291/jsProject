@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object fit and cover </title>
+    <style>
+        .fit{
+            background-color: aliceblue;
+            width: 400px;
+            height: 300px;
+            background-image: url(photo-1520275126937-9506f7dd123c.jpeg);
+            background-position: center center;
+            border: 2px solid black;
+            background-repeat: no-repeat;
+            background-clip: padding-box;
+
+        }
+        img{
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            object-fit: scale-down;
+            object-position: bottom bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="fit" >
+        <!-- <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""> -->
+    </div>
+</body>
+</html>

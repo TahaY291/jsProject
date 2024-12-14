@@ -1,0 +1,146 @@
+body{
+    background-color: black;
+}
+.box{
+    width: 55px;
+    height: 45 px;
+    background-color: rgb(7, 7, 7);
+    color: rgb(247, 243, 242);
+    border: 3px solid;
+    margin: 1px;
+    text-align: center;
+    padding-top: 20px;
+}
+div :nth-child(5){
+    width: 350px;
+    background-color: black;
+    color: aliceblue;
+    border: 2px solid;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 12px 40px;
+    margin: 1px;
+}
+div :nth-child(6){
+    width: 350px;
+    background-color: black;
+    color: aliceblue;
+    border: 2px solid;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 12px 40px;
+    margin: 1px;
+}
+div :nth-child(7){
+    width: 350px;
+    background-color: black;
+    color: aliceblue;
+    border: 2px solid;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 12px 40px;
+    margin: 1px;
+}
+img{
+    width: 400px;
+    margin: 10px;
+    border: 6px solid rgb(163, 224, 7);
+    border-radius: 42px;
+}
+.images{
+    /* width: 100%; */
+    background-color: rgb(255, 174, 0);
+    display: flex;
+    flex-wrap: wrap;
+    /* /* justify-content: center; */
+    /* align-items: center; */
+    /* margin-left: 30px; */
+    /* padding-left: 130px; */
+}
+.center{
+    margin: auto;
+}
+#img1{
+    border: 6px solid rgb(236, 161, 9);
+}
+#img2{
+    border: 6px solid rgb(240, 57, 47);
+}
+#img3{
+    border: 6px solid rgb(239, 222, 27);
+}
+#img4{
+    border: 6px solid rgb(131, 243, 3);
+}
+#img5{
+    border: 6px solid rgb(236, 119, 9);
+}
+#img6{
+    border: 6px solid rgb(249, 168, 5);
+}
+#img7{
+    border: 6px solid rgb(171, 160, 139);
+}
+#img8{
+    border: 6px solid rgb(125, 193, 219);
+}
+#img9{
+    border: 6px solid rgb(77, 52, 22);
+}
+#img10{
+    border: 6px solid rgb(222, 216, 208);
+}
+#img11{
+    border: 6px solid rgb(22, 77, 59);
+}
+#img12{
+    border: 6px solid rgb(76, 67, 56);
+}
+#img13{
+    border: 6px solid rgba(148, 196, 188, 0.956);
+}
+#img14{
+    border: 6px solid rgb(77, 52, 22);
+}
+#img15{
+    border: 6px solid rgb(19, 40, 105);
+}
+#img16{
+    border: 6px solid rgb(40, 41, 47);
+}
+#img17{
+    border: 6px solid rgb(139, 163, 45);
+}
+#img18{
+    border: 6px solid rgb(220, 219, 221);
+}
+#img19{
+    border: 6px solid rgb(180, 160, 195);
+}
+#img20{
+    border: 6px solid rgb(23, 68, 3);
+}
+#img21{
+    border: 6px solid rgb(120, 170, 182);
+}
+#img22{
+    border: 6px solid rgb(156, 213, 217);
+}
+#img23{
+    border: 6px solid rgb(125, 154, 165);
+}
+#img24{
+    border: 6px solid rgb(207, 161, 228);
+}
+#img25{
+    border: 6px solid rgb(232, 207, 62);
+}
+#img26{
+    border: 6px solid rgb(248, 139, 6);
+}
+#img27{
+    border: 6px solid rgb(241, 212, 176);
+}
+#img28{
+    border: 6px solid rgb(241, 212, 176);
+}

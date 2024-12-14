@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .container {
+            height: 100vh;
+            width: 49vw;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .card {
+            display: flex;
+            background: #1a1919;
+            padding: 10px;
+            border-radius: 8px;
+            gap: 5px;
+        }
+
+        .imgDiv {
+            position: relative;
+            border-radius: 8px;
+            height: 150px;
+            background-color: #fff;
+            flex-basis: 30%;
+        }
+        .imgDiv img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: fill;
+        }
+        .duration {
+            position: absolute;
+            bottom: 3%;
+            right: 2%;
+            background: #0000009a;
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .content {
+            display: block;
+            flex-basis: 70%;
+            padding-left: 1%;
+            padding-top: 2%;
+        }
+
+        .title {
+            color: white;
+            font-weight: 600;
+        }
+
+        .info {
+            padding-left: 1%;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            padding-top: 3%;
+            gap: 1px;
+        }
+
+        .info p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script>
+        const intToString = (num) => {
+            num = num.toString().replace(/[^0-9.]/g, "");
+            if (num < 1000) {
+                return num;
+            }
+            let si = [
+                { v: 1e3, s: "K" },
+                { v: 1e6, s: "M" },
+                { v: 1e9, s: "B" },
+                { v: 1e12, s: "T" },
+                { v: 1e15, s: "P" },
+                { v: 1e18, s: "E" },
+            ];
+            let index;
+            for (index = si.length - 1; index > 0; index--) {
+                if (num >= si[index].v) {
+                    break;
+                }
+            }
+            return (
+                (num / si[index].v)
+                    .toFixed(2)
+                    .replace(/\.0+$|(\.[0-9]*[1-9])0+$/, "$1") + si[index].s
+            );
+        };
+        function createCard(title, cName, views, monthAgo, duration, thumbnail) {
+            return `<div class='card'>
+                <div class="imgDiv">
+                    <img src=${thumbnail} alt=${title}>
+                    <span class="duration">${duration}</span>
+                </div>
+                <div class="content">
+                    <h2 class="title">${title}</h2>
+                    <div class="info">
+                       <p class="cName">${cName}</p> 
+                       .
+                       <p class="views">${intToString(views)} views </p>
+                       . 
+                       <p class="monthAgo">${monthAgo} months.ago</p> 
+                    </div>
+                </div>
+                </div>`;
+        }
+        let container = document.querySelector(".container");
+        let array = [
+            createCard(
+                "This is something beautiful you have watched ever",
+                "Nature_Collection",
+                "404000",
+                "7 ",
+                "31:22",
+                "https://assets.weforum.org/article/image/0ZUBmNNVLRCfn3NdU55nQ00UF64m2ObtcDS0grx02fA.jpg"
+            ),
+            createCard(
+                "This is mountain counts in the top biggest mountains in the world",
+                "Nature_Collection",
+                "7114000",
+                "7 ",
+                "14:02",
+                "https://skyhookcontentful.imgix.net/6MPvB1nbHtL2AQbxMi2D7y/af0829fe9fc4733a754e15705d99d33d/pixabay-pehrlich-himalayas.jpg?auto=compress%2Cformat%2Cenhance%2Credeye&crop=faces%2Ccenter&fit=crop&ar=1%3A1&w=576px&ixlib=react-9.7.0"
+            ),
+            createCard(
+                "The longest river of the world in Africa",
+                "Nature_Collection",
+                "120000",
+                "4 ",
+                "10:22",
+                "https://i0.wp.com/hadithi.africa/wp-content/uploads/2019/01/nile03.jpg?resize=770%2C514&ssl=1"
+            ),
+            createCard(
+                "One of the most important thing on the Earth for humanity",
+                "Nature_Collection",
+                "489200",
+                "3 ",
+                "19:22",
+                "https://cdn.britannica.com/89/257489-138-55993EBF/why-are-rainforests-important.jpg?w=800&h=450&c=crop"
+            ),
+            createCard(
+                "Safest country of the world to live 🏡",
+                "Nature_Collection",
+                "52300020",
+                "5 ",
+                "20:14",
+                "https://static01.nyt.com/images/2017/06/06/world/06QATAR-01/06Qatar-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+            ),
+        ];
+        let cardsHTML = array.map((card) => card).join("");
+        container.innerHTML = cardsHTML;
+    </script>
+</body>
+
+</html>

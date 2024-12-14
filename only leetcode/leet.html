@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(31, 30, 30);
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // function sum(arr , tar) {
+        //     let array = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] + arr[i + 1] === tar) {
+        //             array.push(i, i+1)
+        //         }
+                
+        //     }
+        //     return array
+        // }
+        
+//         var twoSum = function(nums, target) {
+//     const pairIdx = {};
+
+//     for (let i = 0; i < nums.length; i++) {
+//         const num = nums[i];
+//         if (target - num in pairIdx) {
+//             console.log(pairIdx[target - num]);
+            
+//             // return [i, pairIdx[target - num]];
+//         }
+//         // pairIdx[num] = i;
+//     }    
+// };
+// // twoSum([2,3,4],6)
+//     console.log( twoSum([2,3,4],6));
+
+// var twoSum = function(nums, target) {
+//          let array = []
+//             for (let i = 0; i < nums.length; i++) {
+//                 if (nums.includes( target )) {
+//                     return true;
+//                 }else{
+//                     return false;
+//                 }
+                
+//             }
+//         };
+// function twoSum(nums , target) {
+//     let k = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (!nums[k] + nums[i] == target) {
+//             k++;
+//         }else{
+//             console.log(k,i);
+            
+//         }
+//     }
+// }
+//         console.log(twoSum([3,2,4], 5));
+// var twoSum = function(nums, target) {
+//     const pairIdx = {};
+
+//     for (let i = 0; i < nums.length; i++) {
+//         const num = nums[i];
+//         if (target - num in pairIdx) {
+//             return [i, pairIdx[target - num]];
+//         }
+//         pairIdx[num] = i;
+//     }    
+// };
+
+// var twoSum = function(nums, target) {
+//     for (let i = 1; i < nums.length; i++) {
+//         for (let j = i; j < nums.length; j++) {
+//             if (nums[j] + nums[j - i] === target) {
+//                 return [j - i, j];
+//             }
+//         }
+//     }
+//     return []; // Empty array if no solution found
+// };
+// function twoSum(nums, target) {
+//     for (let i = 1; i < nums.length; i++) {
+//         for (let j = i; j < nums.length; j++) {
+//             console.log("this is", nums[j-1]);
+            
+//             // if (nums[j] + nums[j-i] === target) {
+//             //     return [ j-i, j]
+//             // }
+//         }        
+//     }
+//     return [];
+// }
+// var twoSum = function(nums, target) {
+//     const newMap = {}
+
+//     for (let i = 0; i < nums.length; i++) {
+//     	const difference = target - nums[i]       
+    
+//     	if (difference in newMap) return [i, newMap[difference]]
+
+//     	newMap[nums[i]] = i
+//     }
+// };
+// var twoSum = function(nums, target) {
+//     const pairIdx = {};
+
+//     for (let i = 0; i < nums.length; i++) {
+//         const num = nums[i];
+//         if (target - num in pairIdx) {
+//             // console.log(num , i);
+            
+//             return [i, pairIdx[target - num]];
+//         }
+//         pairIdx[num] = i;
+//     }    
+// };
+// console.log(twoSum([1,7,3], 4));
+
+// function countDuplicate(arr) {
+//     let count = {};
+//     for (let i = 0; i < arr.length; i++) {
+//         console.log(count[arr[i]]);
+//     //     if (count[arr[i]]) {
+//     //         count[arr[i]]++
+//     //     }else{
+//     //         count[arr[i]] = 1;
+//     //     }
+//     }
+//     // return count;
+// }
+// console.log(countDuplicate([1,2,1,2,1,3,4,5]));
+// let newMap = {};  // Start with an empty object
+
+// let nums = [10, 20, 30, 40];  // Example array
+
+// for (let i = 0; i < nums.length; i++) {
+//     newMap[nums[i]] = i;  // Add key-value pairs to the object
+//     console.log(`Iteration ${i}:`, newMap);  // Display the object after each iteration
+// }
+
+// let array = [1,2,3,4,5]
+// for (let i = 1; i < array.length; i++) {
+//     console.log("Taha");
+    
+//     for (let j = i; j < array.length; j++) {
+//         console.log(array[j] ,"this",  array[j-i]);
+        
+//         // if (array[j] + array[j-i] === 8) {
+//         //     console.log([j-i, j]);
+            
+//         // }
+        
+        
+//     }
+    
+// }
+// function twoSum(nums , target) {
+//     let obj = {};
+//     for (let i = 0; i < nums.length; i++) {
+//         if (target - nums[i] in obj) {
+//             return [i,obj[target - nums[i]]]
+//         }else{
+//             obj[nums[i]] = i;
+//         }
+        
+//     }
+// }
+// console.log(twoSum([1,7,3],4));
+// for (let i = 5; i > 0; i--) {
+    
+//     for (let j = i; j > 0; j--) {
+//         console.log("*");
+//     }
+//     console.log("");
+    
+// }
+// let obj = {
+//     name : "Taha",
+//     roll : 1
+// }
+// obj[name] = "Yasin"
+// console.log(obj[name]);
+function bubbleSort(arr) {
+    let n = arr.length;
+    let swapped;
+
+    // Outer loop to ensure we make multiple passes
+    for (let i = 0; i < n - 1; i++) {
+        swapped = false; // Keep track of whether a swap occurred in this pass
+
+        // Inner loop for comparing adjacent elements
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j + 1]
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+
+        // If no swap occurred, the array is sorted
+        if (!swapped) break;
+    }
+    return arr;
+}
+
+// Example usage:
+let arr = [64, 34, 25, 12, 22, 11, 90];
+console.log("Sorted array:", bubbleSort(arr)); // Output: Sorted array: [11, 12, 22, 25, 34, 64, 90]
+    
+
+
+    </script>
+</body>
+</html>

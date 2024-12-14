@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #222;
+        }
+        .card{
+            width: 90%;
+            max-width: 470px;
+            background: linear-gradient(135deg , #00feba, #e166e6);
+            color: #fff;
+            margin: 100px auto 0;
+            border-radius: 40px 35px;
+            text-align: center;
+            padding: 20px;
+        }
+        .search{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .search input{
+            border: 0;
+            outline:0;
+            background: #ebfffc;
+            color: #555;
+            padding: 10px 25px;
+            height: 60px;
+            border-radius: 30px;
+            flex: 1;
+            margin-right: 16px;
+            font-size: 18px;
+
+        }
+        .search button {
+            border: 0;
+            outline:0;
+            background: #ebfffc;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+
+        }
+        .search button img{
+            width: 36px;
+        }
+        .weather-icon{
+            width: 170px;
+            margin-top: 30px;
+        }
+        .weather h1{
+            font-size: 80px;
+            font-weight: 500;
+        }
+        .weather h2{
+            font-size: 42px;
+            font-weight: 400;
+            margin-top: -10px;
+        }
+        .details{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 20px;
+            margin-top: 50px;
+        }
+        .col{
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+        .col img{
+            width: 40px;
+            margin-right: 10px;
+        }
+        .humidity, .wind{
+            font-size: 28px;
+            margin-top: -6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input class="input" type="text" placeholder="Enter city name" spellcheck="false">
+            <button class="btn"><img src="img/search.png.png" alt=""></button>
+        </div>
+        <div class="weather">
+            <img src="img/cloud (1).png" width="200px" class="weather-icon" alt="">
+            <h1 class="temp">22°c</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="img/humidity.webp" width="100px" alt="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/w.png" class="saturate" width="100px" alt="">
+                    <div>
+                        <p class="wind">15kmph</p>
+                        <p>Wind</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apikey = "cd411219a7ff707d9043fb2c57efd7ac"
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric"
+        let searchbox = document.querySelector('.input');
+        let btn = document.querySelector('.btn');
+        async function checkweather(city) {
+            const response = await fetch(`${apiUrl}&q=${city}&appid=${apikey}`)
+            var data = await response.json();
+            console.log(data);
+            
+
+        
+            document.querySelector('.city').innerHTML = data.name;
+            document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + "°c";
+            document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
+            document.querySelector('.wind').innerHTML = data.wind.speed + "km/h";
+             
+            if (response.status == 404) {
+                console.log(document.querySelector('weather'))
+            }
+
+            let image = document.querySelector('.weather-icon')
+            console.log();
+            
+            if (data.weather[0].main === "Clouds") {
+                image.src = 'img/cloud (3).png';              
+                
+            }else if(data.weather[0].main === "Mist"){
+                image.src = 'img/cloud (5).png';
+            }
+            else if(data.weather[0].main === "Drizzle"){
+                image.src = 'img/cloud (1).png';
+            }
+            else if(data.weather[0].main === "Rain"){
+                image.src = 'img/rain.png';
+            }else{
+                image.src = 'img/cloud (2).png';
+
+            }
+        }
+        btn.addEventListener('click', ()=>{
+            checkweather(searchbox.value);
+
+        })
+  
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- const questions = [
+{
+    question: "Which is the largest animal in the world? ",
+    answers: [
+        { text: "Shark", correct: false },
+        { text: "Blue Whale", correct: true },
+        { text: "Elephant ", correct: false },
+        { text: "Giraffe", correct: false },
+    ]
+},
+{
+    question: "Which is the smallest country in the world? ",
+    answers: [
+        { text: "Vatican City", correct: true },
+        { text: "Bhutan", correct: false },
+        { text: "Nepal ", correct: false },
+        { text: "Sri Lanka", correct: false },
+    ]
+},
+{
+    question: "Which is the largest desert in the world? ",
+    answers: [
+        { text: "kalahari", correct: false },
+        { text: "Gobi", correct: false },
+        { text: "Sahara", correct: true },
+        { text: "Antartica", correct: false },
+    ]
+},
+{
+    question: "Which is the smallest continent in the world? ",
+    answers: [
+        { text: "Asia", correct: false },
+        { text: "Australia", correct: true },
+        { text: "Arctic", correct: false },
+        { text: "Fla fla", correct: false },
+    ]
+},
+]
+let questionEl = document.getElementById("question");
+const answerbtn = document.getElementById("answer-buttons")
+const nextbtn = document.getElementById("next-btn")
+
+let index = 0;
+let score = 0;
+
+function startQuiz() {
+index = 0;
+score = 0;
+nextbtn.innerHTML = "Next";
+showQuestion();
+}
+function showQuestion() {
+resetState();
+let currentQuestion  = questions[index];
+let questionNo = index + 1;
+questionEl.innerHTML = questionNo + " "+ currentQuestion.question;
+
+currentQuestion.answers.forEach(answer =>{
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add('btn');
+    answerbtn.appendChild(button);
+    if (answer.correct) {
+        button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+});
+}
+
+function resetState() {
+nextbtn.style.display = "none";
+while (answerbtn.firstChild) {
+    answerbtn.removeChild(answerbtn.firstChild);
+}
+}
+function selectAnswer(e){
+const selectedbtn = e.target;
+const isCorrect =selectedbtn.dataset.correct === "true";
+if (isCorrect) {
+    selectedbtn.classList.add("correct");
+}else{
+    selectedbtn.classList.add("incorrect");
+}
+}
+
+startQuiz() -->

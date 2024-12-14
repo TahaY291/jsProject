@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            padding-top: 5%;
+            padding-left: 7%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .div {
+            width: 50px;
+            height: 50px;
+            /* display: none; */
+            background-color: #DD6804;
+            color: white;
+            text-align: center;
+            opacity: 0;
+            /* transition: width 1s ease; For smooth transition */
+        }
+        .div-1{
+            transition: all ease 4s;
+            background-color: red;
+        }
+        .div-2{
+            transition: all ease-in 4s;
+            background-color: peru;
+        }
+        .div-3{
+            transition: all ease-out 4s;
+            background-color: teal;
+        }
+        .div-4{
+            transition: all ease-in-out 4s;
+            background-color: coral;
+        }
+        .div-5{
+            transition: all ease 4s;
+            background-color: cornflowerblue;
+        }
+        .hover {
+            font-size: 20px;
+            color: white;
+            background-color: #6A7044;
+            width: 400px;
+            text-align: center;
+            padding: 10px;
+        }
+        .hover:hover ~ .div {
+            width: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hover">Hover me</div> <!-- Moved .hover div to the top -->
+        <div class="div div-1">ease</div>
+        <div class="div div-2">ease-in</div>
+        <div class="div div-3">ease-out</div>
+        <div class="div div-4">ease-in-out</div>
+        <div class="div div-5">ease</div>
+    </div>
+</body>
+</html>

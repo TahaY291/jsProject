@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Define the keyframes for the bouncing animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Apply the animation to the ball element */
+    .ball {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      position: relative;
+      animation: bounce 2s infinite; /* 2s duration, infinite loop */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The ball element to be animated -->
+  <div class="ball"></div>
+
+</body>
+</html>

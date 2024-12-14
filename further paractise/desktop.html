@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #1f1e1e;
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 150px;
+      }
+      .container .head{
+        letter-spacing: 5px;
+        font-size: 125px;
+        /* text-shadow: 0 0 5px #686666, 0 0 10px #867f7f, 0 0 15px #868484, 0 0 20px #797676; */
+        /* text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5); */
+        text-shadow: 1px 1px 0px #ccc, 2px 2px 3px rgba(0, 0, 0, 0.5);
+        /* text-shadow: 0 0 10px #4B83C0; */
+        /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5), -2px -2px 2px rgba(255, 255, 255, 0.5); */
+      }
+      .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+      .image img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      #rd{
+        width: 65px;
+        height: 65px;
+      }
+      #th{
+        width: 65px;
+        height: 65px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="head">30 DAYS</h1>
+      <div class="image">
+        <img src="image/eat.webp" alt="as" />
+        <img src="image/sleep.webp" alt="as" />
+        <img src="image/code.webp" id="rd" alt="as" />
+        <img src="image/pray.png" id="th" alt="as" />
+      </div>
+    </div>
+  </body>
+</html>

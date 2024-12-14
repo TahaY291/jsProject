@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #131010;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            gap: 52px;
+        }
+        .skill{
+            width: 160px;
+            height: 160px;
+            /* background-color: skyblue; */
+            position: relative;
+        }
+        .outer{
+            height: 160px;
+            width: 160px;
+            border-radius: 50%;
+            box-shadow: 6px 6px 10px -1px rgba(54, 50, 50, 0.15),
+                        -6px -6px 10px -1px rgba(90, 80, 80, 0.15);
+;            padding: 20px;
+        }
+        .inner{
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid red; */
+            box-shadow: inset 4px 4px 6px -1px rgba(46, 44, 44, 0.2),
+                        inset -4px -4px 6px -1px rgba(54, 52, 52, 0.7),
+                        0.5px 0.5px 0px  rgb(29, 28, 28),
+                        0.5px 0.5px 0px  rgba(78, 78, 78, 0.15),
+                        0px 12px 10px -10px rgba(66, 65, 65, 0.05);
+        }
+        .number , .number1, .number2{
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 0 5px #13bac0, 0 0 10px #19bbd8, 0 0 20px #28c9d4, 
+                 0 0 40px rgb(0, 162, 255), 0 0 80px rgb(0, 255, 242), 0 0 90px rgb(10, 216, 147);
+
+        }
+        circle{
+            fill: none;
+            stroke:cyan;
+            stroke-width: 20px;
+            stroke-dasharray: 472;
+            stroke-dashoffset: 472;
+            animation: anim 2s linear forwards;
+        }
+        .circle2{
+            animation: anim1 2s linear forwards;
+        }
+        .circle3{
+            animation: anim2 2s linear forwards;
+        }
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        @keyframes anim {
+            100%{
+                stroke-dashoffset: 158;
+            }
+        }
+        @keyframes anim1 {
+            100%{
+                stroke-dashoffset: 200;
+            }
+        }
+        @keyframes anim2 {
+            100%{
+                stroke-dashoffset: 131;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="skill">
+        <div class="outer">
+            <div class="inner">
+                <div class="number">
+
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+            <defs>
+               <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+               </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+    </svg>
+    </div>
+    <div class="skill">
+        <div class="outer">
+            <div class="inner">
+                <div class="number1">
+
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+            <defs>
+               <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+               </linearGradient>
+            </defs>
+            <circle class="circle2" cx="80" cy="80" r="70" stroke-linecap="round" />
+    </svg>
+    </div>
+    <div class="skill">
+        <div class="outer">
+            <div class="inner">
+                <div class="number2">
+
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+            <defs>
+               <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+               </linearGradient>
+            </defs>
+            <circle class="circle3" cx="80" cy="80" r="70" stroke-linecap="round" />
+    </svg>
+    </div>
+    <script>
+        let number = document.querySelector(".number");
+        let number1 = document.querySelector(".number1");
+        let number2 = document.querySelector(".number2");
+        let counter = 0;
+        let counter1 = 0;
+        let counter2 = 0;
+        setInterval(() => {
+            if (counter == 75) {
+                clearInterval()
+
+            }else{
+                counter++;
+                number.innerHTML = counter + "%";
+            }
+
+        }, 2000/75);
+
+        setInterval(() => {
+            if (counter1 < 60) {
+                // clearInterval()
+                counter1++;
+                number1.innerHTML = counter1 + "%";
+
+            }else{
+            }
+
+        }, 2000/60);
+
+        setInterval(() => {
+            if (counter2 < 80) {
+                counter2++;
+                number2.innerHTML = counter2 + "%";
+            }
+
+        }, 2000/80);
+    </script>
+</body>
+</html>

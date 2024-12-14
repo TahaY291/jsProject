@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,2,3,2,5,2];
+        function endit(data) {
+            let arr = []
+            data.forEach(item => {
+                if(!arr.includes(item)) {
+                    arr.push(item)
+                }
+            })
+            return arr;
+        }
+        console.log(endit(arr));
+    </script>
+</body>
+</html>

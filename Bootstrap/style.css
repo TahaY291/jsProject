@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
+
+
+.invert{    
+filter: invert(1);
+}
+
+.no-bullets {
+    list-style-type: none;
+}
+
+#r-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(40, 81, 155);
+}
+
+.thirdbar {
+    background-color: rgb(66, 66, 66);
+}
+
+.carousel-inner {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.browse h4{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(109, 107, 107);
+    margin-bottom: 40px;
+}
+.card-carosal h4{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(109, 107, 107);
+    margin-bottom: 40px;
+    text-align: center;
+}
+.third-card h3{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(109, 107, 107);
+    margin-bottom: 40px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .hide-for-medium {
+      display: none;
+    }
+  }
+@media (max-width: 768px) {
+    .man {
+      display: none;
+    }
+  }

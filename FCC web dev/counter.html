@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #C3E9D5;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container h1{
+            font-size: 44px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .container #value{
+            font-size: 55px;
+            font-weight: 500;
+        }
+        .container .btn-container{
+            margin-top: 20px;
+        }
+        .container button{
+            width: 100px;
+            padding: 4px 10px;
+            outline: 0;
+            border: 1px solid black;
+            cursor: pointer;
+            margin: 0 8px;
+            letter-spacing: 2px;
+            transition: all 0.8s ease;
+            border-radius: 5px;
+        }
+        .container button:hover{
+            background-color: rgb(39, 39, 39);
+            color: white;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>
+                counter
+            </h1>
+            <span id="value">0</span>
+            <div class="btn-container">
+                <button class="btn decrease">Decrease</button>
+                <button class="btn reset">Reset</button>
+                <button class="btn increase">Increase</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        let count = 0;
+
+        const value = document.querySelector("#value");
+        const btns = document.querySelectorAll(".btn")
+        btns.forEach((btn)=>{
+            btn.addEventListener("click", function(e){
+                const styles = e.currentTarget.classList;
+                if (e.target.classList.contains("decrease")) {
+                    count--;
+                }else if (styles.contains("increase")) {
+                    count++
+                }else{
+                    count = 0;
+                }
+                if (count > 0) {
+                    value.style.color = "green";
+                }
+                if (count < 0) {
+                    value.style.color = "red";
+                }
+                if (count == 0) {
+                    value.style.color = "yellow";
+                }
+
+                value.textContent = count;
+            })
+            
+        })
+        
+    </script>
+</body>
+</html>

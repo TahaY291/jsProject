@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.sidebar {
+    background-color: rgb(192, 188, 188);
+    /* width: 434px; */
+    font-family: 'Fira sans', sans-serif;
+    height: 100vh;
+    transition: transform 0.3s ease-in;
+}
+.sidebargo{
+    transform: translate(-434px, 0px);
+    position: absolute;
+}
+
+.sidebar nav {
+    padding: 45px;
+
+}
+
+.sidebar nav li {
+    font-size: 1.8rem;
+    /* font-size: 25px; */
+    list-style: none;
+    padding: 33px 0;
+}
+
+.sidebar nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    /* background-color: yellow; */
+    width: 88vw;
+}
+
+.container {
+    display: flex;
+}
+
+.infocontainer {
+    /* background-color: green; */
+    height: 58vh;
+    width: 80vw;
+    margin: 144px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.devinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.hello {
+    font-size: 65px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Fira sans', sans-serif;
+}
+
+.about {
+    font-size: 40px;
+}
+
+.moreabout {
+    font-size: 22px;
+    margin: 23px 0;
+    font-weight: 600;
+    font-family: 'Fira sans', sans-serif;
+}
+
+.button {
+    margin-top: 34px;
+}
+
+.btn {
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: darkcyan;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 7px 13px;
+    margin: 10px 0 0 0;
+
+}
+
+.btn:hover {
+    color: darkcyan;
+    background-color: #fff;
+    /* border: 1px solid; */
+    outline: 1px solid darkcyan;
+}
+
+.devpic img {
+    height: 58vh;
+}
+
+.contactform {
+    padding: 0 34px;
+    margin: 30px;
+    /* padding-top: 97px; */
+    font-family: 'Fira sans', sans-serif;
+}
+
+.contactform h1 {
+    font-family: 'Source Code Pro', monospace;
+    padding: 12px 0;
+}
+
+.contactform form div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.contactform form div input {
+    /* width: 26vw; */
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+}
+
+#emailHelp {
+    font-size: 13px;
+    color: midnightblue;
+    margin: 0 5px;
+    padding: 3px 0 0 0;
+}
+
+/* .form-group{
+    display: flex;
+    flex-direction: column;
+ } */
+#form-check {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#form-check input {
+    width: 24px;
+    margin: 3px 0;
+}
+.blogcontainer{
+    margin: 30px;
+    margin-top: 40px;
+}
+
+.blogitem {
+    margin: 20px;
+    font-family: 'Fira sans', sans-serif;
+}
+
+h2 {
+    font-family: 'Fira sans', sans-serif;
+    margin: 23px;
+
+}
+
+p {
+    font-family: 'Source Code Pro', monospace;
+
+}
+.intro{
+    margin: 40px;
+
+}
+.intro h2,
+h3 {
+    font-family: 'Fira sans', sans-serif;
+    margin: 12px;
+}
+
+.intro p {
+    font-family: 'Source Code Pro', monospace;
+    margin: 12px;
+}
+
+.skillcontainer {
+    padding: 12px;
+}
+
+.skillitem {
+    display: flex;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+}
+
+.skill {
+    width: 265px;
+    height: 6px;
+    background-color: hotpink;
+}
+
+.hundred {
+    width: 265px;
+    background-color: indianred;
+
+}
+
+.fifty {
+    width: 125px;
+    background-color: cyan;
+}
+
+.t5 {
+    width: 85px;
+    background-color: fuchsia;
+}
+.hamburger{
+    position: absolute;
+    cursor: pointer;
+    /* top: 5px; */
+    left: 9px;
+}
+.ham{
+    margin-top: 8px;
+}
+.cross{
+    margin-left: 170px;
+    margin-top: 8px;
+
+}
+@media (max-width: 1515px) {
+    * {
+        /* background-color: rgb(234, 143, 143); */
+    }
+    .devpic{
+        display: none;
+    }
+/* 
+    .sidebar {
+        transform: translate(-434px, 0px);
+        position: absolute;
+    } */
+}
+@media (max-width: 1400px){
+    .cross{
+        margin-left: 160px;
+    }
+}
+@media (max-width: 1000px){
+    .cross{
+        margin-left: 150px;
+    }
+}
+@media (max-width: 900px){
+    .cross{
+        margin-left: 145px;
+    }
+}
+@media (max-width: )

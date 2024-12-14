@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Player</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .bg-image{
+        position: fixed;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .bg-image img{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        min-width: 50%;
+        min-height: 50%;
+        filter: blur(15px);
+        -webkit-filter: blur(50px);
+        transform: scale(1.1);
+        object-fit: cover;
+      }
+      .player {
+        background-color: rgb(192, 214, 214);
+        width: 400px;
+        padding: 25px 35px;
+        text-align: center;
+        z-index: 9999;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      nav .circle {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background: #fff;
+        color: darkslategray;
+        box-shadow: 0 5px 10px rgba(41, 129, 85, 0.22);
+      }
+      .nature-img {
+        width: 300px;
+        height: 200px;
+        position: absol;
+        object-fit: cover;
+        border-radius: 8px;
+        /* border: 8px solid #fff; */
+        box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.22);
+      }
+      .player h1 {
+        font-size: 20px;
+        font-weight: 400;
+        color: darkslategrey;
+        margin-top: 20px;
+        text-shadow: 12px 10px 60px rgba(41, 129, 85, 0.22);
+      }
+      .player p {
+        font-size: 14px;
+        color: darkslategray;
+      }
+      #progress {
+        -webkit-appearance: none; /* Corrected spelling */
+        appearance: none; /* Added for cross-browser compatibility */
+        width: 100%;
+        height: 6px;
+        background: darkslategray;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 40px 0;
+      }
+      #progress::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Corrected spelling */
+        appearance: none; /* Added for cross-browser compatibility */
+        background: rgb(29, 85, 43);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        box-shadow: 0 5px 5px rgba(41, 129, 85, 0.22);
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .controls div {
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: darkslategray;
+        box-shadow: 0 10px 20px rgba(41, 129, 85, 0.22);
+        cursor: pointer;
+      }
+      .controls div:nth-child(2) {
+        transform: scale(1.5);
+        background: darkslategray;
+        color: #fff;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/b0aee27144.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg-image">
+        <img id="back" src="img/forQuranAudio.jpeg"  alt="">
+      </div>
+      <div class="player">
+        <nav>
+          <div class="circle">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="circle">
+            <i class="fa-solid fa-bars-progress"></i>
+          </div>
+        </nav>
+        <img id="pic" src="img/forQuranAudio.jpeg" class="nature-img" alt="" />
+        <h1 id="topic">Quran</h1>
+        <p id="para">Don't be sad. Allah will Help</p>
+
+        <audio id="ayat"><source src="img/Quranaudio.mp3"audio/mp3" /></audio>
+
+        <input type="range" value="0" id="progress" />
+
+        <div class="controls">
+          <div id="prev"><i class="fa-solid fa-backward"></i></div>
+          <div onclick="playpause()">
+            <i class="fa-solid fa-play" id="ctrl"></i>
+          </div>
+          <div id="next"><i class="fa-solid fa-forward"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let items = [
+        {
+          img: "img/forQuranAudio.jpeg",
+          hea: "Quran",
+          p: "Don't be sad. Allah will Help",
+          link: "img/Quranaudio.mp3",
+        },
+        {
+          img: "https://cdn.vectorstock.com/i/500p/23/10/golden-islamic-allah-calligraphy-in-heavenly-vector-50172310.jpg",
+          hea: "Allah",
+          p: "Names of Allah",
+          link: "img/Names of Allah.mp3",
+        },
+        {
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcETXVi8IBIAXvMnbf9i6WOKlY0tId3KwY2Q&s",
+          hea: "Quran",
+          p: "Ayt al Kursi",
+          link: "img/Ayat Al-Kursi (The Throne Verse) _ Jussuf Khalaf _ آية الكرسي _ يوسف خلف.mp3",
+        },
+        {
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRku8XPtNBrIQvHaNfGrZD2HGMEOhTdx2ZfFA&s",
+          hea: "Nasheed",
+          p: "Hope",
+          link: "img/My Hope (Allah) Nasheed By Muhammad al Muqit.mp3",
+        },
+        {
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2i8jK20rbbbDwYMbj-hJRsbgYQMLjGQoUmw&s",
+          hea: "Nasheed ",
+          p: "The Way of Tears.",
+          link: "img/The Way of The Tears - Exclusive Nasheed - Muhammad al Muqit.mp3",
+        },
+      ];
+
+      let progress = document.getElementById("progress");
+      let ayat = document.getElementById("ayat");
+      let ctrlIcon = document.getElementById("ctrl");
+      let prev = document.getElementById("prev");
+      let next = document.getElementById("next");
+      let pic = document.getElementById("pic");
+      let topic = document.getElementById("topic");
+      let para = document.getElementById("para");
+      let back = document.getElementById("back")
+
+      ayat.onloadedmetadata = function () {
+        progress.max = ayat.duration;
+        progress.value = ayat.currentTime;
+      };
+      function playpause() {
+        if (ctrlIcon.classList.contains("fa-pause")) {
+          ayat.pause();
+          ctrlIcon.classList.replace("fa-pause", "fa-play")
+          // ctrlIcon.classList.remove("fa-pause");
+          // ctrlIcon.classList.add("fa-play");
+        } else {
+          ayat.play();
+          // ctrlIcon.classList.add("fa-pause");
+          // ctrlIcon.classList.remove("fa-play");
+          ctrlIcon.classList.replace("fa-play", "fa-pause")
+        }
+      }
+
+      if (!ayat.pause()) {
+        setInterval(() => {
+          progress.value = ayat.currentTime;
+        }, 200);
+      }
+      progress.onchange = function () {
+        ayat.play();
+        ayat.currentTime = progress.value;
+        ctrlIcon.classList.add("fa-play");
+        ctrlIcon.classList.remove("fa-pause");
+      };
+      let count = 0;
+      next.addEventListener("click", (e) => {
+        if (count < items.length - 1) {
+          console.log(count);
+
+          count++;
+          pic.src = items[count].img;
+          topic.innerHTML = items[count].hea;
+          para.innerHTML = items[count].p;
+          back.src = items[count].img
+          ayat.src = items[count].link;
+          ayat.currentTime = 0;
+          ayat.play();
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      });
+      prev.addEventListener("click", (e) => {
+        if (count > 0) {
+          count--;
+          pic.src = items[count].img;
+          topic.innerHTML = items[count].hea;
+          para.innerHTML = items[count].p;
+          ayat.src = items[count].link;
+          back.src = items[count].img
+          document.body.style.backgroundImage = items[count].img;
+          ayat.currentTime = 0;
+          ayat.play();
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      });
+    </script>
+  </body>
+</html>

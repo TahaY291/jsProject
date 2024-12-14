@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a:hover{
+    text-decoration: none;
+}
+#header{
+    color: #fff;
+    background: #e74c3c;
+}
+#logo{
+    font-size: 2rem;
+}
+#menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menu li{
+    display: inline-block;
+}
+#menu li a{
+    color: #fff;
+
+    padding: 15px 10px;
+    display: block;
+}
+#menu li a:hover{
+    background: #c0392b;
+}
+#banner{
+    background-image: url(image/pic.jpeg);
+    background-size: cover;
+
+}
+.banner-title{
+    padding-top: 5rem;
+}
+.banner-title h1{
+    background: rgba(255,255,255,0.8);
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+}
+.banner-title p.lead{
+    color: #fff;
+    background: rgb(231, 76, 60,0.8);
+    padding: 10px;
+}
+.line{
+    width: 100px;
+    height: 3px;
+    background-color: orange;
+    margin-bottom: 10px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.picture{
+    margin-top: 30px;
+}
+#test{
+    background: url(image/billgates.jpeg) no-repeat 0 0;
+    background-size: cover;
+    padding: 50px 0;
+    position: relative;
+
+}
+#test:before{
+    background: rgba(52, 73, 94, 0.774);
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#test h1{
+    color: white;
+}
+#test p{
+    color: #fff;
+}
+#test h3{
+    color: #fff;
+}
+#test i img{
+    border-radius: 50%;
+}
+#news h3{
+    color:#e74c3c;
+}
+#news a{
+    color: #e74c3c;
+    margin-top: 5px;
+}
+#footer{
+    background: rgba(24, 59, 93, 0.975);
+    color: #fff;
+}

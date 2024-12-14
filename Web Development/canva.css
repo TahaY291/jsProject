@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.col1{
+    /* background-color: rgb(235, 222, 34); */
+    width: 600px;
+}
+.col2{
+    /* background-color: blue; */
+    width: 500px;
+}
+.col3{
+    /* background-color: rgb(19, 150, 59); */
+    width: 500px;
+}
+/* .box_line1{
+    display: flex;
+    width: 300px;
+    flex: 1;
+    background-color: blue;
+    border: 1px solid black;
+}*/
+.box_line2{
+    height: 230px;
+    border: 1px solid black;
+}
+.box_line3{  
+    height: 230px;
+    border: 1px solid rgb(11, 11, 10);
+
+}  

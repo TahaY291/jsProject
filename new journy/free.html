@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 1%, lightblue 50%);
+      }
+      .container {
+        background: url(https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+        background-size: cover;
+        background-position: center center;
+        width: 44vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        padding: 12px;
+        padding-top: 0px;
+        padding-bottom: 17px;
+        overflow: hidden;
+        height: 80vh;
+        /* padding-bottom: 42px; */
+      }
+      .btn {
+        background: transparent;
+        padding: 8px;
+        border-radius: 4px;
+        color: aliceblue;
+        font-size: medium;
+        font-weight: 600;
+        border: 2px solid rgb(255, 255, 255);
+        outline: none;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: -webkit-linear-gradient(
+          left,
+          #2d7e2a,
+          #b1e7aa
+        ); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(
+          right,
+          #2d7e2a,
+          #b1e7aa
+        ); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(
+          right,
+          #2d7e2a,
+          #b1e7aa
+        ); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, #2d7e2a, #b1e7aa);
+      }
+      .demo {
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: aliceblue;
+        /* color: black; */
+      }
+      h1 {
+        color: color-mix(
+          in srgb,
+          rgb(208, 212, 208) 50%,
+          rgb(233, 233, 233) 50%
+        );
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <h1>People Entered</h1>
+      <p class="demo" id="demo">0</p>
+      <button class="btn" onclick="counter()">
+        Count
+      </button>
+
+      <h1>Previous Enteries:</h1>
+      <p class="demo" id="demo2"></p>
+      <button class="btn" onclick="save()">Save</button>
+
+      <h1>Total Enteries</h1>
+      <p class="demo" id="demo3"></p>
+      <button class="btn" onclick="Total()" style="margin-bottom: 5px;">Check All</button>
+      <button class="btn" id="btn3" onclick="reload()">Reload</button>
+    </div>
+
+    <script>
+      let btn = document.getElementById("btn");
+      let demo = document.getElementById("demo");
+      let demo2 = document.getElementById("demo2");
+      let demo3 = document.getElementById("demo3");
+      let count = 0;
+      function counter() {
+        count++;
+        // let string = "Hello!";
+        demo.textContent = count;
+      }
+      function save() {
+        let sa = count + ",";
+
+        demo2.textContent += sa;
+        count = 0;
+        demo.innerText = 0;
+      }
+      function Total() {
+        let ch = demo2.innerText;
+        let arr = ch.split(",");
+        let array = arr.map(Number);
+
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          sum = sum + array[i];
+        }
+        demo3.textContent = sum;
+      }
+      function reload() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

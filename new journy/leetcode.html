@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #k{
+            width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="k">
+
+    </div>
+
+    <script>
+        // var removeDuplicates = function(nums) {
+        //     let arr = [];
+        //     for (let i = 0; i < nums.length; i++) {
+        //         if (!arr.includes(nums[i])) {
+        //             arr.push(nums[i])
+        //         }
+
+        //     }
+        //     return arr;  
+        // };
+        // function removeDuplicates(nums) {
+        //     let k = 0;
+        //     for (let i = 1; i < nums.length; i++) {
+        //         console.log(nums[k]);
+        //         console.log(k);
+        //         // if (nums[i] !== nums[k]) {
+        //         //     k++;
+
+        //         //     nums[k] = nums[i];
+
+        //         // }
+
+        //     }
+        //     return k +1;
+        // }
+
+
+        // removeDuplicates([0,0,1,1,1,2,2,3,3,4])
+
+        // function sdj(str1, str2) {
+        //     if (str1.length < str2.length) {
+        //         return false
+        //     }
+        //     for (let i = 0; i < str1.length; i++) {
+        //         console.log(str1.slice(i, i + str2.length) == str2);
+
+
+        //     }
+        // }
+        // sdj("Taha","Ta")
+        // function index(nums , val) {
+        //     for (let i = 0; i < nums.length; i++) {
+        //         if (nums[i] == val) {
+        //             return i;
+        //         }
+        //         if (nums[i] > val) {
+        //             return i;
+        //         }
+
+        //         }
+        //         return nums.length;
+
+        //     }
+        // console.log( index([1,2,3,4,6],3));
+
+        // var lengthOfLastWord = function(s) {
+        //     let i = 1;
+        //     let str = s.split(' ')
+        //     console.log(str);
+
+        //     let string = ""
+        //     for (let i = 1; i < str.length; i++) {
+        //         if (string.length == 0) {
+
+        //             string = str[str.length - i]
+        //         }
+        //     }
+        //     return string.length;
+
+        // }
+        // console.log(lengthOfLastWord("   fly me   to   the moon  "));
+        // var plusOne = function(digits) {
+        //     let string = digits.toString();
+        //     console.log(string.join());
+
+        // }
+        // plusOne([1,2,3,4])
+
+        // function arrayToInteger(arr) {
+
+        //     let stringArray = arr.map(num => num.toString());
+        //     console.log(stringArray);
+
+
+
+        //     let joinedString = stringArray.join('');
+        //     console.log(joinedString);
+
+
+        //     let result = parseInt(joinedString);
+        //     result++;
+        //     let str = result.toString();
+
+            
+        //     let array = str.split('')
+        //     return array;
+        // }
+
+        // // Example usage:
+        // console.log(arrayToInteger([9,1,2,3])); // Output: 123456
+        // console.log(arrayToInteger([9]));    // Output: 907
+
+//         var plusOne = function(digits) {
+//     for (let i = digits.length - 1; i >= 0; i--) {
+//         if (digits[i] + 1 !== 10) {
+//             digits[i] += 1;
+//             return digits;
+//         }else{
+//             digits[i] = 0;
+//         }
+//         if (i === 0) {
+//             digits.unshift(1);
+//             return digits;  
+//         }
+        
+//     }    
+// };
+// console.log(plusOne([1,3,9,9,9]));
+
+// async function sleep(millis) {
+//     return await new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve(millis)
+//         }, millis);
+//     })
+// }
+// sleep(200)
+// console.log(sleep(200));
+
+// var mySqrt = function(x) {
+//   let s = Math.floor( Math.sqrt(x));
+//   return s  
+// };
+// console.log(mySqrt(8));
+// var mySqr+t = function(x) {
+//     let beg = 0, end = x, ans = 0;
+    
+//     for (; beg <= end;) {
+//         let mid = Math.floor((beg +  end) / 2);
+        
+//         if (mid * mid > x) {
+//             end = mid - 1;
+            
+//         } else { // mid * mid <= x
+//             ans = mid;
+//             beg = mid + 1;
+//             // console.log("beg", beg);
+            
+//         }
+//     }
+    
+//     return ans;
+// };
+
+// // Example usage:
+// console.log(mySqrt(8)); // Output: 2
+// var climbStairs = function(n) {
+//     const dp = new Array(n + 1).fill(0);
+    
+//     dp[0] = 1;
+//     dp[1] = 1;
+    
+//     for (let i = 2; i <= n; i++) {
+//         dp[i] = dp[i - 1] + dp[i - 2];
+//     }
+
+//     return dp[n];    
+// };
+// console.log(climbStairs(8));
+// function* countUp() {
+//     let n = 0;
+//     yield n++;
+//     return n;
+
+// }
+
+// // Create a generator object
+// const counter = countUp();
+
+// // Iterate through the values produced by the generator
+// console.log(counter.next().value); // Output: 1
+// console.log(counter.next().value); // Output: 2
+// console.log(counter.next().value); // Output: 3
+// console.log(counter.next().value); // Output: undefined (no more values)
+
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+//  var once = function (fn) {
+//     let counter = 0
+//     return function (...args) {
+//         counter++
+//         if (counter === 1) return fn(...args)
+//     }
+// };
+// let one =once(2)
+// console.log(one);
+
+
+/**
+ * let fn = (a,b,c) => (a + b + c)
+ * let onceFn = once(fn)
+ *
+ * onceFn(1,2,3); // 6
+ * onceFn(2,3,6); // returns undefined without calling fn
+ */
+// class parent {
+//     constructor(name) {
+//         this.name = name
+        
+//     }
+
+//     gender(){
+//         console.log("I am a male");
+//     }
+// }
+// class child extends parent{
+//     mychild(){
+//         console.log("He is my son");
+        
+//     }
+// }
+// let obj = new child("Taha");
+// obj.gender()
+// console.log(obj);
+// class box {
+//     constructor(width ,height, color) {
+//         this.width = width;
+//         this.height = height;
+//         this.color = color;
+//         this.create();
+//         this.n = 0;
+//     }
+
+//     create() {
+//         let element = document.createElement('div')
+
+//         element.style.width = this.width + "px"
+//         element.style.height = this.height + "px"
+//         element.style.background = this.color
+//         element.style.border = '2px solid teal'
+//         element.style.borderRadius = '4px'
+//         element.style.margin = "2.5px"
+//         element.textContent = this.number();
+
+//         document.getElementById('k').appendChild(element);
+//     }
+
+//     number(){
+//     this.n++;
+//     return this.n;
+//     }
+// }
+
+// for (let i = 0; i < 30; i++) {
+//     new box(120, 30, 'coral')
+    
+// }
+class Box {
+    constructor(width, height, color, start = 0) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.value = start; // Initialize value here
+        this.create(); // Call create after initializing value
+    }
+
+    create() {
+        let element = document.createElement('div');
+
+        element.style.width = this.width + "px";
+        element.style.height = this.height + "px";
+        element.style.background = this.color;
+        element.style.border = '2px solid teal';
+        element.style.borderRadius = '4px';
+        element.style.margin = "2.5px";
+        
+        element.style.display = 'flex';
+        element.style.alignItems = 'center';
+        element.style.justifyContent = 'center';
+        // element.style.textAlign = 'center'
+
+        element.textContent = this.number(); // Use `this.number()` to get the updated value
+
+        document.getElementById('k').appendChild(element);
+    }
+
+    number() {
+        this.value++;
+        return this.value;
+    }
+}
+
+for (let i = 0; i < 30; i++) {
+    new Box(100, 50, 'coral', i); // Pass `i` as the starting value
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

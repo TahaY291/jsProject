@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            /* background-color: blue; */
+        }
+        img{
+            width: 150px;
+            mix-blend-mode:color-burn;
+            /* transition: transform 1s  ease-out ; */
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+        body:hover img{
+            /* transform: rotate(360deg) ; */
+            /* left: 1000px; */
+            /* top: -100px; */
+             /* animation-delay: ; */
+             animation: anim 0.7s 0s ; 
+             animation-timing-function: cubic-bezier(0.1,0.1,0.1,0.1);
+             animation-timing-function: cubic-bezier(0.3,0.4,5.2,0.2);
+
+        }
+        @keyframes anim {
+            0%{
+                /* top: 100px; */
+                left: 10px;
+                transform: rotate(0deg);
+            }
+            50%{
+                /* top: -100px; */
+                left: 500px;
+                transform: rotate(180deg);
+            }
+            100%{
+                /* top: 100px; */
+                left: 1000px;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="images/foot.jpg" alt="">
+</body>
+</html>

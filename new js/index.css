@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-pic{
+    background: url(images/Group\ 81.png) no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    /* position: relative; */
+    height: 800px;
+    /* max-width: 100% - 20%; */
+}
+.nav-bar{
+    /* min-height: 16%; */
+    display: flex;
+    flex-direction: row;
+}
+.rnv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.upper-row{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upper-row-first-part{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+.upper-row-second-part{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
+}
+.lower-row{
+    min-height: 80px;
+}
+.lower-row-right-side{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+}
+.lower-row-right-side span a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+.lower-row-left-side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.phone-bar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.phone{
+    position: absolute;
+    top: 25px;
+}
+.main-pg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-pg-pic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-main{
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second-section{
+    background-image: url(images/image\ 5.png);
+    min-height: 600px;
+    margin-bottom: 40px;
+}
+.scnd-sec-lft{
+    position: relative;
+}
+#fst-img{
+    position: absolute; 
+}
+#scnd-img{
+    position: absolute;
+    top: 40px;
+    left: 166px;
+}
+#thrd-img{
+    position: absolute;
+    top: 51px;
+    right: 177px;
+}
+#frth-img{
+    position: absolute;
+    top: 382px;
+    left: 321px;
+}
+#fif-img{
+    position: absolute;
+    top: 300px;
+    left: 175px;
+}
+#six-img{
+    position: absolute;
+    top: 350px;
+    left: 230px;
+}
+.scnd-sec-rght{
+    width: 74vh;
+}
+.third-section{
+    background-image: url(images/Group\ 82.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+.third-section-pic{
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

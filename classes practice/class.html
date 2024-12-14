@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="Name">Name</label>
+    <input type="text" name="Name" id="Name">
+
+    <label for="auther">Auther</label>
+    <input type="text " name="auther" id="auther">
+
+    <label for="isbn">ISBN</label>
+    <input type="text" name="isbn" id="isbn">
+    <button onclick="enter()">Submit</button>
+
+    <input type="text " id="bookrem">
+    <button id="remove">Remove</button>
+
+    <div class="table">
+        <div>
+            <h1>Name</h1>
+            <p id="naam"><br></p>
+        </div>
+        <div>
+            <h1>Auther</h1>
+            <p id="auth"></p>
+        </div>
+        <div>
+            <h1>ISBN</h1>
+            <p id="is"></p>
+        </div>
+    </div>
+    <script>
+        // class Book {
+        //     constructor(title, auther , isbn) {
+        //         this.title = title;
+        //         this.auther = auther;
+        //         this.isbn = isbn;
+        //     }
+        // }
+
+        // let library = {};
+        // function lib() { 
+        //     let name = document.getElementById('Name').value
+        //     let auther = document.getElementById('auther').value
+        //     let isbn = document.getElementById('isbn').value
+        //     library = new Book(name, auther, isbn)
+
+        //     document.getElementById('naam').innerHTML +=  library.title +  "<br>" ;
+        //     document.getElementById('auth').innerHTML += library.auther +  "<br>" ;
+        //     document.getElementById('is').innerHTML += library.isbn +  "<br>" ;
+        // }
+
+        // class Book {
+        //     constructor(title, author, isbn) {
+        //         this.title = title;
+        //         this.author = author;
+        //         this.isbn = isbn;
+        //         this.borrowed = false;
+        //     }
+        // }
+
+        // class Author {
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        // }
+
+        // class Library {
+        //     constructor() {
+        //         this.books = [];
+        //         this.borrowedBooks = new Map(); // Maps ISBN to borrower
+        //     }
+
+        //     addBook(book) {
+        //         this.books.push(book);
+        //     }
+
+        //     removeBook(isbn) {
+        //         this.books = this.books.filter(book => book.isbn !== isbn);
+        //     }
+
+        //     searchBook(query) {
+        //         return this.books.filter(book =>
+        //             book.title.includes(query) ||
+        //             book.author.includes(query) ||
+        //             book.isbn.includes(query)
+        //         );
+        //     }
+
+            // borrowBook(isbn, borrower) {
+            //     const book = this.books.find(book => book.isbn === isbn);
+            //     if (book && !book.borrowed) {
+            //         book.borrowed = true;
+            //         this.borrowedBooks.set(isbn, borrower);
+            //         return true;
+            //     }
+            //     return false;
+            // }
+
+            // returnBook(isbn) {
+            //     const book = this.books.find(book => book.isbn === isbn);
+            //     if (book && book.borrowed) {
+            //         book.borrowed = false;
+            //         this.borrowedBooks.delete(isbn);
+            //         return true;
+            //     }
+            //     return false;
+            // }
+
+            // listAvailableBooks() {
+            //     return this.books.filter(book => !book.borrowed);
+            // }
+        // }
+
+        // Example Usage
+        // const library = new Library();
+        // const author = new Author("J.K. Rowling");
+        // const book1 = new Book("Harry Potter and the Sorcerer's Stone", author.name, "123456789");
+        // const book2 = new Book("Harry Potter and the Chamber of Secrets", author.name, "987654321");
+
+        // library.addBook(book1);
+        // library.addBook(book2);
+
+        // console.log(library.searchBook("Harry Potter")); // Search by title
+        // console.log(library.listAvailableBooks()); // List available books
+
+        // library.borrowBook("123456789", "John Doe"); // Borrow a book
+        // console.log(library.listAvailableBooks()); // List available books after borrowing
+
+        // library.returnBook("123456789"); // Return a book
+        // console.log(library.listAvailableBooks()); // List available books after returning
+
+
+        // class Book {
+        //     constructor(title, author, isbn) {
+        //         this.title = title;
+        //         this.author = author;
+        //         this.isbn = isbn;
+        //     }
+        // }
+        // class Auther {
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        // }
+        // class library {
+        //     constructor() {
+        //         this.books = [];
+        //     }
+        //     addBook(book){
+        //         this.books.push(book)
+        //     }
+        //     removebook(book){
+        //         this.books = this.books.filter(book => book.isbn != isbn);
+        //     }
+        //     searchbook(query){
+        //         if (book.titlt == query ||
+        //             book.author == query ||
+        //             book.isbn == query
+        //         ) 
+        //         {
+        //             this.books = this.books.find()
+        //         }
+        //     }
+        // }
+        // let book = new Book("Taha","The Taha",1234)
+        // let Library = new library();
+        // Library.addBook(book);
+        // console.log(Library);
+        
+
+
+
+        // let library = {};
+
+        // let bookName = " "
+        // let authorName = ""
+        // let isbnNo = ""
+        // let arr = []
+        // function enter() {
+        //     bookName = document.getElementById('Name').value;
+        //     authorName = document.getElementById('auther').value;
+        //     isbnNo = document.getElementById('isbn').value;
+            
+        //     library = new Book(bookName, authorName, isbnNo);
+        //     arr.push(library)
+        //     console.log(arr);
+            
+        //     let bookrem = document.getElementById("bookrem").value;
+        //     let remove = document.getElementById('remove');
+        //     remove.addEventListener('click', ()=>{
+        //         console.log("TAha");
+                
+        //        if(arr[0].author == bookrem){
+        //         console.log(arr[0].author);
+        //         console.log(arr);
+                
+                
+        //        }
+                
+                
+        //     })
+        // }
+        // console.log(arr);
+        let array = [
+            {
+                book: "Taha",
+                auther: "jasd",
+                isbn: 2831
+            },
+            {
+                book: "Talha",
+                auther: "shaus",
+                isbn: 123
+            },
+            {
+                book: "Yasin",
+                auther: "gas",
+                isbn : 19287
+            }
+        ]
+        function search(query) {
+            return array.filter(item => 
+                item.book.includes(query) ||
+                item.auther.includes(query) || 
+                item.isbn.includes(query.toString())
+            )
+        }
+        // console.log(search("19287"));
+        let string = "1";
+        let result = string.toString()
+        console.log(typeof(result));
+        
+       
+        
+        
+        
+
+    </script>
+</body>
+
+</html>

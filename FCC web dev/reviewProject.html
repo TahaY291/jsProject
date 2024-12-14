@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color:  #DBFCFE;
+        }
+        main{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            /* background-color: red; */
+            width: 70%;
+            height: 60vh;
+            text-align: center;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        .title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title h2{
+            color: #025458;
+            letter-spacing: 2px;
+        }
+        .underline{
+            width: 70px;
+            height: 4px;
+            background-color:#3fc7ce;
+            border-radius: 10px;
+        }
+        article{
+            background-color: #fff;
+            margin-top: 20px;
+            width: 60%;
+            min-width: 60vh;
+            padding: 10px 30px;
+            box-shadow: 2px 2px 30px #929c9c;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .img-container{
+            width: 120px;
+            height: 120px;
+            background-color: #3fc7ce;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .img-container img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            left: -5px;
+            top: 4px;
+        }
+        #author{
+            letter-spacing: 2px;
+        }
+        #job{
+            color: #3fc7ce;
+        }
+        #info{
+            /* width: 60%; */
+            margin-top: 10px;
+            min-width: 60%;
+        }
+        .button-container button{
+            background-color: #fff;
+            outline: none;
+            border: none;
+            color: #3fc7ce;
+            cursor: pointer;
+            padding: 5px;
+            margin:  0 5px;
+        }
+        .random-btn{
+            color: #3fc7ce;
+            border: 1px solid #3fc7ce;
+            background-color: #fff;
+            width: 100px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 1s ease;
+        }
+        .random-btn:hover{
+            background-color: #3fc7ce;
+            color: #333;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="container">
+            <div class="title">
+                <h2>Our Reviews</h2>
+                <div class="underline"></div>
+            </div>
+
+            <article class="review">
+                <div class="img-container">
+                    <img src="https://r2.erweima.ai/imgcompressed/img/compressed_98e525880b36d0c38fe33e8662bbcb57.webp" alt="" id="person-img">
+                </div>
+                <h4 id="author">Smith Jones</h4>
+                <p id="job">ux designer</p>
+                <p id="info">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id voluptas repellat porro ullam rerum reiciendis aperiam voluptatibus tenetur? Labore, quidem!
+                </p>
+                <div class="button-container">
+                    <button class="prev-btn">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </button>
+                    <button class="next-btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                <button class="random-btn">Surprise me</button>
+            </article>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/b0aee27144.js" crossorigin="anonymous"></script>
+    <script>
+        const reviews = [
+            {
+                id: 1,
+                name: "susan smith",
+                job: "web developer",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjISPw-L5rrZ1LxkOBB8bgUHgWrOhm5I3G9A&s",
+                text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id voluptas repellat porro ullam rerum reiciendis aperiam voluptatibus tenetur? Labore, quidem!",
+            },
+            {
+                id: 2,
+                name: "Anna Johnson",
+                job: "web designer",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTCDv0YcATzcm5qoopZz9I8V0Ox5hWhl5ILw&s",
+                text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id voluptas repellat porro ullam rerum reiciendis aperiam voluptatibus tenetur? Labore, quidem!",
+            },
+            {
+                id: 3,
+                name: "Starc smith",
+                job: "Software Engineer",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ajzI5QU5gTaKAjQ-3pIFXKNZvKYwZhk16A&s",
+                text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id voluptas repellat porro ullam rerum reiciendis aperiam voluptatibus tenetur? Labore, quidem!",
+            },
+            {
+                id: 4,
+                name: "Tony Starc",
+                job: "App deeloper",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSLk-zOT6LhOK5DfCt-_-khEFvCeZ1voYF-Q&s",
+                text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id voluptas repellat porro ullam rerum reiciendis aperiam voluptatibus tenetur? Labore, quidem!",
+            },
+        ]
+
+        const img = document.getElementById("person-img");
+        const author = document.getElementById("author");
+        const job = document.getElementById("job");
+        const info = document.getElementById("info");
+        
+
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const randomBtn = document.querySelector(".random-btn");
+
+        let currentItem = 0;
+
+        window.addEventListener("DOMContentLoaded", ()=>{
+            showPerson()
+        })
+        
+        function showPerson() {
+            const item = reviews[currentItem]
+            img.src = item.img;
+            author.textContent = item.name;
+            job.textContent = item.job;
+            info.textContent = item.text;
+        }
+        nextBtn.addEventListener("click",()=>{
+            currentItem++;
+            if (currentItem > reviews.length - 1) {
+                currentItem = 0;
+            }
+            showPerson();
+        })
+        prevBtn.addEventListener("click",()=>{
+            currentItem--;
+            if (currentItem < 0) {
+                currentItem = reviews.length -1
+            }
+            showPerson();
+        })
+
+        randomBtn.addEventListener("click", ()=>{
+            currentItem = Math.floor(Math.random() * reviews.length);
+            showPerson();
+        })
+    </script>
+</body>
+</html>

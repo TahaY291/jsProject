@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.fan-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+#fan {
+    width: 100%;
+    transition: transform 0.5s ease;
+    transform-origin: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="fan-container">
+        <img src="fan.png" alt="Fan" id="fan">
+    </div>
+    <button id="toggleButton">Start Fan</button>
+
+    <script src="script.js"></script>
+    <script>
+        // script.js
+        let fan = document.getElementById('fan');
+let button = document.getElementById('toggleButton');
+let isSpinning = false;
+let speed = 0;
+let maxSpeed = 10; // The maximum speed the fan can reach
+let acceleration = 0.1; // Speed increment
+let deceleration = 0.1; // Speed decrement
+let rotation = 0;
+
+button.addEventListener('click', () => {
+    if (isSpinning) {
+        stopFan();
+    } else {
+        startFan();
+    }
+    isSpinning = !isSpinning;
+    button.textContent = isSpinning ? 'Stop Fan' : 'Start Fan';
+});
+
+function startFan() {
+    const speedUp = setInterval(() => {
+        if (speed < maxSpeed) {
+            speed += acceleration;
+        } else {
+            clearInterval(speedUp);
+        }
+    }, 100);
+
+    rotateFan();
+}
+
+function stopFan() {
+    const slowDown = setInterval(() => {
+        if (speed > 0) {
+            speed -= deceleration;
+        } else {
+            clearInterval(slowDown);
+            cancelAnimationFrame(animationId);
+        }
+    }, 100);
+}
+
+let animationId;
+function rotateFan() {
+    rotation += speed;
+    fan.style.transform = `rotate(${rotation}deg)`;
+    animationId = requestAnimationFrame(rotateFan);
+}
+
+    </script>
+</body>
+</html>

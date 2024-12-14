@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: green;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-align: center;
+            color: white;
+            font-size: large;
+        }
+        h1{
+            color: goldenrod;
+        }
+        button{
+            padding: 9px 18px;
+            background-color: goldenrod;
+            color: green;
+            font-size: large;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            border: 8px solid green;
+            width: 21vh;
+            min-height: 7vh;
+        }
+        button:hover{
+            background-color: green;
+            color: goldenrod;
+            border: 8px solid goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blackjack</h1>
+    <p id="message">Start Your Game</p>
+    <p id="card">Card:</p>
+    <p id="sum">Sum:</p>
+    <button onclick="startGame()" id="startGame">Start Game</button>
+    <br>
+    <button onclick="newCard()" id="newCard" >New Card</button>
+
+    <script>
+        let cardEl = document.getElementById('card')
+        let sumEl = document.getElementById('sum')
+        let start = document.getElementById('startGame')
+        let cardbtn = document.getElementById('newCard')
+        let messageEl = document.getElementById("message")
+
+        let firstCard = 0;
+        let scndCard = 0;
+        let sum = 0;
+        let cardarr = []
+        let hasBlackJack = false;
+        let isAlive = false;
+
+        function startGame() {
+            isAlive = true
+            firstCard = getrandom();
+            scndCard = getrandom();
+            sum = firstCard + scndCard
+            cardarr = [firstCard, scndCard]
+            renderGame()
+        }
+        function renderGame() {
+            cardEl.textContent = "Card: " + " "  ; 
+            for (let i = 0; i < cardarr.length; i++) {
+                cardEl.textContent +=  " " + cardarr[i] ; 
+                
+            }
+            sumEl.textContent = " Sum:  " + sum;
+            if (sum < 21) {
+                messageEl.textContent = "Do you want new card";
+            }else if(sum === 21){
+                messageEl.textContent = "Wohoo! You have got the BlackJack"
+                hasBlackJack = true;
+            }else{
+                messageEl.textContent = "You are out of the game";
+                isAlive = false;
+            }
+        }
+        function getrandom() {
+            let randomNum = Math.floor(Math.random() * 13) + 1;
+            if (randomNum > 10) {
+                return 10;
+            }else if(randomNum == 1){
+                return 11;
+            }
+            return randomNum;
+        }
+        function newCard() {
+            if (isAlive == true && hasBlackJack == false) {
+                
+                let card = getrandom();
+                sum += card;
+                cardarr.push(card);
+                console.log(sum);
+                renderGame();
+            }
+        }
+
+    </script>
+</body>
+</html>

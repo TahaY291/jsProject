@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .mrc{
+            border: 1px solid;
+        }
+        .container{
+            /* background-color: blue; */
+            position: relative;
+        }
+        #input{
+            font-size: 1.2rem;
+            font-weight: 100;
+            border-radius: 25px;
+            padding: 10px 20px;
+            position: relative;
+            outline: rgb(228, 114, 73);
+            border: 2px solid rgb(228, 114, 73);
+        }
+        #input::placeholder {
+            color: gray;
+            font-style:normal;
+            font-size: 14px;
+        }
+        #btn{
+            font-size: 1.2rem;
+            font-weight: 100;
+            padding: 10px 20px;
+            border-radius: 25px;
+            position: absolute;
+            right: 0;
+            bottom: 2px;
+            border: none;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+            background-color: rgb(228, 114, 73);
+        }
+        .list-container{
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            font-size: 17px;
+            padding: 1px 0px 1px 0px;
+            user-select: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+        ul li::before{
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-image: url('circle.svg'); 
+            background-size: cover;
+            background-position: center;
+            top: 4px;
+            left: 8px;
+        } 
+        ul li.checked{
+            /* border: none; */
+            /* background-color: rgb(56, 134, 236); */
+            color: #555;
+            text-decoration: line-through;
+        }
+        ul li.checked::before{
+            background-image: url('tik.svg');
+            position: absolute;
+            top: 5px;
+        }
+        ul li span{
+            position: absolute;
+            right: 0;
+            top: -6px;
+            width: 40px;
+            height: 40px;
+            font-size: 22px;
+            color: #555;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%  ;
+        }
+        ul li span:hover{
+            background-color: #edeef0;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="mrc">
+
+        <div class="container">
+            <input type="text" name="" id="input" placeholder="Enter your goals">
+            <button onclick="add()" id="btn" >Add</button>
+        </div>
+        <ul class="list-container">
+
+        </ul>
+    </div>
+
+
+
+    <script>
+        let input = document.getElementById("input")
+        let btn = document.getElementById("btn")
+        let list = document.querySelector(".list-container")
+        function add() {
+            if (input.value == "") {
+                alert("You must write something first")
+            }else{
+                var li = document.createElement("li")
+                li.textContent += input.value;
+                list.appendChild(li)
+                var cross = document.createElement( "span")
+                cross.innerHTML = "\u00d7";
+                li.appendChild(cross);
+                input.value = "";
+                savedata();
+                
+            }  
+        }
+        list.addEventListener('click',(e)=>{
+            if (e.target.tagName === "LI") {
+                e.target.classList.toggle("checked")
+                savedata();
+            }else if(e.target.tagName === "SPAN"){
+                e.target.parentElement.remove();
+                savedata()
+            }
+        })
+        function savedata() {
+            localStorage.setItem("data",list.innerHTML);
+        }
+        function getdata() {
+            list.innerHTML = localStorage.getItem("data")
+        }
+        getdata();
+    </script>
+</body>
+</html>

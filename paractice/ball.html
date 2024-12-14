@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Ball at the ground */
+  }
+  40% {
+    transform: translateY(-30px); /* Ball reaches its highest point */
+  }
+  60% {
+    transform: translateY(-15px); /* Ball reaches a mid-point */
+  }
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+}
+
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: royalblue;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(34,121,195);
+            background-image: url(ph\ \(20\).jpeg);
+/* background: linear-gradient(0deg, purple 0%, rgb(221, 162, 172) 100%);
+color: coral; */
+        }
+
+        .box {
+            background-color:cadetblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            width: 150vh;
+            background: transparent;
+            color: navy;
+            box-shadow: 2px 2px 12px black;
+        }
+        h1{
+            /* border: 4px solid greenyellow; */
+            background-color: rgba(61, 77, 39, 0.2);
+            width: 63vh;
+            height: 12vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            color: black;
+            box-shadow: 2px 2px 12px ;
+            
+        }
+        #winner
+        {
+            color: navy;
+            background-color: rgba(61, 77, 39,0.2 );
+            border-radius: 4px;
+            /* background-color: red; */
+            padding: 20px;
+            color: black;
+        }
+
+        .player {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: larger;
+            /* color: navy; */
+        }
+
+        #Player {
+            padding: 12px;
+            /* color:navy; */
+
+        }
+
+        ul li {
+            list-style-type: none;
+            colr
+        }
+
+        #computer ul li {
+            list-style-type: none;
+        }
+            .btn{
+                background-color:   orange;
+                color: navy;
+                padding: 8px 12px;
+                width: 120px;
+                border: 2px solid ;
+                margin: 8px 12px;
+                border-radius: 4px;
+                font-size: large;
+                font-weight: 700;
+                position: relative;
+                cursor: pointer;
+                transition: background-color 0.5s ;
+
+            }
+            .btn:hover{
+                background-color: navy;
+                color: orange;
+                border: 2px solid orange;
+            }
+            .points{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12vh;
+                font-size: 1.3rem;
+            }
+            /* .btn::before{
+                content: "";
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background-color: navy;
+                color: coral;
+                transform: scale(0);
+                transform-origin: right;
+                transition: transform 0.5s;
+                z-index: 1;
+
+            } */
+            /* .btn:hover::before{
+                transform: scale(1);
+                transform-origin: left;
+            } */
+            #startbtn{
+                width: 17vh;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <h1 >Rock Paper Scissor</h1>
+        <h2 id="winner">Winner: </h2>
+        <div class="player">
+            <p id="Player" " style="font-size: 1.4rem;font-weight: 700; ">Player:
+            <ul>
+                <li></li>
+            </ul>
+            <br>
+        </p>
+        <p id="computer"style="font-size: 1.4rem;font-weight: 700; " >Computer:
+            <ul>
+                <li></li>
+            </ul>
+            <br>
+        </p>
+    </div>
+<div class="points">
+    <span id="count1">Your point</span>
+    <span id="count2">Computer point</span>
+</div>
+
+        <p id="draw" style="font-size: larger;">Not</p>
+        <h3 style="
+        font-size: x-large; ">Choose your move</h3>
+        <div class="button">
+            <button class="btn">Rock</button>
+            <button class="btn">Paper</button>
+            <button class="btn">Scissor</button>
+        </div>
+        <button class="btn" id="startbtn" onclick="start()" style="margin: auto;" >Start Game</button>
+    </div>
+
+    <script>
+        let playerEl = document.getElementById('Player')
+        let computerEl = document.getElementById('computer')
+        let btn = document.querySelectorAll('.btn')
+        let array = ["Rock", "Paper", "Scissor"];
+
+
+        function getrandom() {
+            let index = Math.floor(Math.random() * 3);
+            return array[index]
+        }
+        btn.forEach((e) => {
+            e.addEventListener('click', () => {
+                let playerChoice = e.textContent;
+                // console.log(playerChoice);
+                let li = document.createElement('li');
+                li.textContent = getrandom();
+
+                playerEl.textContent = "Player: " + playerChoice;
+                computerEl.textContent = "Computer: " + li.textContent;
+                // console.log(getrandom());
+                winner(playerChoice, li.textContent);
+            })
+        })
+        let pcount = 0;
+        let ccount = 0
+        function winner(player, computer) {
+            if (player === computer) {
+                let draw = document.getElementById('draw')
+                draw.textContent = "Draw"
+                
+            } else if (
+                (player === "Rock" && computer === "Scissor") ||
+                (player === "Paper" && computer === "Rock") ||
+                (player === "Scissor" && computer === "Paper")
+            ) {
+            draw.textContent = "You won this point";
+            pcount++;
+            let count1 = document.getElementById('count1')
+            count1.textContent = "Your points:" + pcount;
+            
+            
+            
+        } else {
+            draw.textContent = "Computer won this point";
+            console.log("Computer wins!");
+            ccount++
+            let count2 = document.getElementById('count2')
+            count2.textContent = "Computer points:" + ccount;
+        }
+
+            let winner  = document.getElementById("winner")
+        if (pcount > ccount) {
+            winner.textContent = "You are winnig  "
+        }else if(ccount > pcount){
+        
+            winner.textContent = " Computer is winnig this game "
+        }   
+        }
+        function start() {
+            location.reload();
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

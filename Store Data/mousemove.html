@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            margin: 0;
+            padding: 0;
+
+            min-height: 100vh;
+        }
+        span {
+
+            position: relative;
+            pointer-events: none;
+
+        }
+
+        span::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            
+            pointer-events: none;
+            transform: translate(-60%, -50%);
+            background-color: red;
+        } */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        /* div {
+            background: url("https://cdn0.iconfinder.com/data/icons/merry-christmas-41/512/45-baloons-baloon-holiday-party-512.png");
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-size: cover;
+            transform: translate(-50%, -50%);
+            animation: animate 16s;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        } */
+
+        span {
+            /* background: url("https://cdn0.iconfinder.com/data/icons/merry-christmas-41/512/45-baloons-baloon-holiday-party-512.png"); */
+            background: url("https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Bubble_PNG_Clipart.png?m=1629831072");
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-size: cover;
+            transform: translate(-50%, -50%);
+            animation: animate 16s;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            /* opacity: 0.4; */
+            /* animation: anime 15s; */
+            color: teal;
+        }
+
+        @keyframes anime {
+            0% {
+                transform: translate(-50%, -50%);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translate(-50%, -5000%);
+                opacity: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body id="bd">
+    <span id="span"></span>
+    <script>
+
+        let clrarr = ['teal', 'burlywood', "slateblue", "seagreen", "royalblue", 'rosybrown', 'coral', "cyan", 'royalblue', 'red'];
+        function randomclr() {
+            let color = Math.floor(Math.random() * clrarr.length)
+            return clrarr[color];
+        }
+        let body = document.getElementById('bd');
+        console.log(randomclr());
+        body.addEventListener('mousemove', (event) => {
+            let span = document.createElement('span')
+            // body.appendChild(span);
+            let posx = event.offsetX
+            let posy = event.offsetY
+            span.style.left = posx + "px"
+            span.style.top = posy + "px"
+            let size = Math.floor(Math.random() * 120);
+            let clr = randomclr();
+            span.style.width = size + "px"
+            span.style.height = size + "px"
+            // span.style.backgroundColor = `${clr}`;
+
+            setTimeout(() => {
+                span.remove()
+            }, 4000);
+
+         })
+
+        // body.addEventListener('mousemove', (e) => {
+        //     let span = document.createElement('span')
+        //     span.src = 'https://cdn0.iconfinder.com/data/icons/merry-christmas-41/512/45-baloons-baloon-holiday-party-512.png'
+        //     body.appendChild(span);
+        //     let px = e.offsetX;
+        //     let py = e.offsetY;
+        //     span.style.left = px + 'px'
+        //     span.style.top = py + 'py'
+        //     let size = 30;
+        //     span.style.width = size + 'px';
+        //     span.style.height = size + 'px';
+        //     setTimeout(() => {
+        //         span.remove();
+        //     }, 4000);
+
+        // })
+
+
+
+        // bd.style.backgroundColor = randomclr()
+    </script>
+</body>
+
+</html>

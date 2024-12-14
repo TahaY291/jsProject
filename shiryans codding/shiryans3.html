@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            min-height: 100vh;
+        }
+        #rect{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        window.addEventListener("mousemove", (e)=>{
+            
+            let rect = document.getElementById("rect")
+            let xval = gsap.utils.mapRange(0,window.innerWidth, rect.getBoundingClientRect().width/2, window.innerWidth - (rect.getBoundingClientRect().width/2),e.clientX )
+            // let yval = gsap.utils.mapRange(0,window.innerHeight, rect.getBoundingClientRect().height, window.innerHeight - (rect.getBoundingClientRect().height),e.clientY )
+            gsap.to(rect,{
+                left: xval + "px",
+                top: e.clientY  + "px",
+                ease: Power3,
+                // duration: 4 ,
+            })
+        })
+        </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  Arial, sans-serif;
+}
+.start p{
+    text-align: center;
+    padding: 5px 0;
+    background-color: rgb(40, 81, 155);
+    color: white;
+
+}
+.text{
+    position: relative;
+    margin: 0;
+}
+.logos{
+    position: absolute;
+    right: 120px;
+    top: 3px;
+}
+.logos ul li{
+    padding: 0 2px;
+}
+.logos ul li:hover{
+    opacity: 1px;
+}
+.input{
+    position: relative;
+}
+.input input{
+    position: relative;
+    padding: 4px 8px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.input img{
+    position: absolute;
+    top: 8px;
+    right: 20px;
+}
+.secondbar{
+    background-color: #ffffff;
+}
+.invert{    
+    filter: invert(1);
+}
+.browse{
+    margin-top: 40px;
+}
+.browse .cards{
+    /* width: 410px; */
+    /* height: 217px;  */
+    border: 1px solid rgb(194, 190, 190);
+    margin-bottom: 8px;
+    color: rgb(109, 107, 107);
+    font-weight: 600;
+    transition: transform 0.3s;
+    /* margin: 2px; */
+}
+ .browse .cards:hover {
+    transform: translatey(-5px); 
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); 
+  }
+  @media (min-width: 768px) {
+    #carouselExample {
+      margin-left: 20px;
+    }
+  }
+  .blue-card{
+    background-color: rgb(87, 100, 117);
+    color: white;
+
+  }
+
+  .inp{
+    background:  rgb(114, 122, 135);
+    padding: 5px 30px;
+    border-radius: 20px ;
+    color: #ffffff;
+    border: none;
+    outline: none;
+  }
+  .inp::placeholder {
+    color: white; /* Change to your desired color */
+  }
+  .but{
+    width: 100px;
+    border-radius: 50px;
+  }
+  .blue h1{
+    font-weight: 600;
+    letter-spacing: 5px;
+  }
+  third-card h3{
+    font-weight: 700;
+  }
+  .lates-card{
+    border: 1px solid rgb(111, 106, 106);
+    transition: transform 0.4s;
+    margin-top: 12px;
+  }
+  .lates-card:hover {
+    transform: translatey(-8px); 
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); 
+  }
+  .con-contacts p{
+    font-weight: 800;
+    color: rgb(94, 93, 93);
+  }
+  .con-cards{
+    border: 1px solid rgb(208, 203, 203);
+    /* box-shadow: 0 0 5px rgb(21, 21, 21); */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s;
+  }
+  .con-cards span{
+    margin: 15px 0;
+    color: #115198;
+    font-size: 12.4px;
+    font-family: "Lato", sans-serif;
+  }
+  .con-cards:hover{
+    transform: translatey(-8px); 
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); 
+  }
+  .sperate{
+    background-color: rgb(129, 127, 127);
+    height: 1px;
+    width: 100%;
+  }
+  .last-card h5{
+    color: #555555;
+    font-size: 16px;
+    font-family:"Lato", sans-serif ;
+    font-weight: 700;
+  }
+  .last-card span{
+    color: #777777;
+    font-size: 16px;
+    font-family:"Lato", sans-serif ;
+    font-style: normal;
+  }
+  .last-card td{
+    color: #115198;
+  }
+  .contacts{
+    background-color: rgb(245, 247, 251);
+  }

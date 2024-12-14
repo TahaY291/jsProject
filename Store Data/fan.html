@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: cadetblue;
+        }
+        .fan{
+            margin-bottom: 20px;
+            border: 12px solid rgb(7, 7, 7); 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height: 400px;
+             */
+             min-height: 400px;
+            width: 400px;
+            background-color: cadetblue;
+            animation: animate linear infinite;
+            position: relative;
+        }
+        .btn{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* outline: none; */
+            
+            border: 1px solid black;
+            background-color: rgb(153, 146, 146);
+            cursor: pointer;
+            padding: 4px;
+            margin: 0 4px;
+        }
+        .btn-on{
+            background-color: red;
+        }
+        .btn-off{
+            background-color: green;
+        }
+        .img-fan{
+            background-color: aquamarine ;
+            position: absolute;
+            /* for black fan */
+            /* top: -1px; */
+            /* /* right: -5px; */
+            /* top: 24px;  */
+            /* for transparent fan */
+            /* top: -7px;
+            left: 27px; */
+        }
+        .dot{
+            width: 30px;
+            height: 30px;
+            background-color: cadetblue;
+            position: absolute;
+            border-radius: 50%;
+            /* border: 30px solid black; */
+            /* border-style: groove;
+            border-style: none solid dotted dashed;
+            border-style: dashed groove none dotted; */
+
+        }
+
+        @keyframes animate {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fan">   
+        <img class="img-fan" style="background: none;"  src="luxus-c3-brown.png"    width="340px" alt="">
+        <!-- <div class="dot" ></div> -->
+        
+    </div>
+    <audio id="fanSound" src="download.htm"></audio>      
+    <div>
+
+        <button class="btn btn-on" onclick="funcOn()" >ON</button>
+        <button class="btn btn-off" onclick="funcOff()">Off</button>
+        <button class="btn btn-1" id="dl1" onclick="func1()">1</button>
+        <button class="btn btn-2" id="dl2" onclick="func2()">2</button>
+        <button class="btn btn-3" id="dl3"  onclick="func3()">3</button>
+    </div>
+
+    <script>
+        let a = document.querySelector('.fan')
+        let isfunction = false;
+        function funcOn() {
+            a.style.animationDuration = 0.5 + "s";
+            isfunction = true;
+            var fanSound = document.getElementById("fanSound");
+            fanSound.play();
+        }
+        function funcOff() {
+            a.style.animationDuration = 0 + "s";
+            isfunction = false;
+        }
+        function func1() {
+            if (isfunction) {
+                a.style.animationDuration = 0.02+ "s";
+                let dl1 = document.getElementById('dl1')
+                dl1.style.cursor = 'pointer';
+                
+            }else if(!isfunction){
+                dl1.style.cursor = "not-allowed";
+            }
+        }
+        function func2() {
+            if (isfunction) {
+                a.style.animationDuration = 0.2 + "s";
+                let dl2 = document.getElementById('dl2')
+                dl2.style.cursor = 'pointer';
+            }else if(!isfunction){
+                dl2.style.cursor = "not-allowed";
+            }
+        }
+        function func3() {
+            if (isfunction) {
+                a.style.animationDuration = 0.3 + "s";
+                let dl3 = document.getElementById('dl3')
+                dl3.style.cursor = 'pointer';
+                
+            }else if(!isfunction){
+                dl3.style.cursor = "not-allowed";
+            }
+        }
+        
+        // function api(callbacks) {
+        //     setTimeout(() => {
+        //         const data = {
+        //             name: "Taha",
+        //             age: 23
+        //         }
+        //         callbacks(data);
+        //     }, 2000);
+        // }
+        // function det(par) {
+        //     par.lastname = "yasin"
+        //     console.log(par);
+        // }
+
+        // api(det)
+
+        // function onclick() {
+        //     alert("Button is clicked")
+        // }
+
+        // document.querySelector('.btn-on').addEventListener('click', onclick);
+    </script>
+</body>
+</html>

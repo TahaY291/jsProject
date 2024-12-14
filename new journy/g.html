@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+        span{
+            background: url("https://cdn0.iconfinder.com/data/icons/merry-christmas-41/512/45-baloons-baloon-holiday-party-512.png");
+            /* background-color: #fff; */
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-size: cover;
+            transform: translate(-50%, -50%);
+            animation: animate 16s;
+            pointer-events: none;
+        }
+        @keyframes animate {
+            0%{
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                /* filter: hue-rotate(360deg); */
+            }
+            100%{
+                transform: translate(-50%, -5000%);
+                opacity: 0;
+                /* filter: hue-rotate(720deg); */
+            }
+        }
+    </style>
+</head>
+<body class="body"> 
+    <script>
+        let bd = document.querySelector('.body')
+        bd.addEventListener('mousemove',(event)=>{
+            let xpos = event.offsetX;
+            let ypos = event.offsetY;
+            let spanel = document.createElement('span')
+            spanel.style.left = xpos + "px"
+            spanel.style.top = ypos + "px"
+            bd.appendChild(spanel);
+            let size = Math.random()*150;
+            spanel.style.width = size + "px"
+            spanel.style.height = size + "px"
+            setTimeout(() => {
+                spanel.remove()
+            }, 3000);
+
+        })
+    </script>
+</body>
+</html>

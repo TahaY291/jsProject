@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+.netflix{
+    background: url(assets/image/main.jpg.jpg) no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    height: 700px;
+
+}
+.netflix:before{
+    background: rgba(0, 0, 0, 0.551);
+    content: "";
+    position: absolute;
+}
+.nav{
+    padding-top: 20px;
+    /* display: flex;
+    justify-content: space-around; */
+    
+}
+.signup{
+    background-color: rgb(230, 46, 45);
+    color: #fff;
+    padding: 5px 8px;
+    outline: none;
+    border: none;
+    border-radius: 4px ;
+}
+.pad{
+    margin: 60px 0;
+    padding: 70px 0;
+}
+.main-content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main-content h1{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.main-content h4{
+    padding-top: 18px;
+
+}
+.main-content p{
+    padding-top: 12px;
+}
+.hero-buttons input{
+    width: 333px;
+    padding: 10px 8px ;
+    background-color: rgba(0, 0, 0, 0.653);
+    /* outline: none; */
+    border: none;
+    margin-top: 12px;
+}
+.hero-buttons .bton{
+    padding: 6px;
+    font-size: larger;
+    outline: none;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 9px;
+    margin-top: 12px;
+}

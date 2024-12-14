@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(92,9,121);
+background: linear-gradient(370deg, rgba(92,9,121,1) 0%, rgba(92,9,121,1) 40%, rgba(255,205,0,1) 89%);
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+            background-color: transparent;
+            filter: blur(1px);
+            /* border: 1px solid black;  */
+            box-shadow: 0 0 20px black;
+            color: white;
+        }
+        #grid{
+            margin-left: 42px;
+        }
+        #grid img{
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Score: <span id="result" ></span></h3>
+        <div id="grid">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+        </div>
+
+    </div>
+    <script>
+
+
+        const cardarr = [
+            {
+                name: 'fries',
+                img: 'image/fries.png'
+            },
+            {
+                name: 'cheeseburger',
+                img: 'image/cheeseburger.png'
+            },
+            {
+                name: 'hotdog',
+                img: 'image/hotdog.png'
+            },
+            {
+                name: 'ice-cream',
+                img: 'image/ice-cream.png'
+            },
+            {
+                name: 'milkshake',
+                img: 'image/milkshake.png'
+            },
+            {
+                name: 'pizza',
+                img: 'image/pizza.png'
+            },
+            {
+                name: 'fries',
+                img: 'image/fries.png'
+            },
+            {
+                name: 'cheeseburger',
+                img: 'image/cheeseburger.png'
+            },
+            {
+                name: 'hotdog',
+                img: 'image/hotdog.png'
+            },
+            {
+                name: 'ice-cream',
+                img: 'image/ice-cream.png'
+            },
+            {
+                name: 'milkshake',
+                img: 'image/milkshake.png'
+            },
+            {
+                name: 'pizza',
+                img: 'image/pizza.png'
+            }
+        ]
+        cardarr.sort(()=> 0.5 - Math.random())
+        let cards = document.querySelectorAll('#img')
+        let score = document.getElementById('result')
+        let checkarr = []
+        let count = 0;
+
+        cards.forEach((element, index)=>{
+            element.setAttribute('src', cardarr[index].img)
+            setTimeout(() => {
+                element.setAttribute('src', 'image/blank.png')
+            }, 3000);
+
+            element.addEventListener('click',()=>{
+                if (element.getAttribute('src') === 'image/blank.png') {
+                    element.setAttribute('src', cardarr[index].img)
+                    checkarr.push(element);
+
+                    if (checkarr.length >= 2) {
+                        let lastElement = checkarr[checkarr.length -1 ]
+                        let scndlastElement = checkarr[checkarr.length -2 ]
+
+                        let lastSrc = lastElement.getAttribute('src')
+                        let scndlastSrc = scndlastElement.getAttribute('src')
+
+                        if (lastSrc === scndlastSrc) {
+                            setTimeout(() => {
+                                lastElement.setAttribute('src', 'image/white.png')
+                                scndlastElement.setAttribute('src', 'image/white.png')
+                                checkarr = [];
+                                count++;
+                                score.innerHTML = count;
+
+                            }, 500);
+                        }else{
+                            setTimeout(() => {
+                                lastElement.setAttribute('src', 'image/blank.png')
+                                scndlastElement.setAttribute('src', 'image/blank.png')
+                                checkarr = [];
+                                console.log(checkarr);
+                                alert("You are failed to memorize the pattern.")
+                            }, 500);
+                        }
+                    }
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>

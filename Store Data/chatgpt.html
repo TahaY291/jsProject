@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Visibility</title>
+    <style>
+        /* .card {
+            width: 100px;
+            height: 150px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            position: relative;
+        }
+        .card-content {
+            visibility: visible;
+            transition: visibility 0.5s;
+        }
+        .hidden {
+            visibility: hidden;
+        } */
+         body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+         }
+         .span{
+             width: 13px;
+             height: 13px;
+            border-radius: 50%;
+            z-index: 1;
+            background: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* border: 2px solid black; */
+            /* border-style: dashed; */
+        }
+        .div{
+             width: 40px;
+             height: 40px;
+             /* background-color: blue; */
+             border-radius: 50%;
+             border: 5px solid black;
+             position: absolute;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             pointer-events: none;
+             animation: move 0.7s linear infinite;
+         }
+         /* @keyframes move {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+         } */
+    </style>
+</head>
+<body>
+    <div class="div">
+        <span class="span"></span>
+    </div>
+
+    <script>
+        // JavaScript code to hide card content after 5 seconds
+        // window.onload = function() {
+        //     setTimeout(() => {
+        //         const cards = document.querySelectorAll('.card-content');
+        //         cards.forEach(card => {
+        //             card.classList.add('hidden');
+        //         });
+        //     }, 5000); // 5000 milliseconds = 5 seconds
+        // };
+
+//         class Box {
+//     create() {
+//         let body = document.querySelector('body');
+//         body.addEventListener('mousemove', (event) => {
+//             let div = document.querySelector('.div');
+//             let rect = div.getBoundingClientRect(); // Get the dimensions of the element
+
+//             let posx = event.clientX; // Use clientX and clientY instead of offsetX and offsetY
+//             let posy = event.clientY;
+
+//             // Calculate the position of the center of the .div
+//             let centerX = posx - rect.width / 2;
+//             let centerY = posy - rect.height / 2;
+
+//             div.style.left = centerX + 'px';
+//             div.style.top = centerY + 'px';
+//         });
+//     }
+// }
+
+// let person = new Box();
+// person.create();
+class Box {
+    create() {
+        let body = document.querySelector('body');
+        let div = document.querySelector('.div');
+
+        // Show the div when the cursor enters the body
+        body.addEventListener('mouseover', () => {
+            div.style.display = 'flex';
+        });
+
+        // Hide the div when the cursor leaves the body
+        body.addEventListener('mouseout', () => {
+            div.style.display = 'none';
+        });
+
+        // Update the position of the div when moving the cursor
+        body.addEventListener('mousemove', (event) => {
+            if (div.style.display === 'flex') {
+                let rect = div.getBoundingClientRect();
+
+                let posx = event.clientX;
+                let posy = event.clientY;
+
+                // let centerX = posx - rect.width / 2;
+                // let centerY = posy - rect.height / 2;
+
+                div.style.left = posx + 'px';
+                div.style.top = posy + 'px';
+            }
+        });
+    }
+}
+
+let person = new Box();
+person.create();
+
+
+
+
+
+        // class box {
+        //     create(){
+        //         let body = document.querySelector('body')
+        //         body.addEventListener('mousemove', (event)=>{
+        //             let div = document.querySelector('.div')
+        //             let posx = event.offsetX;
+        //             let posy = event.offsetY;
+        //             div.style.left = event.offsetX + 'px';
+        //             div.style.top = event.offsetY + 'px';
+        //         })
+        //     }
+        // }
+        // let person = new box
+        // person.create()
+
+        // var kthDistinct = function(arr, k){
+        //     let count = {}
+        //     for (let i = 0; i < arr.length; i++) {
+        //         const element = arr[i];
+        //         if (count[element]) {
+        //             count[element]++;
+        //         }else{
+        //             count[element] = 1;
+        //         }
+                
+        //     }
+        //     return count;
+
+            
+            
+        // }
+        // console.log(kthDistinct(["T","Tah","f","d"], 4));
+        // var twoSum = function(nums, target) {
+        //     let indeces = []
+        //     for (let i = 0; i < nums.length; i++) {
+        //         if (nums[i] + nums[i + 1] == target) {
+        //             indeces.push(i);
+        //             indeces.push(i + 1)
+        //         }
+                
+        //     }
+        //     return indeces;
+        // };
+        // console.log(twoSum([2,7,11,15], 9));
+        
+        // var isPalindrome = function(x) {
+        //     let string = x.toString();
+        //     let len = string.length;
+            
+        //     for (let i = 0; i < len/2; i++) {
+                
+        //         if (string[i] !== string[len - i -1]) {
+        //             return false
+        //         }else {
+        //             return true;
+        //         }
+                
+        //     }
+        // };
+        // console.log( isPalindrome(10));
+
+        let symbols = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+        var romanToInt = function(s) {
+            let value = 0;
+            for (let i = 0; i < s.length; i++) {
+                if (symbols[s[i]] < symbols[s[i + 1]]) {
+                    value -= symbols[s[i]];
+                }else{
+                    value += symbols[s[i]];
+                }
+                
+                
+            }
+            return value;
+        }
+        console.log( romanToInt("LM"));
+        
+       
+      
+        
+
+    </script>
+</body>
+</html>

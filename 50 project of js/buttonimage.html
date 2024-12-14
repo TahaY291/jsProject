@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #fafafa;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .magic {
+        background-color: #f9ca24;
+        color: #fff;
+        font-family: sans-serif;
+        border: 0;
+        border-radius: 3px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        letter-spacing: 1px;
+        box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+        font-size: 16px;
+        padding: 12px 20px;
+        z-index: 100;
+      }
+      .magic:focus {
+        outline: none;
+      }
+      .magic:active {
+        box-shadow: none;
+        transform: translateY(2px);
+      }
+      .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 500px;
+        width: 500px;
+        position: relative;
+        transition: 0.4s ease;
+      }
+      .boxes.big {
+        width: 600px;
+        height: 600px;
+      }
+      .boxes.big .box {
+        transform: rotate(360deg);
+      }
+      .box {
+        background-image: url("image/Screenshot\ \(184\).png ");
+        background-repeat: no-repeat;
+        background-size: 500px 500px;
+        background-position: center;
+        position: relative;
+        height: 125px;
+        width: 125px;
+        transition: 0.4s ease;
+      }
+      .box::after {
+        content: "";
+        background-color: #8deaf6;
+        position: absolute;
+        top: 8px;
+        right: -15px;
+        height: 100%;
+        width: 15px;
+        transform: skewY(45deg);
+      }
+
+      .box::before {
+        content: "";
+        background-color: #24d9f9;
+        position: absolute;
+        bottom: -15px;
+        left: 8px;
+        height: 15px;
+        width: 100%;
+        transform: skewX(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" class="magic">Magic 🎩</button>
+    <div id="boxes" class="boxes big">
+        <!-- THIS IS IF WE DO MANUALLY -->
+      <!-- <div class="box" style="background-position: 0px 0px"></div>
+      <div class="box" style="background-position: -125px 0px"></div>
+      <div class="box" style="background-position: -250px 0px"></div>
+      <div class="box" style="background-position: -375px 0px"></div>
+      <div class="box" style="background-position: -0px -125px"></div>
+      <div class="box" style="background-position: -125px -125px"></div>
+      <div class="box" style="background-position: -250px -125px"></div>
+      <div class="box" style="background-position: -375px -125px"></div>
+      <div class="box" style="background-position: -0px -250px"></div>
+      <div class="box" style="background-position: -125px -250px"></div>
+      <div class="box" style="background-position: -250px -250px"></div>
+      <div class="box" style="background-position: -375px -250px"></div>
+      <div class="box" style="background-position: -0px -375px"></div>
+      <div class="box" style="background-position: -125px -375px"></div>
+      <div class="box" style="background-position: -250px -375px"></div>
+      <div class="box" style="background-position: -375px -375px"></div> -->
+    </div>
+
+    <script>
+      const boxesContainer = document.getElementById("boxes");
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () =>
+        boxesContainer.classList.toggle("big")
+      );
+
+      function createBoxes() {
+          for (let i = 0; i < 4; i++) {
+              for (let j = 0; j < 4; j++) {
+                  console.log(j);
+                  console.log( "this is i=", i);
+
+                  const box = document.createElement('div')
+                  // box.style.background = "yellow"
+                  box.classList.add('box');
+                  box.style.backgroundPosition =`${-j * 125}px ${-i * 125}px`;
+                  boxesContainer.appendChild(box)
+
+              }
+
+          }
+      }
+      createBoxes()
+    </script>
+  </body>
+</html>

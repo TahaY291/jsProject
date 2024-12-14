@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outercon">
+
+        <h2>Hover to watch STADIUM</h2>
+        <div class="container">
+            <div class="outbox">
+
+            <div class="box">
+                <div class="inbox">
+                    <div class="box1" id="pl1"></div>
+                    <div class="box1" id="pl2"></div>
+                    <div class="box1" id="pl3"></div>
+                    <div class="box1" id="pl4"></div>
+                    <div class="box1" id="pl5"></div>
+                    <div class="box1" id="pl6"></div>
+                    <div class="box1" id="pl7"></div>
+                    <div class="box1" id="pl8"></div>
+                    <div class="box1" id="pl9"></div>
+                    <div class="box1" id="pl10"></div>
+                    <div class="box1" id="pl11"></div>
+                    <div class="box1" id="pl12"></div>
+                    <div class="box1" id="pl13"></div>
+                    <div class="box1" id="umpire" ></div>
+                    <div class="box1" id="umpire1" ></div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <script>
+        // const book = [
+        //     { title : "Book 1" , auther: "Auther 1", year:"1999"},
+        //     { title : "Book 2" , auther: "Auther 2", year:"2005"},
+        //     { title : "Book 3" , auther: "Auther 3", year:"2010"},
+        // ];
+        // for (let i = 0; i < book.length; i++) {
+        //     const element = book[i];
+        //     if (element.year > 2000) {
+        //         console.log(element);
+        //     }
+            
+        // }
+//         const person = {
+//     name: "John",
+//     age: 30,
+//     city: "New York",
+//     introduce: function() {
+//         return  " Name: " + this.name +  "\n" + " Age:  " + this.age + "\n" + "City:" + " " + this.city;
+//     }
+// };
+// console.log(console.log(person.introduce()));
+// const company = { 
+//     name: "GOOGLE",
+//     adress: {
+//         street: "Dogar Colony",
+//         city : "America"
+//     },
+
+//     employees: [
+//         {name : "taha", age: 23},
+//         {name : "talha", age: 24}
+//     ]
+
+// }
+// console.log(company);
+// console.log(company.adress);
+// console.log(company.employees[0]);
+// console.log(company.employees[1]);
+// var createHelloWorld = function(){
+//     return function(){
+//         return "Hello World"
+//     }
+// }
+// let hello = createHelloWorld()
+// console.log(hello());
+
+// var counter = function(n){
+//     return function(){
+//         return n++;
+//     }
+
+// }
+// let count = counter(10)
+// console.log(count());
+// console.log(count());
+
+// let check = function(val){
+//     return object = {
+//         toBe: function(expect){
+//             return expect === val ? true : false
+//         },
+//         noToBE: function(expect){
+//             return expect !== val ? true :  false
+//         }
+
+//     };
+// }
+// console.log(check(2).noToBE(1));
+// console.log(check(2).toBe(1));
+
+// let pos =0;
+// function count(){
+//     pos = pos + 1;
+//     console.log('fired count-' , pos/1)
+// }
+// count()
+// function remove(arr, val) {
+//     let index = arr.indexOf(val);
+//     if (index > -1) {
+//         arr.splice(indeex, 1)
+//     }
+//     return arr;
+// }
+// console.log([1,2,3,4,5,6,4,32,5,5,5,5,1,2,3,4], 5);
+// function removeItemAll(arr, value) {
+//   var i = 0;
+//   while (i < arr.length) {
+//     if (arr[i] === value) {
+//       arr.splice(i, 1);
+//     } else {
+//       ++i;
+//     }
+//   }
+//   return arr;
+// }
+// // Usage
+// // console.log(removeItemOnce([2,5,9,1,5,8,5], 5))
+// console.log(removeItemAll([2,5,9,1,5,8,5], 5))
+// let fun = function(fn){
+//     let call = false
+//     return function(...args){
+//         return fn(...args)
+//         call = true 
+//     }
+//     return call = false
+// }
+
+// let fn = function (a,b,c) {
+//     return a + b + c;
+// }
+// let add = fun(fn)
+// console.log(add(1,2,3));
+// console.log(add(1,4,3));
+// let fun = function(fn){
+//     let called = false;
+//     return function(...args){
+//         if (called) {
+//             return undefined;
+//         }
+//         called = true
+//         return fn(...args)
+//     }
+// }
+// let fn = function(a,b,c){
+//     return a + b + c;
+// }
+// let add = fun(fn)
+
+// console.log(add(1,2,3));
+// console.log(add(1,2,3));
+// console.log(add(1,2,3));
+// let createCounter = function(n){
+//     let val = n;
+//     return{
+//         increment: function(){
+//             return ++val;
+//         },
+//         reset: function(){
+//             return val = n;
+//         },
+//         decrement: function(){
+//             return --val;
+//         }
+//     };
+// }
+
+// let counter = createCounter(5)
+// console.log(counter.increment());
+// console.log(counter.reset());
+// console.log(counter.decrement());
+
+// let map = function(arr , fn){
+//     let returnedarr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         let transform = fn(arr[i], i)
+//         returnedarr[i] = transform;
+//     }
+//     return returnedarr;
+// }
+// let fn = function(x, i){
+//     return x + i;
+// }
+// let fun = map([1,2,3], fn)
+// console.log(fun);
+// var filter = function(arr, fn){
+//     let returnedarr = []
+//     for (let i = 0; i < arr.length; i++) {
+//         let transform = fn(arr[i], i);
+//         if(transform != undefined){
+//             returnedarr.push(transform);
+//         }
+//     }
+//     return returnedarr;
+// }
+// let fn = function(x, i){
+//     if(x > 10)return x;
+// }
+// let fun = filter([0,10,20,30], fn)
+// console.log(fun);
+
+// var reducer = function(num, fn, init){
+//     if(num.length == 0){
+//         return init;
+//     }
+//     let val = init;
+//     for (let i = 0; i < num.length; i++) {
+//         val = fn(val , num[i])
+        
+//     }
+//     return val;
+
+// }
+// let fn = function(x, i){
+//     return x + i;
+// }
+// let fun = reducer([1,2,3,4], fn, 0)
+// console.log(fun);
+
+// var compose = function(functions){
+//     return function(x){
+//         return functions.reduceRight((acc, fn)=>fn(acc), x)
+//     }
+// }
+// let f = function(x){
+//     return x + 1;
+// }
+// let g = function(x){
+//     return x * x;
+// }
+// let h = function(x){
+//     return 2 * x;
+// }
+// let functions  = [f,g,h];
+// let composed = compose(functions);
+// let func  = composed(4)
+// console.log(func);
+
+// Program to countdown till 1
+
+// // recursive function
+// function counter(count) {
+    
+// // display count
+// console.log(count);
+
+// // condition for stopping
+// if(count > 1) {
+
+//     // decrease count
+//     count = count - 1;
+
+//     // call counter with new value of count
+//     counter(count);
+// } else {
+
+//     // terminate execution
+//     return;
+// };
+// };
+
+// // access function
+// counter(5);
+
+// function flat(arr) {
+//     let arr1 = [];
+//     let val ;
+//       arr.forEach(element => {
+    //         if (Array.isArray(element)) {
+        //             return flat(element );
+        //             val = element;
+        //         }
+        //       });
+        //       arr1.push(val)
+        //       return val;
+        // }
+        // console.log(flat([1, [2, [3, [4, 5]]], 6]));
+        // function r(arr) {
+            //     let val = []
+            //     for (let i = 0; i < arr.length; i++) {
+//         const element = arr[i];
+
+//         val[i] = element;
+
+//     }
+//     return val;
+// }
+// console.log(r([1,2,3]));
+        // function flatenarr(arr) {
+        //     arr.forEach(element => {
+        //     if (Array.isArray(element)) {
+        //             return flatenarr(item)
+        //     } else{
+        //         return element
+        //     }
+        //     });
+
+        // }
+        // console.log(flatenarr([1, [2, [3, [4, 5]]], 6]));
+
+// function a(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         return arr[i]
+        
+//     }
+// }
+// console.log(a([1,2,3]));
+
+    // function greet(name) {
+        
+    //     return `Helle ${name}`
+    // }
+    // console.log(greet("Talha"));
+    // function factorial(n) {
+    //     let fact = 1
+    //     for (let i = 1; i <= n; i++) {
+    //         fact = fact * i;
+            
+    //     }
+    //     return fact;
+    // }
+    // console.log(factorial(5));
+
+    // function ctof(c) {
+    //     let f = (9/5)* c + 32;
+    //     return f
+    // }
+    // console.log(ctof(40));
+
+    // function countstr(str) {
+    //     let count = 0;
+    //     for (let i = 0; i < str.length; i++) {
+    //         count++;
+    //     }
+    //     return count;
+    // }
+    // console.log(countstr("mahamakashuhasu"));
+    // function reverse(str) {
+    //     let string = "";
+    //     for (let i = 0; i < str.length; i++) {
+    //         if (i == 0) {
+    //             string += str[i].toUpperCase();
+    //         }else{
+    //             string += str[i]
+    //         }
+            
+    //     }
+    //     return string
+    // }
+    // console.log(reverse("taha"));
+    // function CAPITAL(string) {
+    //     let str = string.split(" ")
+    //     for (let i = 0; i < str.length; i++) {
+    //         str[i] = str[i].charAt(0).toUpperCase() + str.slice(1)
+            
+            
+    //     }
+    //     return str.join(" ")
+    // }
+    // console.log(CAPITAL("daaha yasin")    );
+function prime(start, end) {
+    let arr =[]
+    for (let start = 3; start < end; start++) {
+        if (start % 2 !== 0) {
+            arr.push(start)
+        }
+        
+    }
+    console.log(arr);
+    for (let i = 0; i < arr[i]; i++) {
+        console.log(i);
+
+    }
+}
+prime(1, 30)
+
+
+
+    
+
+    </script>
+
+</body>
+</html>

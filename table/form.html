@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Personal Infromation</h1>
+
+    <label for="firstName">First Name:</label><br>
+    <input class="input" type="text" name="firstName" id="firstName" >
+    <div id="demo0"></div>
+
+    <label for="lasrName">Last Name:</label><br>
+    <input class="input" type="text" name="lastName" id="lastName" >
+    <div id="demo1"></div>
+
+    <label for="email">Email:</label><br>
+    <input class="input" type="email" name="email" id="email" >
+    <div id="demo2"></div>
+
+    <label for="number">Number:</label><br>
+    <input class="input" type="number" name="number" id="number" >
+    <div id="demo3"></div>
+
+    <label for="address">Address</label><br>
+    <textarea class="input" name="address" id="address"></textarea>
+    <div id="demo4"></div>
+
+    <button  onclick="submit()" class="btn">Submit</button>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+            
+        </tbody>
+    </table>
+    
+    <script src="index.js"></script>
+</body>
+</html>

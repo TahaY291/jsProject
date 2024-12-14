@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid{
+            width:600px;
+            height: 300px;
+            border: 1px solid black;
+            position: absolute;
+        }
+        .block{
+            width: 100px;
+            height: 20px;
+            background-color: blue;
+            position: absolute;
+            left: 50px;
+            bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <!-- <div class="block"></div> -->
+    </div>
+
+    <script>
+        const grid = document.querySelector('.grid')
+        const blockWidth = 100
+        const blockHeight = 20
+        class Block {
+            constructor(xAxis, yAxis){
+                this.bottomLeft = [xAxis, yAxis]
+                this.bottomRight = [xAxis + blockWidth, yAxis]
+                this.topleft = [xAxis, yAxis + blockHeight]
+                this.topRight = [xAxis + blockWidth , yAxis + blockHeight]
+            }
+        }
+        const blocks = [
+            new Block(10,270)
+    ]
+    console.log(blocks);
+    
+
+        // function addblock() {
+        //     for (let i = 0; i < blocks.length; i++) {
+                
+        //         const block = document.createElement('div')
+        //         block.classList.add('block')
+        //         block.style.left = blocks[i].bottomLeft[0]
+        //         block.style.top = '50px'
+        //         grid.appendChild(block)
+        //     }
+        // }
+        // addblock(); 
+    </script>
+</body>
+</html>

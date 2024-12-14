@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+
+    <script>
+      function timeRemaining() {
+        const d = new Date(2024, 9, 29, 11, 30, 0);
+        const dTime = d.getTime();
+        let today = new Date().getTime();
+
+        let time = dTime - today;
+        let oneDay = 24 * 60 * 60 * 1000;
+        const oneHour = 60 * 60 * 1000;
+        const oneMinute = 60 * 1000;
+        let days = time / oneDay;
+        days = Math.floor(days);
+
+        let hours = Math.floor((time % oneDay) / oneHour);
+
+        let minutes = Math.floor((time % oneHour) / oneMinute);
+
+        let seconds = Math.floor((time % oneMinute) / 1000);
+
+        let array = [days, hours, minutes, seconds];
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] < 10) {
+            array[i] = "0" + array[i];
+          }
+        }
+
+        document.getElementById("demo").innerHTML =
+          array[0] + " " + array[1] + " " + array[2] + " " + array[3];
+      }
+      let countDown = setInterval(timeRemaining, 1000);
+
+      timeRemaining();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+    background-color: #4b0082; /* Dark purple */
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header .logo img {
+    width: 150px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d3d3d3; /* Light grey */
+    transform: scale(1.1);
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.main-image {
+    background: url('main-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-image h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.main-image p {
+    font-size: 1.2em;
+}
+
+#services {
+    background-color: #f0f0f0; /* Light grey */
+    padding: 40px 20px;
+}
+
+.service {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#graphic-design {
+    background-color: #4b0082; /* Dark purple */
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.gallery img {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#video-editing {
+    background-color: #2e2e2e; /* Dark grey */
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#contact {
+    background-color: #4b0082; /* Dark purple */
+    color: #fff;
+    padding: 40px 20px;
+}
+
+footer {
+    background-color: #333; /* Dark grey */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Scroll animation */
+html {
+    scroll-behavior: smooth;
+}

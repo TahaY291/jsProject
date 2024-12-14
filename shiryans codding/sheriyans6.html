@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: cornflowerblue;
+      }
+      #card {
+        /* height: 100%; */
+        width: 300px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+      }
+      #card img {
+        height: 26vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+      }
+      #card h1 {
+        font-size: 25px;
+        margin: 10px 0;
+        font-weight: 800;
+      }
+      #card h5 {
+        font-size: 25px;
+        color: red;
+        margin-bottom: 20px;
+      }
+      #card button {
+        background-color: cadetblue;
+        color: #fff;
+        font-weight: 700;
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <img src="image/StockCake-Gardening Sunset Scene_1723792374.jpg" alt="" />
+      <h1>SomeName</h1>
+      <h5>Stranger</h5>
+      <button id="add">Add Freind</button>
+    </div>
+    <script>
+      let istatus = document.querySelector("h5");
+
+      var add = document.querySelector("#add");
+      var remove = document.querySelector("#remove");
+      var check = 0;
+
+      add.addEventListener("click", () => {
+        if (check == 0) {
+            istatus.innerHTML = "Freind";
+            istatus.style.color = "green";
+            add.innerHTML = "Remove Freind";
+            check = 1
+        }else{
+            istatus.innerHTML = "Stranger";
+            istatus.style.color = "red";
+            add.innerHTML = "Add Friend";
+            check = 0;
+        }
+      });
+      // remove.addEventListener("click", ()=>{
+      //     istatus.innerHTML = "Stranger";
+      //     istatus.style.color = "red";
+      // })
+    </script>
+  </body>
+</html>

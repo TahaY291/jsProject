@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="image/1703696-200.png" alt=""> -->
+    <div id="body" ></div>
+    <script>
+        // function one(callbacks) {
+        //     setTimeout(() => {
+        //         console.log(1);
+        //         callbacks()
+        //     }, 3000);
+
+        // }
+
+        // function two() {
+        //     console.log(2);
+
+        // }
+        // one(two);
+
+        // function show(callbacks) {
+        //     let data = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+        //     fetch(data).then(function(file){
+        //         console.log(file);
+
+        //     });
+        //     callbacks();
+
+        // }
+        // function show2() {
+        //     console.log('s');
+        // }
+        // show(show2);
+        // var canBeEqual = function (target, arr) {
+        //     if (target.length !== arr.length) {
+        //         return false;
+        //     }
+        //     for (let i = 0; i < arr.length; i++) {
+        //         for (let j = 0; j < arr.length; j++) {
+        //             if (arr[j] > arr[j + 1]) {
+        //                 let temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = temp;
+        //             }
+        //         }
+        //     }
+        //     for (let i = 0; i < target.length; i++) {
+        //         for (let j = 0; j < arr.length; j++) {
+        //             if (arr[j] > arr[j + 1]) {
+        //                 let temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = temp;
+        //             }
+        //         }
+        //     }
+
+        //     for (let i = 0; i < target.length; i++) {
+        //         if (target[i] !== arr[i]) {
+        //             return false
+        //         }
+        //         return true;
+        //     }
+        // };
+        // let sort = canBeEqual([4], [4]);
+        // console.log(sort);
+        // console.log(sort);
+
+        // let arr = [2, 3, 4, 1]
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = 0; j < arr.length; j++) {
+        //         if (arr[j] > arr[j + 1]) {
+        //             let temp = arr[j];
+        //             arr[j] = arr[j + 1];
+        //             arr[j + 1] = temp;
+
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+
+        // var findMedianSortedArrays = function (nums1, nums2) {
+        //     let newarr = nums1.concat(nums2);
+        //     let len = newarr.length;
+
+        //     if (len%2 == 0) {
+        //         let median = 0;
+        //         let num1 = Math.floor(newarr[len]/2)
+
+        //         console.log(num1);
+        //     }
+
+
+        // };
+
+        // console.log(findMedianSortedArrays([1,3],[3,2]))
+
+        // var arr = [1,2,3]    
+        // var Len = Math.floor( arr.length/2);
+        // let median = arr[Len]
+        // console.log(median);
+
+        // function performOperation(num, callbacks){
+        //     callbacks(num);    
+        // }
+
+        // function call(val) {
+        //     console.log(val*val);
+
+
+        // }
+
+        // performOperation(2 , call)
+
+        // function processArray(arr, callbacks) {
+        //    return callbacks(arr);
+        // }
+
+        // function call(array) {
+
+        //     let newarr = array.map((e)=>{
+        //         return e*2;
+        //     })
+        //     return newarr;
+        // }
+
+        // console.log(processArray([1,2,3], call));
+
+        // function filtercall(arr, callbacks) {
+        //     return callbacks(arr);
+        // }
+
+        // function call(array) {
+        //     let newarr = array.filter((age)=>{
+        //         return age > 2;
+        //     })
+        //     return newarr;
+        // }
+        // console.log(filtercall([1,2,3,4,5], call))
+
+
+
+        // function fetchdata(callbacks) {
+        //     setTimeout(()=>{
+        //         const data = "http://127.0.0.1:3000/callbacks.html"
+        //         callbacks(data);
+        //     }, 2000)
+        // }
+        // function handleData(data) {
+        //     console.log(data);
+
+        // }
+
+        // fetchdata(handleData)
+
+        // function divide(num1, num2, callbacks) {
+        //     if (num2 != 0) {
+        //         callbacks(num1 , num2)
+
+        //     }else{
+        //         console.error("num2 is not a non zero number");
+
+        //     }
+        // }
+        // function call(val1, val2) {
+        //     console.log(val1/val2);
+
+        // }
+        // divide(6,0, call)
+
+        // function transformData(arr, callback1, callback2) {
+        //     let trans  = callback1(arr);
+        //     callback2(trans);
+        // }
+        // function transform(array) {
+        //     let arr = array.map((e) => {
+        //         return e + 5;
+        //     })
+        //     return arr;
+            
+        // }
+        // function showdata(narr) {
+        //     console.log(narr);
+        //     return narr;
+        // }
+        // transformData([1, 2, 3], transform, showdata)
+
+
+        // class box{
+        //     constructor(width, height, color){
+        //         this.width = width
+        //         this.height = height
+        //         this.color = color
+        //         this.createbox()
+        //     }
+        //     createbox(){
+        //         let element  = document.createElement('div');
+                
+        //         this.element.style.width = `${this.width}px`;
+        //         this.element.style.height = `${this.height}px`;
+        //         this.element.style.border = `1px solid yellow`;
+        //         this.element.style.borderRadius = `12px`;
+        //         this.element.style.display = 'flex';
+        //         this.element.style.margin = `5px`;
+        //         document.getElementById('body').appendChild(this.element)
+        //     }
+        // }
+
+        // for (let i = 0; i < 20; i++) {
+        //     new box(100, 100, 'blue')
+            
+        // }
+        // class box {
+        //     constructor() {
+        //         this.createbox();
+        //     }
+
+        //     createbox(){
+        //         let element = document.createElement('div')
+
+        //         element.style.width =100 + 'px'
+        //         element.style.height =`40px`
+        //         element.style.backgroundColor = ' lavender'
+        //         element.style.border =`4px solid #032b44`
+        //         element.style.borderRadius =`4px`
+        //         element.style.margin =`4px`
+        //         // this.element.style.width =`100px`
+        //         document.getElementById('body').appendChild(element)
+        //     }
+        // }
+
+        // for (let i = 0; i < 30; i++) {
+        //     new box();
+            
+        // }
+
+        // class person {
+        //     constructor(name, year) {
+        //         this.name = name;
+        //         this.year = year;
+        //     }
+        //     age(){
+        //         let date = new Date();
+        //         return date.getFullYear()-this.year;
+        //     }
+        // }
+
+        // let Taha = new person("Taha Yasin", 2004)
+        // let Talha = new person("Talha Yasin", 2007)
+        // console.log(Taha.age());
+        
+
+        // document.body.innerHTML = Taha.age() + " ," + Talha.age();
+
+        // class person {
+        //     constructor(name , year) {
+        //         this.name = name;
+        //         this.year = year;
+        //     }
+        //     age(x){
+        //         return x - this.year;
+        //     }
+        // }
+        // let date  = new Date();
+        // let year  = date.getFullYear();
+
+        // let Taha = new person("Taha" , 2004)
+        // console.log(Taha.age(year));
+
+        // class car {
+        //     constructor(brand) {
+        //         this.brand  = brand;
+        //     }
+        //     present(){
+        //         return "This is my car brand " + this.brand;
+        //     }
+        // }
+        // class Model extends car {
+        //     constructor(brand , mod) {
+        //         super(brand)
+        //         this.model = mod;
+        //     }
+        //     show(){
+        //         return this.present() + "it is  car of" + " " + this.model;
+        //     }
+        // }
+        // let myCar = new Model("Audi ", 1930)
+        // console.log(myCar.show());
+
+        class car {
+            constructor(brand) {
+                this.carname = brand;
+            }
+        }
+        let myCar = new car("Ford")   
+        console.log(myCar.carname);
+        
+        
+        
+
+        
+    </script>
+</body>
+
+</html>

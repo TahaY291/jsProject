@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.3s linear;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .outerContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgb(156, 201, 201);
+        padding: 20px;
+      }
+      .container {
+        width: 400px;
+        height: 400px;
+        background-color: rgb(171, 216, 218);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .container button {
+        width: 100px;
+        height: 100px;
+        background-color: cadetblue;
+        margin: 0 13px;
+        border-radius: 5px;
+        font-size: 50px;
+        font-weight: 600;
+        color: aliceblue;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) inset;
+    }
+    #declare{
+        color: aliceblue;
+        margin-bottom: 10px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    #reset{
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background-color: cadetblue;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) inset;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outerContainer">
+        <h1 id="declare">The game start with Turn O</h1>
+
+        <div class="container">
+            <button class="btn" id="1"></button>
+      <button class="btn" id="2"></button>
+      <button class="btn" id="3"></button>
+      <button class="btn" id="4"></button>
+      <button class="btn" id="5"></button>
+      <button class="btn" id="6"></button>
+      <button class="btn" id="7"></button>
+      <button class="btn" id="8"></button>
+      <button class="btn" id="9"></button>
+    </div>
+    <button id="reset">Reset Game</button>
+</div>
+    <script>
+      let btns = document.querySelectorAll(".btn");
+      let winnerIs = document.getElementById("declare")
+      let reset = document.getElementById("reset")
+      function initialize() {
+        btns.forEach((btn)=>{
+            btn.innerText = ""
+            btn.disabled = false;
+        })
+      }
+      reset.addEventListener("click",()=>{
+        location.reload();
+      })
+      let turn = true;
+
+      const winPatterns = [
+        [0, 1, 2],
+        [0, 3, 6],
+        [0, 4, 8],
+        [1, 4, 7],
+        [2, 5, 8],
+        [2, 4, 6],
+        [3, 4, 5],
+        [6, 7, 8],
+      ];
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          let element = e.currentTarget;
+          if (turn) {
+            element.innerHTML = "o";
+            winnerIs.innerText = "It's X turn ";
+            turn = false;
+        } else {
+            element.innerHTML = "x";
+            winnerIs.innerText = "Its O turn";
+            turn = true;
+          }
+          element.disabled = true;
+          checkWinner();
+        });
+      });
+
+      function checkWinner() {
+        for (const pattern of winPatterns) {
+          let pos1 = btns[pattern[0]].innerText;
+          let pos2 = btns[pattern[1]].innerText;
+          let pos3 = btns[pattern[2]].innerText;
+
+          if (pos1 !==" " && pos2 !== " " && pos3 !== "") {
+            if (pos1 == pos2 &&  pos2 == pos3) {
+                btns.forEach((btn)=>{
+                    btn.disabled = true;
+                })
+                winnerIs.innerText = `The Winner Is ${pos1}`
+
+            }
+          }
+        }
+      }
+
+      
+
+
+    //   function declareWinner() {
+    //     if (!checkWinner) {
+    //         btns.forEach((btn)=>{
+    //             btn.disabled  = true;
+    //         })
+            
+    //     }
+    //   }
+    //   declareWinner();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+            background-color: blueviolet;
+        }
+
+        #grid {
+            margin-left: 42px;
+        }
+
+        #grid img {
+            margin: 0 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h3>Score: <span id="result"></span></h3>
+        <div id="grid">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+            <img id="img" src="image/blank.png" alt="">
+        </div>
+    </div>
+    <script>
+
+        const cardarr = [
+            {
+                name: 'fries',
+                img: 'image/fries.png'
+            },
+            {
+                name: 'cheeseburger',
+                img: 'image/cheeseburger.png'
+            },
+            {
+                name: 'hotdog',
+                img: 'image/hotdog.png'
+            },
+            {
+                name: 'ice-cream',
+                img: 'image/ice-cream.png'
+            },
+            {
+                name: 'milkshake',
+                img: 'image/milkshake.png'
+            },
+            {
+                name: 'pizza',
+                img: 'image/pizza.png'
+            },
+            {
+                name: 'fries',
+                img: 'image/fries.png'
+            },
+            {
+                name: 'cheeseburger',
+                img: 'image/cheeseburger.png'
+            },
+            {
+                name: 'hotdog',
+                img: 'image/hotdog.png'
+            },
+            {
+                name: 'ice-cream',
+                img: 'image/ice-cream.png'
+            },
+            {
+                name: 'milkshake',
+                img: 'image/milkshake.png'
+            },
+            {
+                name: 'pizza',
+                img: 'image/pizza.png'
+            }
+        ]
+        let cards = document.querySelectorAll('#img')
+
+        cardarr.sort(() => 0.5 - Math.random())
+
+        let checkarr = []
+       
+        cards.forEach((element, index) => {
+            element.setAttribute('src', cardarr[index].img)
+            setTimeout(() => {
+                element.setAttribute('src', 'image/blank.png')
+            }, 3000);
+            element.addEventListener('click', (e) => {
+                if (element.getAttribute('src') === 'image/blank.png') {
+                    element.setAttribute('src', cardarr[index].img);
+                    checkarr.push(element)
+                    // console.log(checkarr);
+                    if (checkarr.length >= 2) {
+                        let lastElement = checkarr[checkarr.length - 1];
+                        let secondLastElement = checkarr[checkarr.length-2 ];
+                        
+
+                        let lastSrc = lastElement.getAttribute('src');
+                        let secondLastSrc = secondLastElement.getAttribute('src');
+                       
+
+
+                        if (lastSrc == secondLastSrc) {
+                            setTimeout(() => {
+                                lastElement.setAttribute('src', "image/white.png")
+                                secondLastElement.setAttribute('src', 'image/white.png')
+                                checkarr = [];
+                                console.log(checkarr);
+                            }, 500);
+                        }else{
+                            setTimeout(() => {
+                                lastElement.setAttribute('src', '')
+                            }, 500);
+                        }
+                    }
+                }
+            })
+
+        });
+
+
+
+
+
+
+
+
+        // let card = document.getElementById('img')
+
+        // card.addEventListener('click', ()=>{
+        //     let img = document.createElement('img')
+        //     card.setAttribute('src', 'image/pizza.png')
+        // })
+
+        // let arr = [1,2,5,4,8,2,9,6,7,8]
+        // arr.sort(()=>{
+        //    return 0.5 - Math.random();
+        // })
+        // console.log(arr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-color: #333;
+            /* cursor: none; */
+        }
+        .cursor-dot{
+            width: 18px ;
+            height: 18px;
+            background-color: white;
+        }
+        .cursor-bg{
+            width: 300px ;
+            height: 300px;
+            filter: blur(6vw) brightness(1.05);
+            background-color: grey;
+            border: 2px solid grey;
+            opacity: .4;
+            aspect-ratio: 1;
+        }
+        .cursor-dot,
+        .cursor-bg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-bg"></div>
+
+    <script>
+        const cursorDot = document.querySelector(".cursor-dot")
+        const cursorOutline = document.querySelector(".cursor-bg")
+
+        window.addEventListener("mousemove",(e)=>{
+            const posx = e.clientX;
+            const posy = e.clientY;
+
+            cursorDot.style.left = `${posx}px`
+            cursorDot.style.top = `${posy}px`
+            cursorOutline.style.left = `${posx}px`
+            cursorOutline.style.top = `${posy}px`
+
+            cursorOutline.animate({
+                left: `${posx}px`,
+                top: `${posy}px`
+            }, {duration: 5000 ,fill:"forwards"});
+
+            cursorDot.animate({
+                left: `${posx}px`,
+                top: `${posy}px`,
+            },{duration: 500 , fill: "forwards"})
+        })
+
+
+
+    </script>
+</body>
+</html>

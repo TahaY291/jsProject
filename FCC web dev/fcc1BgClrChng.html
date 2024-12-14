@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+          /* cursor: none;  / */
+
+      }
+      body {
+        background-color: rgb(228, 239, 243);
+      }
+      nav {
+        width: 100%;
+        height: 8vh;
+        background-color: #fcfcfc;
+        display: flex;
+      }
+      .nav {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav h1 {
+        color: #75bff0;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      ul li {
+        list-style-type: none;
+        list-style: none;
+      }
+      ul li a {
+        text-decoration: none;
+        text-transform: none;
+        text-shadow: #94898967;
+        color: rgb(56, 53, 53);
+      }
+      .inputBox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: red; */
+      }
+      input {
+        width: 200px;
+        background-color: rgba(36, 29, 29, 0.226);
+        font-size: 16px;
+        outline: none;
+        border: 0;
+        padding: 8px 12px;
+        /* border-radius: 22px; */
+      }
+      #saveBtn {
+        /* width: 200px; */
+        background-color: rgb(236, 236, 236);
+        font-size: 16px;
+        outline: none;
+        border: 0;
+        padding: 8px 12px;
+        /* border-radius: 22px; */
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+      }
+      main {
+        width: 100%;
+        height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .container h2 {
+        width: fit-content;
+        background-color: rgb(29, 28, 28);
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: white;
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+      .container .color {
+        color: skyblue;
+      }
+      .container button {
+        color: #333;
+        background-color: #fff;
+        outline: none;
+        border: 1px solid #333;
+        padding: 5px 14px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .container button:active {
+        background-color: rgb(182, 214, 226);
+        background-color: #c99ebe;
+      }
+      .fvrtClr {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: rgba(135, 207, 235, 0);
+        padding: 10px 10px;
+        transform: translateX(-250px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: transform 1s ease;
+      }
+      .fvrtClr::-webkit-scrollbar {
+  display: none;
+}
+      .fvrtClr h2 {
+        font-weight: 500;
+        font-size: 30px;
+      }
+      .fvrtClr ol {
+        padding-left: 35px;
+        margin-top: 10px;
+      }
+      .fvrtClr ol li {
+        font-size: 18px;
+        font-weight: 500;
+        width: 150px;
+        position: relative;
+        padding: 5px 15px;
+        border-radius: 12px;
+        margin: 10px 0;
+      }
+
+      .fvrtClr ol li img {
+        position: absolute;
+        right: 20px;
+        top: 8px;
+        cursor: pointer;
+
+      }
+      #bar {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        /* cursor: pointer; */
+      }
+      .imgBar {
+        position: relative;
+        /* cursor: pointer; */
+      }
+      #bar1 {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer; 
+        z-index: 99;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <h1 id="flip">Color Flipper</h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Simple</a></li>
+          <li><a href="hex.html">Hex</a></li>
+        </ul>
+        <div class="inputBox">
+          <input type="text" id="input" placeholder="Paste here" />
+          <button onclick="saveColors()" id="saveBtn">Save</button>
+        </div>
+      </div>
+    </nav>
+    <div class="imgBar">
+      <h1><img id="bar1" src="lineBars.svg" alt="" /></h1>
+    </div>
+    <main id="main">
+      <div class="container">
+        <h2>Background Color : <span class="color"> #f1f5f8 </span></h2>
+        <!-- <button onclick="changeColor()" class="btn btn-hero" id="btn">Click me</button> -->
+        <button class="btn btn-hero" id="btn">Click me</button>
+      </div>
+      <div class="fvrtClr">
+        <h2>Saved Colors <img id="bar" src="cross.svg" alt="" /></h2>
+        <ol start="1">
+          <!-- <li>qwkjdqwh</li> -->
+        </ol>
+      </div>
+    </main>
+    <script>
+      const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+      const btn = document.getElementById("btn");
+      let color = document.querySelector(".color");
+      let input = document.getElementById("input");
+      let savrBtn = document.getElementById("saveBtn");
+      let fvrtClr = document.querySelector(".fvrtClr ol");
+      let sidebar = document.querySelector(".fvrtClr");
+      let bar1 = document.getElementById("bar1");
+      let bar = document.getElementById("bar");
+      let container = document.querySelector(".container")
+
+      bar1.addEventListener("click", () => {
+        sidebar.style.transform = "translateX(0px)";
+        sidebar.style.transition = "transform 1s ease";
+        bar1.style.display = "none";
+      });
+
+      bar.addEventListener("click", () => {
+        bar1.style.transition = "opacity 1s ease";
+        bar1.style.opacity = "0"; 
+        setTimeout(() => {
+          bar1.style.display = "block"; 
+          bar1.style.opacity = "1";
+        }, 1000); 
+
+        sidebar.style.transform = "translateX(-250px)";
+        sidebar.style.transition = "transform 1s ease";
+      });
+
+
+      function getData() {
+        let savedColors = localStorage.getItem("see");
+        if (savedColors) {
+          fvrtClr.innerHTML = savedColors;
+          let imgs = fvrtClr.querySelectorAll("img");
+          imgs.forEach((img) => {
+            img.addEventListener("click", removeClr);
+          });
+        }
+      }
+      getData();
+
+      function setData() {
+        localStorage.setItem("see", fvrtClr.innerHTML);
+      }
+
+      function saveColors() {
+        if (input.value !== " ") {
+          
+          let li = document.createElement("li");
+          li.style.backgroundColor = input.value;
+          li.textContent = input.value;
+          fvrtClr.appendChild(li);
+        let img = document.createElement("img");
+        img.src = "cross.svg";
+        img.style.width = "15px";
+        li.appendChild(img);
+        input.value = " ";
+        img.addEventListener("click", removeClr);
+        setData();
+      }
+      }
+      function removeClr(e) {
+        e.target.parentElement.remove();
+        e.container.remove()
+        setData();
+      }
+
+      btn.addEventListener("click", () => {
+        let hexColor = "#";
+        for (let i = 0; i < 6; i++) {
+          hexColor += hex[getRandomm()];
+        }
+        color.textContent = hexColor;
+        document.body.style.backgroundColor = hexColor;
+        document.querySelector(".nav h1").style.color = hexColor;
+        btn.style.color = "black";
+        setData();
+      });
+      function getRandomm() {
+        return Math.floor(Math.random() * hex.length);
+      }
+
+
+
+
+    </script>
+  </body>
+</html>

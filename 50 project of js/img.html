@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="box.css" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: black;
+      }
+      .box {
+        background-color: brown;
+        display: flex;
+        gap: 13px;
+        flex-wrap: wrap;
+        padding: 12px;
+        min-height: 40vh;
+    }
+    .boxes{
+        background-color: darkcyan;
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+        box-shadow: 2px 4px 10px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+        padding: 10px;
+      }
+      .inBox{
+        background-color: tomato;
+        width: 80px;
+        height: 80px;
+        border-radius: 4px;
+        box-shadow: inset 2px 4px 10px;
+        transition: all 1s ease;
+      }
+      .inBox:hover{
+        width: 100px;
+        height: 100px;
+        perspective: 1000px;
+        background-color: rgb(109, 56, 65);
+      }
+      .boxes:hover{
+        background-color: burlywood;
+        scale: 1.1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <div class="boxes">
+        <div class="inBox"></div>
+      </div>
+      <!-- <div class="boxes">
+        <div class="inBox"></div>
+      </div> -->
+    </div>
+    <script>
+      let a = 20 //will be executed
+      // let b = 20 will be executed
+      /* 
+      two methods to comment javascript statement
+      have a nice day look good feel statement sakTay haIn 
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            min-height: 100vh;
+        }
+        .balloon {
+            width: 100px;
+            height: 150px;
+            background-color: lightblue;
+            border-radius: 50% 50% 60% 60%;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .string {
+            width: 2px;
+            height: 50px;
+            background-color: gray;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="bl">
+        Balloon
+        <div class="string"></div>
+    </div>
+
+    <script>
+        // let bd = document.querySelector('body')
+        // bd.addEventListener('mousemove',(event)=>{
+        //     let px = event.offsetX;
+        //     let py = event.offsetY;
+        //     let bl = document.createElement('div')
+        //     bl.classList.add('balloon')
+
+        //     bd.appendChild(bl)
+        //     bl.style.left = px + "px"
+        //     bl.style.top = py + "px"
+        //     setTimeout(() => {
+        //         bl.classList.remove('balloon');
+        //     }, 20);
+        
+        // })
+
+
+        function sortandmerge(num1, m, num2, n) {
+            for (let i = m, j = 0; j < n ; i++, j++ ) {
+                num1[i] = num2[j]
+            }
+            num1.sort((a, b)=> a - b)
+            console.log(num1);
+            
+            
+        }
+        sortandmerge([1,4,3], 3,[2,5,6], 3)
+        
+       
+        
+        
+    </script>
+</body>
+</html>

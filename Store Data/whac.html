@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .grid{
+            width: 606px;
+            height: 606px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .square{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+        .mole{
+            background-color: blue;
+
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Score</h2>
+    <h2 id="score">0</h2>
+
+    <h2>Time Left</h2>
+    <h2 id="time-left">60</h2>
+
+    <div class="grid">
+        <div class="square" id="1"></div>
+        <div class="square" id="2"></div>
+        <div class="square" id="3"></div>
+        <div class="square" id="4"></div>
+        <div class="square" id="5"></div>
+        <div class="square" id="6"></div>
+        <div class="square" id="7"></div>
+        <div class="square" id="8"></div>
+        <div class="square" id="9"></div>
+    </div>
+    <script>
+//         const squares = document.querySelectorAll('.square')
+// const mole = document.querySelector('.mole')
+// const timeLeft = document.querySelector('#time-left')
+// const score = document.querySelector('#score')
+
+// let result = 0
+// let hitPosition
+// let currentTime = 60
+// let timerId = null
+
+// function randomSquare() {
+//   squares.forEach(square => {
+//     square.classList.remove('mole')
+//   })
+
+//   let randomSquare = squares[Math.floor(Math.random() * 9)]
+//   randomSquare.classList.add('mole')
+
+//   hitPosition = randomSquare.id
+// }
+
+// squares.forEach(square => {
+//   square.addEventListener('mousedown', () => {
+//     if (square.id == hitPosition) {
+//       result++
+//       score.textContent = result
+//       hitPosition = null
+//     }
+//   })
+// })
+
+// function moveMole() {
+//   timerId = setInterval(randomSquare, 500)
+// }
+
+// moveMole()
+
+// function countDown() {
+//  currentTime--
+//  timeLeft.textContent = currentTime
+
+//  if (currentTime == 0) {
+//    clearInterval(countDownTimerId)
+//    clearInterval(timerId)
+//    alert('GAME OVER! Your final score is ' + result)
+//  }
+
+// }
+
+// let countDownTimerId = setInterval(countDown, 1000)
+
+
+
+
+
+
+
+
+
+//         const squares = document.querySelectorAll('.square')
+// const mole = document.querySelector('.mole')
+// const timeLeft = document.querySelector('#time-left')
+// const score = document.querySelector('#score')
+
+// let result = 0
+// let hitPosition
+// let currentTime = 60
+// let timerId = null
+
+// function randomSquare() {
+//   squares.forEach(square => {
+//     square.classList.remove('mole')
+//   })
+
+//   let randomSquare = squares[Math.floor(Math.random() * 9)]
+//   randomSquare.classList.add('mole')
+
+//   hitPosition = randomSquare.id
+// }
+
+// squares.forEach(square => {
+//   square.addEventListener('mousedown', () => {
+//     if (square.id == hitPosition) {
+//       result++
+//       score.textContent = result
+//       square.classList.remove('mole')
+//       hitPosition = null
+//     }
+//   })
+// })
+
+// function moveMole() {
+//   timerId = setInterval(randomSquare, 1000)
+// }
+
+// moveMole()
+
+// function countDown() {
+//  currentTime--
+//  timeLeft.textContent = currentTime
+
+//  if (currentTime == 0) {
+//    clearInterval(countDownTimerId)
+//    clearInterval(timerId)
+//    alert('GAME OVER! Your final score is ' + result)
+//  }
+
+// }
+
+// let countDownTimerId = setInterval(countDown, 1000)
+
+
+
+
+
+
+
+//         let squares = document.querySelectorAll('.square');
+// let mole = document.querySelector('.mole');
+// let timeLeft = document.querySelector('#time-left');
+// let score = document.querySelector('#score');
+
+// let currentTime = 60;
+// let result = 0;
+// let hitClass;
+// let hitSquare;
+// let interval;
+
+// const colors = ['red', 'blue', 'yellow'];
+
+// function getRandomColor() {
+//     const randomIndex = Math.floor(Math.random() * colors.length);
+//     return colors[randomIndex];
+// }
+
+// function showRandomMole() {
+//     squares.forEach(square => {
+//         square.classList.remove(...colors);
+//         square.dataset.clicked = 'false'; // Reset the clicked state
+//     });
+    
+//     const randomSquare = squares[Math.floor(Math.random() * squares.length)];
+//     hitClass = getRandomColor();
+//     hitSquare = randomSquare;
+//     randomSquare.classList.add(hitClass);
+// }
+
+// function updateScore(event) {
+//     if (event.target.classList.contains(hitClass) && event.target.dataset.clicked === 'false' && hitClass === 'blue') {
+//         result++;
+//         score.textContent = result;
+//         event.target.dataset.clicked = 'true'; // Set the clicked state to true
+//     }
+// }
+
+// function updateTimer() {
+//     currentTime--;
+//     timeLeft.textContent = currentTime;
+//     if (currentTime <= 0) {
+//         clearInterval(interval);
+//         alert("Time's up!");
+//         squares.forEach(square => {
+//             square.removeEventListener('click', updateScore);
+//         });
+//     }
+// }
+
+// squares.forEach(square => {
+//     square.addEventListener('click', updateScore);
+// });
+
+// interval = setInterval(() => {
+//     showRandomMole();
+//     updateTimer();
+// }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+        let sq = document.querySelectorAll('.square');
+        let mole = document.querySelector('.mole')
+        let timeLeft = document.querySelector('#time-left')
+        let score = document.querySelector('#score')
+
+
+
+        
+        let currentTime = 60;
+        let hitDiv;
+        let result = 0;
+        let interval;
+        let ranInterval;
+
+        let array = ['red', 'blue', 'yellow'];
+        function randomClass() {
+            let randomIndex = Math.floor(Math.random()*array.length)
+            return array[randomIndex]; 
+        }        
+
+        function randomSquare() {
+            sq.forEach(e=>{
+                e.classList.remove('yellow', 'blue','red');
+                let randomDiv = sq[Math.floor(Math.random()*9)]
+                let className = randomClass();
+                randomDiv.classList.add(className);
+                hitDiv = className;
+            })
+        }
+        // randomSquare()
+        ranInterval = setInterval(() => {
+            randomSquare();
+        }, 1000);
+
+
+            sq.forEach(e=>{
+                e.addEventListener('click', ()=>{
+                    if (e.classList.contains('blue')) {
+                        if (currentTime !== 0) {
+                        result++;
+                    }
+                    score.textContent = result;
+                        e.classList.remove('blue')
+                    }
+                    
+                    
+                })
+                
+            })   
+
+        function Timer() {
+            currentTime--;
+            timeLeft.textContent = currentTime;
+            if (currentTime == 0) {
+                clearInterval(interval)
+                // alert("Time complete to hit a whac");
+                alert(`Your current score is ${result}`)
+                clearInterval(ranInterval)
+                result = 0;
+                }
+        }
+        Timer()
+        
+        interval = setInterval(() => {
+            Timer();
+        }, 1000);
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let result = 0;
+        // let hitPosition;
+        // let currentTime =60;
+        // function randomSquare() {
+        //     sq.forEach(square =>{
+        //         square.classList.remove('mole')
+        //         let randomPosition = sq[Math.floor(Math.random()*9)]
+        //         randomPosition.classList.add('mole');
+        //     })
+            
+
+        //     hitPosition  = randomPosition.id
+        // }
+
+        // sq.forEach(square=>{
+        //     square.addEventListener('mousemove', ()  => {
+        //         if (square.id == hitPosition) {
+        //             result++;
+        //             score.textContent = result;
+        //             console.log(hitPosition);
+        //             hitPosition = null;
+        //         }
+        //     })
+        // })
+
+        // function moveMole() {
+        //     let timerid = null;
+        //     setInterval(() => {
+        //     randomSquare();
+        //         }, 1000);
+        //     }
+        //     moveMole();
+
+        // function countTimer() {
+        //     currentTime--;
+        //     timeLeft.textContent = currentTime;
+        //     if (currentTime == 0) {
+        //         clearInterval(countTimer);
+        //         alert('Game Over! Your Final result is ' + result);
+        //     }
+        // }
+        // setInterval(() => {
+        //     // countTimer();
+        // }, 100);
+    </script>
+</body>
+</html>

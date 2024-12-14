@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      @font-face {
+        font-family: b;
+        src: url(image/estate/KFOlCnqEu92Fr1MmEU9fBBc4\\(1\).ttf);
+      }
+
+      @font-face {
+        font-family: c;
+        src: url(image/estate/KFOmCnqEu92Fr1Mu4mxK\\(1\).ttf);
+      }
+
+      @font-face {
+        font-family: a;
+        src: url(image/estate/jost-variable.ttf);
+      }
+
+      #main {
+        position: relative;
+        overflow: hidden;
+        background-color: #0a3cca;
+      }
+
+      #page1 {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+      }
+
+      #page1 video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      #page1 nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        position: absolute;
+        height: 10vh;
+        width: 100vw;
+      }
+
+      #page1 > nav > img {
+        margin-top: -1.7vw;
+        width: 9%;
+      }
+
+      #right-nav > button {
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #fff;
+        background-color: #0b48ed;
+        color: #fff;
+        cursor: pointer;
+        text-transform: capitalize;
+        font-family: a;
+        font-size: 15px;
+      }
+
+      .bottom-page1 {
+        position: absolute;
+        bottom: 8%;
+        left: 10%;
+        width: 50vw;
+        height: 35vh;
+      }
+
+      .bottom-page1 h1 {
+        font-family: a;
+        font-size: 5vw;
+        font-weight: 100;
+        line-height: 1;
+        color: #fff;
+      }
+
+      .bottom-page1-inner {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        height: 40%;
+        width: 100%;
+      }
+
+      .bottom-page1-inner button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        background-color: #fff;
+        color: black;
+        font-size: 15px;
+        margin-right: 12vw;
+        font-family: b;
+      }
+
+      .bottom-page1-inner h4 {
+        font-size: 1.2vw;
+        font-family: a;
+        color: white;
+      }
+
+      #page2 {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        font-family: a;
+        height: 100vh;
+        width: 100vw;
+        background-color: #0a3cca;
+        position: relative;
+        padding: 0vw 8vw;
+        color: #fff;
+      }
+
+      #page2 h2 {
+        font-weight: 100;
+        margin-bottom: 3vw;
+      }
+
+      #page2 h1 {
+        width: 90%;
+        font-size: 4vw;
+        font-weight: 100;
+        line-height: 1.3;
+        color: #dadada69;
+        margin-bottom: 12%;
+      }
+
+      #page3 {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      #page3 canvas {
+        max-height: 100vh;
+        max-width: 100vw;
+        position: relative;
+      }
+
+      #page4 {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: #1137ca;
+        font-family: a;
+        color: white;
+      }
+      #page4 h3 {
+        margin-left: 10vw;
+        margin-bottom: 2vw;
+      }
+      #page4 h1 {
+        margin-left: 10vw;
+        width: 70%;
+        font-weight: 100;
+        font-size: 4vw;
+        line-height: 1.1;
+        margin-bottom: 8%;
+        color: #dadada69;
+      }
+
+      #page5 {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      #page5 canvas {
+        max-height: 100vh;
+        max-width: 100vw;
+        position: relative;
+      }
+      #page6{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: #243DCA;
+        font-family: a;
+        color: white;
+      }
+      #page6 h3 {
+        margin-left: 10vw;
+        margin-bottom: 2vw;
+      }
+      #page6 h1 {
+        margin-left: 10vw;
+        width: 70%;
+        font-weight: 100;
+        font-size: 4vw;
+        line-height: 1.1;
+        margin-bottom: 8%;
+        color: #dadada69;
+      }
+
+      #page7{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+#page7>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.page7-cir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.page7-cir-inner{
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+#page8{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+#page8>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.page8-bottom{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: a;
+}
+.page8-bottom>h1{
+    color: #fff;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+    font-weight: 100;
+}
+.page8-bottom>button{
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #fff;
+    color: #0a3cce;
+}
+#page9{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+.left9{
+    height: 100%;
+    width: 40%;
+    position: relative;
+    font-family: a;
+}
+.left9>h1{
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 5vw;
+    font-weight: 100;
+    color: #fff;
+    line-height: 1;
+}
+.right9{
+    height: 100%;
+    width: 60%;
+    position: relative;
+}
+.right9-center{
+    height: 50%;
+    width: 85%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.jpeg);
+    background-size: cover;
+    left: 5%;
+}
+#page10{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+.right10{
+    height: 100%;
+    width: 60%;
+    position: relative;
+    left: 40%;
+}
+.right10-inner{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    height: 33.3%;
+    width: 100%;
+    font-family: a;
+    color: #fff;
+}
+.right10-inner>h1{
+    font-size: 2vw;
+}
+.right10-inner>p{
+    margin-top: 2vw;
+    font-size: 1.3vw;
+    width: 80%;
+}
+
+#page11{
+    position: relative;
+    height: 110vh;
+    width: 100vw;
+    background-color: #fff;
+    font-family: a;
+}
+#page11>h1{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 4vw;
+    color: #000;
+    font-weight: 100;
+}
+.page11-inner{
+    display: flex;
+    top: 18%;
+    position: relative;
+    margin-bottom: 2vw;
+    height: 24%;
+    width: 100%;
+}
+.left11{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.left11>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.right11{
+    padding-top: 5vw;
+    color: #000;
+    left: 50%;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+.right11>h4{
+    font-weight: 100;
+}
+.right11>h1{
+    font-size: 2vw;
+}
+
+
+#page12{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #02268e;
+}
+.page12-inner{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    color: #fff;
+    font-family: a;
+}
+.page12-inner>h1{
+    font-size: 5vw;
+    font-weight: 100;
+}
+.page12-inner>p{
+    font-size: 1.3vw;
+}
+
+
+#page13{
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: a;
+    padding: 7vw 10vw;
+}
+#page13>h1{
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 100;
+}
+#page13>button{
+    padding: 18px 30px;
+    border: none;
+    background-color: #0a3cce;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 2vw;
+}
+
+
+#page14{
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    background-color: #000;
+}
+.page14-inner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 5vw;
+    font-family: a;
+    height: 33.3%;
+    width: 100%;
+    color: #fff;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff48;
+}
+.page14-inner>i{
+    font-weight: 100;
+    font-size: 2.4vw;
+    position: relative;
+    z-index: 9999;
+}
+.page14-inner>h1{
+    font-size: 3vw;
+    font-weight: 100;
+    position: relative;
+    z-index: 9999;
+}
+
+.center14{
+    height: 0%;
+    width: 100%;
+    background-color: #0a3cce;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease .5s;
+}
+
+
+.page14-inner:hover .center14{
+    height: 100%;
+}
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <div data-scroll data-scroll-speed="-5" id="page1">
+        <nav>
+          <img src="image/estate/Screenshot 2023-05-30 220719.png" alt="" />
+          <div id="right-nav">
+            <button>book a demo</button>
+            <button><i class="ri-menu-line"></i></button>
+          </div>
+        </nav>
+        <div class="bottom-page1">
+          <h1>
+            Experience Real <br />
+            Estate Agility
+          </h1>
+          <div class="bottom-page1-inner">
+            <h4>
+              Create a digital twin of your existing building <br />
+              and release the potential of Web3.
+            </h4>
+            <button>LEARN MORE</button>
+          </div>
+        </div>
+        <video
+          src="https://thisismagma.com/wp-content/themes/magma/assets/home/hero/1.mp4?2"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+      <div id="page2">
+        <h2>CERTIFY YOUR BUILDING AS A DIGITAL TWIN TOKEN (DTT)</h2>
+        <h1>
+          The Digital Twin Token is a unique digital asset backed by property
+          data. Magma combines your building’s components and systems essential
+          information into a DTT.
+        </h1>
+      </div>
+      <div id="page3">
+        <canvas></canvas>
+      </div>
+      <div id="page4">
+        <h3>CONNECT THE BUILDING'S TWIN TO YOUR STAKEHOLDERS</h3>
+        <h1>
+          Users connect directly to the DTT without any intermediaries. As
+          Stakeholder, they have the power to upload and verify information that
+          enriches the Digital Twin Token. A Stakeholder's ability to access
+          validated-data to perform tasks depends on their specific role.
+        </h1>
+      </div>
+
+      <div id="page5">
+        <canvas></canvas>
+      </div>
+
+
+
+      <div id="page6">
+        <h3>INCREASE YOUR DIGITAL TWIN TOKEN’S VALUE</h3>
+        <h1>DTT data increases the value of your digital asset by lowering operational costs, improving energy use, assisting commercialization, and boosting the liquidity of your building.</h1>
+    </div>
+
+
+    <div id="page7">
+      <div class="page7-cir">
+          <div class="page7-cir-inner"></div>
+      </div>
+      <canvas></canvas>
+  </div>
+
+
+  <div id="page8">
+    <div class="page8-bottom">
+        <h1>Magma DTT</h1>
+        <button>LEARN MORE</button>
+    </div>
+    <video src="https://thisismagma.com/wp-content/themes/magma/assets/home/glass/1.webm?2"autoplay loop muted></video>
+</div>
+<div id="page9">
+    <div class="left9">
+        <h1>What is <br> Magma?</h1>
+    </div>
+    <div class="right9">
+        <div class="right9-center"></div>
+    </div>
+</div>
+<div id="page10">
+    <div class="right10">
+        <div class="right10-inner">
+            <h1>Web3 platform
+            </h1>
+            <p>Magma is a Web3 platform for all real estate stakeholders, which provides users with the ability to manage interactions between physical and digital assets through unique, and collectively generated, 3D representations of their buildings.</p>
+        </div>
+        <div class="right10-inner">
+            <h1>The Digital Twin Token: The building’s unique digital copy</h1>
+            <p>Magma uses blockchain technology to record essential data, which enables transparent, traceable, and immutable streams of information to be readily accessible to its users. Magma smart contracts are built with this blockchain data to expedite tasks like requests for proposals, lease agreements, and services arrangements.</p>
+        </div>
+        <div class="right10-inner">
+            <h1>An Index of digitization</h1>
+            <p>The Magma Index provides valuable insight for decision-making regarding data-sharing, service-creating, and operational/environmental expectations.</p>
+        </div>
+    </div>
+</div>
+<div id="page11">
+    <h1>Recent Blog</h1>
+    <div class="page11-inner">
+        <div class="left11">
+            <img src="https://thisismagma.com/wp-content/uploads/2023/05/thisismagma.com-magma-a-la-3eme-edition-du-tech-talk-de-cbre-france-1684942208038.jpeg" alt="">
+        </div>
+        <div class="right11">
+            <h4>MAY 30,2023</h4>
+            <h1>Magma At CBRE France's 3rd Tech Talk</h1>
+
+        </div>
+    </div>
+    <div class="page11-inner">
+        <div class="left11">
+            <img src="https://thisismagma.com/wp-content/uploads/2023/05/thisismagma.com-workshop-blockchain-et-actif-digitaux-sba-16-min-scaled.jpg" alt="">
+        </div>
+        <div class="right11">
+            <h4>MAY 30,2023</h4>
+            <h1>Magma At CBRE France's 3rd Tech Talk</h1>
+
+        </div>
+    </div>
+    <div class="page11-inner">
+        <div class="left11">
+            <img src="https://thisismagma.com/wp-content/uploads/2023/03/magma.wp2.cubdev.com-exploring-the-potential-of-real-estate-tokenization-digital-twins-magma.png" alt="">
+        </div>
+        <div class="right11">
+            <h4>MAY 30,2023</h4>
+            <h1>Magma At CBRE France's 3rd Tech Talk</h1>
+
+        </div>
+    </div>
+  
+</div>
+<div id="page12">
+    <div class="page12-inner">
+        <h1>Featured In</h1>
+        <p>Thrilled to have been featured in several prominent media <br> outlets and leading professionals across the world’s best <br> real estate and web3 institutions.</p>
+    </div>
+</div>
+<div id="page13">
+    <h1>Become an
+        <br>
+        early adopter</h1>
+        <button>BOOK A DEMO</button>
+</div>
+<div id="page14">
+    <div class="page14-inner">
+        <h1>Twitter</h1>
+        <i class="ri-arrow-right-up-line"></i>
+        <div class="center14"></div>
+    </div>
+    <div class="page14-inner">
+        <h1>LinkedIn</h1>
+        <i class="ri-arrow-right-up-line"></i>
+        <div class="center14"></div>
+
+    </div>
+    <div class="page14-inner">
+        <h1>Instagram</h1>
+        <i class="ri-arrow-right-up-line"></i>
+        <div class="center14"></div>
+
+    </div>
+</div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function loco() {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+        const locoScroll = new LocomotiveScroll({
+          el: document.querySelector("#main"),
+          smooth: true,
+        });
+        // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+        locoScroll.on("scroll", ScrollTrigger.update);
+
+        // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+        ScrollTrigger.scrollerProxy("#main", {
+          scrollTop(value) {
+            return arguments.length
+              ? locoScroll.scrollTo(value, 0, 0)
+              : locoScroll.scroll.instance.scroll.y;
+          }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+          getBoundingClientRect() {
+            return {
+              top: 0,
+              left: 0,
+              width: window.innerWidth,
+              height: window.innerHeight,
+            };
+          },
+          // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+          pinType: document.querySelector("#main").style.transform
+            ? "transform"
+            : "fixed",
+        });
+
+        // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+        // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+        ScrollTrigger.refresh();
+      }
+      loco();
+
+      var clutter = "";
+
+      document
+        .querySelector("#page2>h1")
+        .textContent.split(" ")
+        .forEach((dets) => {
+          clutter += `<span> ${dets} </span>`;
+
+          document.querySelector("#page2>h1").innerHTML = clutter;
+        });
+
+      gsap.to("#page2>h1>span", {
+        scrollTrigger: {
+          trigger: `#page2>h1>span`,
+          start: `top bottom`,
+          end: `bottom top`,
+          scroller: `#main`,
+          scrub: 0.5,
+        },
+        stagger: 0.2,
+        color: `#fff`,
+      });
+
+      function canvas() {
+        const canvas = document.querySelector("#page3>canvas");
+        const context = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener("resize", function () {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          render();
+        });
+
+        function files(index) {
+          var data = `
+  image/estate/frames00007.png
+  image/estate/frames00010.png
+  image/estate/frames00013.png
+  image/estate/frames00016.png
+  image/estate/frames00019.png
+  image/estate/frames00022.png
+  image/estate/frames00025.png
+  image/estate/frames00028.png
+  image/estate/frames00031.png
+  image/estate/frames00034.png
+  image/estate/frames00037.png
+  image/estate/frames00040.png
+  image/estate/frames00043.png
+  image/estate/frames00046.png
+  image/estate/frames00049.png
+  image/estate/frames00052.png
+  image/estate/frames00055.png
+  image/estate/frames00058.png
+  image/estate/frames00061.png
+  image/estate/frames00064.png
+  image/estate/frames00067.png
+  image/estate/frames00070.png
+  image/estate/frames00073.png
+  image/estate/frames00076.png
+  image/estate/frames00079.png
+  image/estate/frames00082.png
+  image/estate/frames00085.png
+  image/estate/frames00088.png
+  image/estate/frames00091.png
+  image/estate/frames00094.png
+  image/estate/frames00097.png
+  image/estate/frames00100.png
+  image/estate/frames00103.png
+  image/estate/frames00106.png
+  image/estate/frames00109.png
+  image/estate/frames00112.png
+  image/estate/frames00115.png
+  image/estate/frames00118.png
+  image/estate/frames00121.png
+  image/estate/frames00124.png
+  image/estate/frames00127.png
+  image/estate/frames00130.png
+  image/estate/frames00133.png
+  image/estate/frames00136.png
+  image/estate/frames00139.png
+  image/estate/frames00142.png
+  image/estate/frames00145.png
+  image/estate/frames00148.png
+  image/estate/frames00151.png
+  image/estate/frames00154.png
+  image/estate/frames00157.png
+  image/estate/frames00160.png
+  image/estate/frames00163.png
+  image/estate/frames00166.png
+  image/estate/frames00169.png
+  image/estate/frames00172.png
+  image/estate/frames00175.png
+  image/estate/frames00178.png
+  image/estate/frames00181.png
+  image/estate/frames00184.png
+  image/estate/frames00187.png
+  image/estate/frames00190.png
+  image/estate/frames00193.png
+  image/estate/frames00196.png
+  image/estate/frames00199.png
+  image/estate/frames00202.png
+ `;
+          return data.split("\n")[index];
+        }
+
+        const frameCount = 67;
+
+        const images = [];
+        const imageSeq = {
+          frame: 1,
+        };
+
+        for (let i = 0; i < frameCount; i++) {
+          const img = new Image();
+          img.src = files(i);
+          images.push(img);
+        }
+
+        gsap.to(imageSeq, {
+          frame: frameCount - 1,
+          snap: "frame",
+          ease: `none`,
+          scrollTrigger: {
+            scrub: 0.5,
+            trigger: `#page3`,
+            start: `top top`,
+            end: `250% top`,
+            scroller: `#main`,
+          },
+          onUpdate: render,
+        });
+
+        images[1].onload = render;
+
+        function render() {
+          scaleImage(images[imageSeq.frame], context);
+        }
+
+        function scaleImage(img, ctx) {
+          var canvas = ctx.canvas;
+          var hRatio = canvas.width / img.width;
+          var vRatio = canvas.height / img.height;
+          var ratio = Math.max(hRatio, vRatio);
+          var centerShift_x = (canvas.width - img.width * ratio) / 2;
+          var centerShift_y = (canvas.height - img.height * ratio) / 2;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            img.width * ratio,
+            img.height * ratio
+          );
+        }
+        ScrollTrigger.create({
+          trigger: "#page3",
+          pin: true,
+          scroller: `#main`,
+          start: `top top`,
+          end: `250% top`,
+        });
+      }
+      canvas();
+
+      var clutter = "";
+
+      document
+        .querySelector("#page4>h1")
+        .textContent.split(" ")
+        .forEach((dets) => {
+          clutter += `<span> ${dets} </span>`;
+
+          document.querySelector("#page4>h1").innerHTML = clutter;
+        });
+
+      gsap.to("#page4>h1>span", {
+        scrollTrigger: {
+          trigger: `#page4>h1>span`,
+          start: `top bottom`,
+          end: `bottom top`,
+          scroller: "#main",
+          scrub: 0.5,
+        },
+        stagger: 0.2,
+        color: `white`,
+      });
+
+
+
+
+
+      function canvas1(){
+  const canvas = document.querySelector("#page5>canvas");
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+window.addEventListener("resize", function () {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+render();
+});
+
+function files(index) {
+var data = `
+image/estate/bridges00004.png
+image/estate/bridges00007.png
+image/estate/bridges00010.png
+image/estate/bridges00013.png
+image/estate/bridges00016.png
+image/estate/bridges00019.png
+image/estate/bridges00022.png
+image/estate/bridges00025.png
+image/estate/bridges00028.png
+image/estate/bridges00031.png
+image/estate/bridges00034.png
+image/estate/bridges00037.png
+image/estate/bridges00040.png
+image/estate/bridges00043.png
+image/estate/bridges00046.png
+image/estate/bridges00049.png
+image/estate/bridges00052.png
+image/estate/bridges00055.png
+image/estate/bridges00058.png
+image/estate/bridges00061.png
+image/estate/bridges00064.png
+image/estate/bridges00067.png
+image/estate/bridges00070.png
+image/estate/bridges00073.png
+image/estate/bridges00076.png
+image/estate/bridges00079.png
+image/estate/bridges00082.png
+image/estate/bridges00085.png
+image/estate/bridges00088.png
+image/estate/bridges00091.png
+image/estate/bridges00094.png
+image/estate/bridges00097.png
+image/estate/bridges00100.png
+image/estate/bridges00103.png
+image/estate/bridges00106.png
+image/estate/bridges00109.png
+image/estate/bridges00112.png
+image/estate/bridges00115.png
+image/estate/bridges00118.png
+image/estate/bridges00121.png
+image/estate/bridges00124.png
+image/estate/bridges00127.png
+image/estate/bridges00130.png
+image/estate/bridges00133.png
+image/estate/bridges00136.png
+image/estate/bridges00139.png
+image/estate/bridges00142.png
+image/estate/bridges00145.png
+image/estate/bridges00148.png
+image/estate/bridges00151.png
+image/estate/bridges00154.png
+image/estate/bridges00157.png
+image/estate/bridges00160.png
+image/estate/bridges00163.png
+image/estate/bridges00166.png
+image/estate/bridges00169.png
+image/estate/bridges00172.png
+image/estate/bridges00175.png
+image/estate/bridges00178.png
+image/estate/bridges00181.png
+image/estate/bridges00184.png
+image/estate/bridges00187.png
+image/estate/bridges00190.png
+image/estate/bridges00193.png
+image/estate/bridges00196.png
+image/estate/bridges00199.png
+image/estate/bridges00202.png
+`;
+return data.split("\n")[index];
+}
+
+const frameCount = 67;
+
+const images = [];
+const imageSeq = {
+frame: 1,
+};
+
+for (let i = 0; i < frameCount; i++) {
+const img = new Image();
+img.src = files(i);
+images.push(img);
+}
+
+gsap.to(imageSeq, {
+frame: frameCount - 1,
+snap: "frame",
+ease: `none`,
+scrollTrigger: {
+  scrub: .5,
+  trigger: `#page5`,
+  start: `top top`,
+  end: `250% top`,
+  scroller: `#main`,
+},
+onUpdate: render,
+});
+
+images[1].onload = render;
+
+function render() {
+scaleImage(images[imageSeq.frame], context);
+}
+
+function scaleImage(img, ctx) {
+var canvas = ctx.canvas;
+var hRatio = canvas.width / img.width;
+var vRatio = canvas.height / img.height;
+var ratio = Math.max(hRatio, vRatio);
+var centerShift_x = (canvas.width - img.width * ratio) / 2;
+var centerShift_y = (canvas.height - img.height * ratio) / 2;
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.drawImage(
+  img,
+  0,
+  0,
+  img.width,
+  img.height,
+  centerShift_x,
+  centerShift_y,
+  img.width * ratio,
+  img.height * ratio
+);
+}
+ScrollTrigger.create({
+
+trigger: "#page5",
+pin: true,
+scroller: `#main`,
+start: `top top`,
+end: `250% top`,
+});
+}
+canvas1()
+
+
+
+
+var clutter = "";
+
+document
+  .querySelector("#page6>h1")
+  .textContent.split(" ")
+  .forEach((dets) => {
+    clutter += `<span> ${dets} </span>`;
+
+    document.querySelector("#page6>h1").innerHTML = clutter;
+  });
+
+gsap.to("#page6>h1>span", {
+  scrollTrigger: {
+    trigger: `#page6>h1>span`,
+    start: `top bottom`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: 0.5,
+  },
+  stagger: 0.2,
+  color: `#fff`,
+});
+
+
+
+
+
+
+function canvas2(){
+  const canvas = document.querySelector("#page7>canvas");
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+window.addEventListener("resize", function () {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+render();
+});
+
+function files(index) {
+var data = `
+
+https://thisismagma.com/assets/home/lore/seq/1.webp?2
+https://thisismagma.com/assets/home/lore/seq/2.webp?2
+https://thisismagma.com/assets/home/lore/seq/3.webp?2
+https://thisismagma.com/assets/home/lore/seq/4.webp?2
+https://thisismagma.com/assets/home/lore/seq/5.webp?2
+https://thisismagma.com/assets/home/lore/seq/6.webp?2
+https://thisismagma.com/assets/home/lore/seq/7.webp?2
+https://thisismagma.com/assets/home/lore/seq/8.webp?2
+https://thisismagma.com/assets/home/lore/seq/9.webp?2
+https://thisismagma.com/assets/home/lore/seq/10.webp?2
+https://thisismagma.com/assets/home/lore/seq/11.webp?2
+https://thisismagma.com/assets/home/lore/seq/12.webp?2
+https://thisismagma.com/assets/home/lore/seq/13.webp?2
+https://thisismagma.com/assets/home/lore/seq/14.webp?2
+https://thisismagma.com/assets/home/lore/seq/15.webp?2
+https://thisismagma.com/assets/home/lore/seq/16.webp?2
+https://thisismagma.com/assets/home/lore/seq/17.webp?2
+https://thisismagma.com/assets/home/lore/seq/18.webp?2
+https://thisismagma.com/assets/home/lore/seq/19.webp?2
+https://thisismagma.com/assets/home/lore/seq/20.webp?2
+https://thisismagma.com/assets/home/lore/seq/21.webp?2
+https://thisismagma.com/assets/home/lore/seq/22.webp?2
+https://thisismagma.com/assets/home/lore/seq/23.webp?2
+https://thisismagma.com/assets/home/lore/seq/24.webp?2
+https://thisismagma.com/assets/home/lore/seq/25.webp?2
+https://thisismagma.com/assets/home/lore/seq/26.webp?2
+https://thisismagma.com/assets/home/lore/seq/27.webp?2
+https://thisismagma.com/assets/home/lore/seq/28.webp?2
+https://thisismagma.com/assets/home/lore/seq/29.webp?2
+https://thisismagma.com/assets/home/lore/seq/30.webp?2
+https://thisismagma.com/assets/home/lore/seq/31.webp?2
+https://thisismagma.com/assets/home/lore/seq/32.webp?2
+https://thisismagma.com/assets/home/lore/seq/33.webp?2
+https://thisismagma.com/assets/home/lore/seq/34.webp?2
+https://thisismagma.com/assets/home/lore/seq/35.webp?2
+https://thisismagma.com/assets/home/lore/seq/36.webp?2
+https://thisismagma.com/assets/home/lore/seq/37.webp?2
+https://thisismagma.com/assets/home/lore/seq/38.webp?2
+https://thisismagma.com/assets/home/lore/seq/39.webp?2
+https://thisismagma.com/assets/home/lore/seq/40.webp?2
+https://thisismagma.com/assets/home/lore/seq/41.webp?2
+https://thisismagma.com/assets/home/lore/seq/42.webp?2
+https://thisismagma.com/assets/home/lore/seq/43.webp?2
+https://thisismagma.com/assets/home/lore/seq/44.webp?2
+https://thisismagma.com/assets/home/lore/seq/45.webp?2
+https://thisismagma.com/assets/home/lore/seq/46.webp?2
+https://thisismagma.com/assets/home/lore/seq/47.webp?2
+https://thisismagma.com/assets/home/lore/seq/48.webp?2
+https://thisismagma.com/assets/home/lore/seq/49.webp?2
+https://thisismagma.com/assets/home/lore/seq/50.webp?2
+https://thisismagma.com/assets/home/lore/seq/51.webp?2
+https://thisismagma.com/assets/home/lore/seq/52.webp?2
+https://thisismagma.com/assets/home/lore/seq/53.webp?2
+https://thisismagma.com/assets/home/lore/seq/54.webp?2
+https://thisismagma.com/assets/home/lore/seq/55.webp?2
+https://thisismagma.com/assets/home/lore/seq/56.webp?2
+https://thisismagma.com/assets/home/lore/seq/57.webp?2
+https://thisismagma.com/assets/home/lore/seq/58.webp?2
+https://thisismagma.com/assets/home/lore/seq/59.webp?2
+https://thisismagma.com/assets/home/lore/seq/60.webp?2
+https://thisismagma.com/assets/home/lore/seq/61.webp?2
+https://thisismagma.com/assets/home/lore/seq/62.webp?2
+https://thisismagma.com/assets/home/lore/seq/63.webp?2
+https://thisismagma.com/assets/home/lore/seq/64.webp?2
+https://thisismagma.com/assets/home/lore/seq/65.webp?2
+https://thisismagma.com/assets/home/lore/seq/66.webp?2
+https://thisismagma.com/assets/home/lore/seq/67.webp?2
+https://thisismagma.com/assets/home/lore/seq/68.webp?2
+https://thisismagma.com/assets/home/lore/seq/69.webp?2
+https://thisismagma.com/assets/home/lore/seq/70.webp?2
+https://thisismagma.com/assets/home/lore/seq/71.webp?2
+https://thisismagma.com/assets/home/lore/seq/72.webp?2
+https://thisismagma.com/assets/home/lore/seq/73.webp?2
+https://thisismagma.com/assets/home/lore/seq/74.webp?2
+https://thisismagma.com/assets/home/lore/seq/75.webp?2
+https://thisismagma.com/assets/home/lore/seq/76.webp?2
+https://thisismagma.com/assets/home/lore/seq/77.webp?2
+https://thisismagma.com/assets/home/lore/seq/78.webp?2
+https://thisismagma.com/assets/home/lore/seq/79.webp?2
+https://thisismagma.com/assets/home/lore/seq/80.webp?2
+https://thisismagma.com/assets/home/lore/seq/81.webp?2
+https://thisismagma.com/assets/home/lore/seq/82.webp?2
+https://thisismagma.com/assets/home/lore/seq/83.webp?2
+https://thisismagma.com/assets/home/lore/seq/84.webp?2
+https://thisismagma.com/assets/home/lore/seq/85.webp?2
+https://thisismagma.com/assets/home/lore/seq/86.webp?2
+https://thisismagma.com/assets/home/lore/seq/87.webp?2
+https://thisismagma.com/assets/home/lore/seq/88.webp?2
+https://thisismagma.com/assets/home/lore/seq/89.webp?2
+https://thisismagma.com/assets/home/lore/seq/90.webp?2
+https://thisismagma.com/assets/home/lore/seq/91.webp?2
+https://thisismagma.com/assets/home/lore/seq/92.webp?2
+https://thisismagma.com/assets/home/lore/seq/93.webp?2
+https://thisismagma.com/assets/home/lore/seq/94.webp?2
+https://thisismagma.com/assets/home/lore/seq/95.webp?2
+https://thisismagma.com/assets/home/lore/seq/96.webp?2
+https://thisismagma.com/assets/home/lore/seq/97.webp?2
+https://thisismagma.com/assets/home/lore/seq/98.webp?2
+https://thisismagma.com/assets/home/lore/seq/99.webp?2
+https://thisismagma.com/assets/home/lore/seq/100.webp?2
+https://thisismagma.com/assets/home/lore/seq/101.webp?2
+https://thisismagma.com/assets/home/lore/seq/102.webp?2
+https://thisismagma.com/assets/home/lore/seq/103.webp?2
+https://thisismagma.com/assets/home/lore/seq/104.webp?2
+https://thisismagma.com/assets/home/lore/seq/105.webp?2
+https://thisismagma.com/assets/home/lore/seq/106.webp?2
+https://thisismagma.com/assets/home/lore/seq/107.webp?2
+https://thisismagma.com/assets/home/lore/seq/108.webp?2
+https://thisismagma.com/assets/home/lore/seq/109.webp?2
+https://thisismagma.com/assets/home/lore/seq/110.webp?2
+https://thisismagma.com/assets/home/lore/seq/111.webp?2
+https://thisismagma.com/assets/home/lore/seq/112.webp?2
+https://thisismagma.com/assets/home/lore/seq/113.webp?2
+https://thisismagma.com/assets/home/lore/seq/114.webp?2
+https://thisismagma.com/assets/home/lore/seq/115.webp?2
+https://thisismagma.com/assets/home/lore/seq/116.webp?2
+https://thisismagma.com/assets/home/lore/seq/117.webp?2
+https://thisismagma.com/assets/home/lore/seq/118.webp?2
+https://thisismagma.com/assets/home/lore/seq/119.webp?2
+https://thisismagma.com/assets/home/lore/seq/120.webp?2
+https://thisismagma.com/assets/home/lore/seq/121.webp?2
+https://thisismagma.com/assets/home/lore/seq/122.webp?2
+https://thisismagma.com/assets/home/lore/seq/123.webp?2
+https://thisismagma.com/assets/home/lore/seq/124.webp?2
+https://thisismagma.com/assets/home/lore/seq/125.webp?2
+https://thisismagma.com/assets/home/lore/seq/126.webp?2
+https://thisismagma.com/assets/home/lore/seq/127.webp?2
+https://thisismagma.com/assets/home/lore/seq/128.webp?2
+https://thisismagma.com/assets/home/lore/seq/129.webp?2
+https://thisismagma.com/assets/home/lore/seq/130.webp?2
+https://thisismagma.com/assets/home/lore/seq/131.webp?2
+https://thisismagma.com/assets/home/lore/seq/132.webp?2
+https://thisismagma.com/assets/home/lore/seq/133.webp?2
+https://thisismagma.com/assets/home/lore/seq/134.webp?2
+https://thisismagma.com/assets/home/lore/seq/135.webp?2
+https://thisismagma.com/assets/home/lore/seq/136.webp?2
+
+`;
+return data.split("\n")[index];
+}
+
+const frameCount = 136;
+
+const images = [];
+const imageSeq = {
+frame: 1,
+};
+
+for (let i = 0; i < frameCount; i++) {
+const img = new Image();
+img.src = files(i);
+images.push(img);
+}
+
+gsap.to(imageSeq, {
+frame: frameCount - 1,
+snap: "frame",
+ease: `none`,
+scrollTrigger: {
+  scrub: .5,
+  trigger: `#page7`,
+  start: `top top`,
+  end: `250% top`,
+  scroller: `#main`,
+},
+onUpdate: render,
+});
+
+images[1].onload = render;
+
+function render() {
+scaleImage(images[imageSeq.frame], context);
+}
+
+function scaleImage(img, ctx) {
+var canvas = ctx.canvas;
+var hRatio = canvas.width / img.width;
+var vRatio = canvas.height / img.height;
+var ratio = Math.max(hRatio, vRatio);
+var centerShift_x = (canvas.width - img.width * ratio) / 2;
+var centerShift_y = (canvas.height - img.height * ratio) / 2;
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.drawImage(
+  img,
+  0,
+  0,
+  img.width,
+  img.height,
+  centerShift_x,
+  centerShift_y,
+  img.width * ratio,
+  img.height * ratio
+);
+}
+ScrollTrigger.create({
+
+trigger: "#page7",
+pin: true,
+scroller: `#main`,
+start: `top top`,
+end: `250% top`,
+});
+}
+canvas2()
+
+
+
+gsap.to(".page7-cir",{
+  scrollTrigger:{
+    trigger:`.page7-cir`,
+    start:`top center`,
+    end:`bottom top`,
+    scroller:`#main`,
+    scrub:.5
+  },
+  scale:1.5
+})
+
+
+
+gsap.to(".page7-cir-inner",{
+  scrollTrigger:{
+    trigger:`.page7-cir-inner`,
+    start:`top center`,
+    end:`bottom top`,
+    scroller:`#main`,
+    scrub:.5
+  },
+  backgroundColor : `#0a3bce91`,
+})
+
+
+
+    </script>
+  </body>
+</html>

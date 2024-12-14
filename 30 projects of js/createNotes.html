@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Notes App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg , royalblue ,  skyblue);
+            color: #333;
+            padding-top: 4%;
+            padding-left: 10%;
+        }
+        .container h1{
+            display: flex;
+            align-items: center;
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .container h1 img{
+            width:100px;
+        }
+        .container button{
+            display: flex;
+            align-items: center;
+            background: linear-gradient( rgb(226, 226, 71) ,rgb(238, 178, 66));
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            outline: none;
+            border: none;
+            border-radius: 40px;
+            padding: 15px 25px;
+            margin: 30px 0 20px;
+            cursor: pointer;
+        }
+        .container button img{
+
+            width: 25px;
+            margin-right: 10px;
+
+        }
+        .notes-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .input-box{
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            min-height: 150px;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 20px;
+            outline: none;
+            border-radius: 5px;
+        }
+        .input-box img{
+            width: 25px;
+            position: absolute;
+            bottom: 10px ;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> <img id="notbook" src="img/notes.png" alt=""> Notes</h1>
+        <button onclick="createNotes()" class="btn" ><img  id="pen" src="img/pen.webp" alt=""> Create Notes </button>
+        <div class="notes-container">
+            <!-- <p contenteditable="true" class="input-box">
+                <img src="img/delete.svg" alt="">
+            </p> -->
+        </div>
+    </div>
+    <script>
+        let notesContainer = document.querySelector(".notes-container");
+        let createbtn = document.querySelector(".btn")
+        let notes = document.querySelectorAll(".input-box")
+
+        function getData() {
+            notesContainer.innerHTML = localStorage.getItem('notes');
+        }
+        getData();
+        function saveData() {
+            localStorage.setItem('notes', notesContainer.innerHTML);
+        }
+
+        function createNotes() {
+            let inputBox = document.createElement("p")
+            let img = document.createElement("img")
+            inputBox.className = "input-box";
+            inputBox.setAttribute("contenteditable", "true");
+            img.src = "img/delete.svg"
+            notesContainer.appendChild(inputBox).appendChild(img);
+            saveData()
+        }
+        notesContainer.addEventListener("click",(e)=>{
+            if (e.target.tagName === "IMG") {
+                e.target.parentElement.remove();
+                saveData()
+            }
+            else if(e.target.tagName === "P"){
+                notes = document.querySelectorAll(".input-box");
+                notes.forEach(nt=>{
+                    nt.onkeyup = function(){
+                        saveData();
+                    }
+                })
+            }
+        })
+
+    </script>
+</body>
+</html>

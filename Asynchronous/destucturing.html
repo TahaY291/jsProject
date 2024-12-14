@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        const numbers = [12,23,32];
+
+        const [a,b,c] = numbers
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        const [x, ,y] = [10,20,30];
+        console.log(x);
+        console.log(y);
+
+        const [o =5 , i = 10 ] = [7]
+        console.log(o);
+        console.log(i);
+        
+        const person = {name: "Taha", age: 30 , city: "Toba"};
+
+        let {name, age, city} = person;
+
+        console.log(name);
+        console.log(age);
+        console.log(city);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</script>
+</body>
+</html>

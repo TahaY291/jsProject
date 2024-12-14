@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #001e4d;
+        }
+
+        .app {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            margin: 100px auto 0;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .app h1 {
+            font-size: 25px;
+            color: #001e4d;
+            font-weight: 600;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+
+        .quiz {
+            padding: 20px 0;
+        }
+
+        .quiz h2 {
+            font-size: 18px;
+            color: #001e4d;
+            font-weight: 600;
+        }
+
+        .btn {
+            background-color: #fff;
+            color: #222;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid #222;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover:not([disabled]) {
+            background: #222;
+            color: #fff;
+        }
+        .btn:disabled{
+            cursor: no-drop;
+        }
+
+        #next-btn {
+            background: #001e4d;
+            color: #fff;
+            font-weight: 500;
+            width: 150px;
+            border: 0;
+            padding: 10px;
+            margin: 20px auto 0;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .correct {
+            background-color: greenyellow;
+        }
+
+        .incorrect {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <h1>Simple Quiz</h1>
+        <div class="quiz">
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            {
+                question: "Which is the largest animal in the world? ",
+                answers: [
+                    { text: "Shark", correct: false },
+                    { text: "Blue Whale", correct: true },
+                    { text: "Elephant ", correct: false },
+                    { text: "Giraffe", correct: false },
+                ]
+            },
+            {
+                question: "Which is the smallest country in the world? ",
+                answers: [
+                    { text: "Vatican City", correct: true },
+                    { text: "Bhutan", correct: false },
+                    { text: "Nepal ", correct: false },
+                    { text: "Sri Lanka", correct: false },
+                ]
+            },
+            {
+                question: "Which is the largest desert in the world? ",
+                answers: [
+                    { text: "kalahari", correct: false },
+                    { text: "Gobi", correct: false },
+                    { text: "Sahara", correct: true },
+                    { text: "Antartica", correct: false },
+                ]
+            },
+            {
+                question: "Which is the smallest continent in the world? ",
+                answers: [
+                    { text: "Asia", correct: false },
+                    { text: "Australia", correct: true },
+                    { text: "Arctic", correct: false },
+                    { text: "Fla fla", correct: false },
+                ]
+            },
+        ]
+        let questionEl = document.getElementById("question");
+        const answerbtn = document.getElementById("answer-buttons")
+        const nextbtn = document.getElementById("next-btn")
+
+        let index = 0;
+        let score = 0;
+        // function startQuiz() {
+        //     index = 0;
+        //     score = 0;
+        //     nextbtn.style.display = "none";
+        //     startQuiz();
+        // }
+        // function startQuiz() {
+        //     resetState();
+        //     let currentQuestion = questions[index];
+        //     let questionNo = index + 1;
+        //     questionEl.innerHTML = questionNo + " "+ currentQuestion.question;
+        //     currentQuestion.answers.forEach(answer=>{
+        //         let button = document.createElement("button")
+        //         button.innerHTML = answer.text;
+        //         button.classList.add("btn")
+        //         answerbtn.appendChild(button);
+        //         if (answer.correct) {
+                    
+        //             button.dataset.correct = answer.correct;
+        //         }
+        //         button.addEventListener("click",(e)=>{
+        //             let select = e.target;
+        //             let isCorrect = select.dataset.correct === "true";
+        //             if (isCorrect) {
+        //                 select.classList.add("correct")
+        //                 score++;
+        //             }else{
+        //                 select.classList.add("incorrect")
+
+        //             }
+        //             Array.from(answerbtn.children).forEach(btn=>{
+        //                 if (btn.dataset.correct === "true") {
+        //                     btn.classList.add("correct");
+        //                 }
+        //                 btn.disabled = true;
+        //             })
+        //             nextbtn.style.display = "block";
+        //         })
+                
+        //     })
+        // }
+        // function resetState() {
+        //     nextbtn.style.display = "none";
+        //     while (answerbtn.firstChild) {
+        //         answerbtn.removeChild(answerbtn.firstChild);
+        //     }
+            
+        // }
+        // startQuiz()
+
+
+
+
+
+
+
+
+
+
+
+        
+                function startQuiz() {
+                    index = 0;
+                    score = 0;
+                    nextbtn.innerHTML = "Next";
+                    showQuestion();
+                }
+        
+                function showQuestion() {
+                    resetState();
+                    let currentQuestion = questions[index];
+                    console.log(currentQuestion);
+        
+                    let questionNo = index + 1;
+                    questionEl.innerHTML = questionNo + " " + currentQuestion.question;
+        
+                    currentQuestion.answers.forEach((answer) => {
+                        let btn = document.createElement('button')
+                        btn.innerHTML = answer.text;
+                        btn.classList.add("btn");
+                        answerbtn.appendChild(btn);
+                        if (answer.correct) {
+                            btn.dataset.correct = answer.correct;
+                        }
+                        btn.addEventListener('click', selectanswer);
+        
+        
+                    })
+                }
+                function resetState() {
+                    nextbtn.style.display = "none";
+        
+                    while (answerbtn.firstChild) {
+                        answerbtn.removeChild(answerbtn.firstChild);
+                    }
+                }
+                function selectanswer(e) {
+                    const selectbtn  = e.target;
+                    const isCorrect = selectbtn.dataset.correct === "true";
+                    if (isCorrect) {
+                        selectbtn.classList.add("correct");
+                        score++;
+                    }else{
+                        selectbtn.classList.add("incorrect");
+        
+                    }
+                    Array.from(answerbtn.children).forEach(btn=>{
+                        if (btn.dataset.correct === "true") {
+                            btn.classList.add("correct")
+                        }
+                        btn.disabled = true;
+                    })
+                    nextbtn.style.display = "block";
+                }
+                function showScore() {
+                    resetState();
+                    questionEl.innerHTML = `You scored ${score} out of ${questions.length}!`;
+                    nextbtn.innerHTML = "Play Again";
+                    nextbtn.style.display = "block";
+                }
+                function handleNextBtn() {
+                    index++;
+                    if (index < questions.length) {
+                        showQuestion();
+                    }else{
+                        showScore();
+                    }
+                }
+                nextbtn.addEventListener("click", ()=>{
+                    if (index < questions.length) {
+                        handleNextBtn()
+                    }else{
+                        startQuiz();
+                    }
+                })
+                startQuiz();
+
+    </script>
+</body>
+
+</html>

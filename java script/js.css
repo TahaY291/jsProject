@@ -1,0 +1,14 @@
+.bulb{
+    width: 55px;
+    height: 55px;
+    background-color: #f1c40f;
+    border-radius: 50px;
+    margin: 50px auto;
+    transition: box-shadow 0.5s ease-in-out;
+}
+.glow{
+    box-shadow: 0 0 20px 10px #f38004;
+}
+.glow1{
+    box-shadow: 0  0 40px 40px #f1c40f;
+}

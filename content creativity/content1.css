@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+body {
+    background-color: rgb(26, 26, 25);
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 30%, rgba(26, 28, 49, 1) 70%);
+    border-radius:  0 0 200px 200px;
+}
+.main-container{
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: transparent;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 12vh;
+    background: transparent;
+}
+.logo{
+    width: 10vw;
+}
+
+.logo img{
+    width: 100px;
+    height: 50px;
+    border-radius: 60px;
+    /* border-radius: 50%; */
+}
+.link ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.link ul li {
+    list-style-type: none;
+}
+
+.link li a {
+    color: rgb(209, 207, 207);
+    text-decoration: none;
+    /* font-size: clamp(12px, 2vw, 15px); */
+    font-size: 1rem;
+    font-weight: 600;
+}
+.meeting button {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+    background-color: rgb(70, 82, 242);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.meeting button:hover {
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    background-color: rgb(25, 35, 173);
+    transform: scale(1.05);
+}
+
+.meeting button:active {
+    background-color: rgb(50, 63, 211);
+}
+
+
+@media (max-width: 480px) {
+
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Styles for tablets */
+}
+
+
+@media (max-width: 1024px) {
+    .header .meeting button{
+        display: none;
+    }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .mainContent{
+        transform: translate(-2%, -0%);
+    }
+}
+
+
+@media (min-width: 1441px) {
+    .header .meeting button{
+        display: none;
+    }
+
+}
+

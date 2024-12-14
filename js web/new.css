@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(pic/bg.jpg) #030728 no-repeat center center;
+}
+.slider-wrapper{
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0px 70px 55px;
+}
+.card-list .card-item{
+    color: rgb(109, 144, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    padding: 35px;
+    border-radius: 8px;
+    backdrop-filter: blur(30px);
+    background: rgba(255,255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.card-list .card-item .user-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 3px solid #fff;
+    padding: 4px;
+}
+
+.card-list .card-item .user-proffession{
+    font-size: 1.15rem;
+    color: rgb(109, 144, 240);
+    font-weight: 500;
+    margin: 14px 0 40px;
+
+}
+.card-list .card-item .message-button{
+    font-size: 1.5rem;
+    padding:10px 35px;
+    color: #030728;
+    border-radius: 6px;
+    font-weight: 500px;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+    background-color: rgb(248, 31, 103);
+    color: rgb(109, 144, 240);
+}
+.card-list .card-item .message-button:hover{
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #fff;
+    color: rgb(109, 144, 240);
+}

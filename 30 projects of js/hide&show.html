@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #993446;
+            /* background: #dabec3; */
+        }
+        .input-box{
+            background-color: transparent;
+            width: 500px;
+            border-radius: 5px;
+            padding: 10px  20px;
+            margin: 300px auto;
+            display: flex;
+            position: relative;
+        }
+        .input-box input{
+            width: 100%;
+            padding: 10px 10px;
+            border: none;
+            border-bottom: 1px solid #0f0f0f;
+            outline: 0;
+            font-size: 24px;
+            color: #fff;
+            background: transparent;
+        }
+        .input-box img{
+            width: 35px;
+            cursor: pointer;
+            position: absolute;
+            right: 5%;
+            top: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-box">
+        <input type="password" id="password" placeholder="password">
+        <img src="img/closeEye.svg" id="icon" alt="">
+    </div>
+    <script>
+        let eye = document.getElementById("icon")
+        let password = document.getElementById("password")
+
+        eye.onclick = function () {
+            if (password.type == 'password') {
+                password.type = "text";
+                eye.src = "img/eye.svg"
+            }else{
+                password.type = "password";
+                eye.src = "img/closeEye.svg"
+                
+            }
+        }
+
+
+    </script>
+</body>
+</html>

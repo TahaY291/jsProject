@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <p>Name</p>
+  <input class="input" name="name" type="text" id="name">
+<div id="demo0"></div>
+<p>Last Name</p>
+<input class="input" type="text" name="lastname" placeholder="Enter last name" id="lastname">
+<div id="demo1"></div>
+<p>Email</p>
+<input class="input" type="email" name="email" id="email" placeholder="enter you email">
+<div id="demo2"></div>
+<p>Number</p>
+<input class="input" type="number" name="number" id="number" id="number" placeholder="enter your phone">
+<div id="demo3"></div>
+<button onclick="submit()">click</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody id="result">
+  </tbody>
+</table>
+</body>
+<script>
+  function  submit(){
+    let  arr = [];
+    let input = document.querySelectorAll(".input");
+    let inputbox = document.querySelectorAll(".input");
+    var first = document.getElementById('name').value;
+    var last = document.getElementById('lastname').value;
+    var email = document.getElementById('email').value;
+    var number = document.getElementById('number').value;
+    inputbox.forEach((e, index) => {
+      if (e.value == '') {
+        document.getElementById(`demo${index}`).innerHTML = `<p style='color: red'> ${e.getAttribute('name')} field is required. </p>`
+      }else {
+        document.getElementById(`demo${index}`).innerHTML = ""
+        e.value = ""
+      }
+    });
+    const data = {
+      first :  first,
+      last : last,
+      email : email,
+      number : number
+    }
+    arr.push(data);
+    // console.log(arr);
+
+    showResult(arr);
+  }
+  function showResult(items){
+    console.log('here i am',items);
+    // let output="";
+    // for(index in items){
+    //   output +="\
+    //             <tr>\
+    //               <td>+items[arr].first</td>\
+    //               </tr>\";
+    // }
+    // document.getElementById('result').innerHTML=output;
+  }
+</script>
+</html>
